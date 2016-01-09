@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2015-01-10">10 Jan 2015</time>
+        	
+        		on
+	        	
+	        	    算法
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">递归与约瑟夫问题</h1>
+
+        <section class="post-content">
+            <p>「递归」是一种很强大、也很常见的解决问题方式。我所学到的递归，是当你碰到一个<code>令人奔溃</code>的问题，没办法一下子解决的那种。却发现可以通过简单转化，把一个<code>大问题</code>分解成<code>一模一样</code>的<code>小问题</code>的时候，递归就有奇效了。意思就是，我虽然没解决这个问题，但是我找到了一个可以无限简化这个问题的方法，然后当这个问题简化到极限的时候，就引刃而解了。     </p>
+
+<h4>「约瑟夫问题」的来源</h4>
+
+<p>在犹太罗马战争期间，41名犹太反抗者困在了罗马人包围的洞穴中.这些反抗者宁愿<code>自杀</code>也不愿被活捉，但是又对自己下不了毒手。于是，他们决定围成一个圆圈，并沿着圆圈每隔两个人杀死一个人。但是，「约瑟夫」和他的朋友觉得自杀是非常愚蠢的，于是他迅速计算出他和其朋友在这个险恶的圆圈中应该站的位置。可想而知，最后他俩活下来了。（其实本来是说好一起死的，他俩应该是最后自杀，只不过没人监督他俩了。。。）<br>
+所以这个「以夫拉维·约瑟夫」是得益于自己的数学才能，才得以存活于世。    </p>
+
+<p>现在流传下来的约瑟夫问题有所简化，原本的<code>隔二杀一</code>简化成了现在的<code>隔一个杀一个</code>，大概是因为比较容易心算吧？<br>
+即：<code>有100个人围城一个圈，每数到第二个人就把他干掉，问最后剩下的是第几个人？</code>    </p>
+
+<p>对于我自己，之前一直没想到这个问题和递归有关系。。。实际上是这样的：      </p>
+
+<ol>
+<li>假设有100个人，杀掉一轮一个还剩50人，双数全被干掉了，只剩下单数<br></li>
+<li>这剩下的<code>50个单号</code>被杀的问题，与<code>全新的50人</code>被杀相比，之所以我认为这两个问题不同，是因为之前那个全是单号，好像杀起来不一样。但是我没想到，与全新50人相比，其实只是50个人的<code>号码不同</code>，杀起来是一样的，事实上最后留下的人是同一个。<br></li>
+<li>也就是说，杀掉一轮以后，相当于重新开始了一次新杀戮，我们要做的，只是把每个人的号码进行「映射」，即新号码映射回老号码。比如共有10个人，杀过一轮以后，剩下1、3、5、7、9，那么对于全新5个人的1、2、3、4、5而言，只是每个人的编号有<code>2倍-1</code>的映射而已。（10个人是个偶数，奇数稍有不同，为<code>2倍+1</code>）<br></li>
+<li>于是我们终于有了递归式：<br>
+<img src="/assets/images/2015-01-10_14.32.34.png"></img><br></li>
+</ol>
+
+<p>作为一个很初级的coder，我其实是蛮喜欢递归代码的简洁优雅，也比较符合人类的思维。但是作为科学家呢，他们是不满足与递归解的。     </p>
+
+<p>后来人们发现，总人数为「2的幂次方」时，最后剩下的总是<code>第一个人</code>。于是就有了一个非常机智的解法，也是我最欣赏的解法，就是：当杀杀杀，杀到只剩下2的幂次方个人的时候，那时的1号就是最后留下的人。于是我们要做的，又回到了这个1号在原来队伍里的号码了。（转化问题这个思想这是重要啊！）    </p>
+
+<p>数学家不服啊，于是也想出了一个令人匪夷所思的解法：<code>把总人数化成二进制，然后「循环左移」一位</code>，就有答案了。。。（证明就不写了，不算太难）     </p>
+
+<p>『注意』以上诸解法，均是基于两个前提：1.从2号开始杀。2.隔一个杀一个。<br>
+聪明的你应该知道，对于变体，我们只要转化成基于这俩前提的子问题即可。     </p>
+
+<h4>再谈递归</h4>
+
+<p>作为计算机科学基础课程，「具体数学」当然也就首推消除递归的。阅读书中第一章，我做如下笔记：<br>
+1. 所有的「线性递归」都有公式可以求出「封闭解」。（就是直接的解）<br>
+2. 这个解法是约瑟夫数学解得推广（进制转化）。    </p>
+
+<p>解法如下：<br>
+对于普通的线性递归<br>
+<img src="/assets/images/2015-01-10_13.56.52.png"></img><br>
+可以用这个公式求解：（括号右边的数字表示进制）<br>
+_<br>
+<img src="/assets/images/2015-01-10_13.56.59.png"></img>     </p>
+
+<p>好像有点晦涩，给个例子吧~     </p>
+
+<p><img src="/assets/images/2015-01-10_13.57.07.png"></img><br>
+<img src="/assets/images/2015-01-10_13.57.23.png"></img>     </p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

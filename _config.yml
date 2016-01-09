@@ -1,0 +1,15 @@
+name: Rock's personal notebook
+description: Pain is inevitable, Suffering is optional.
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
+
+markdown: redcarpet
+pygments: true
+logo: false
+paginate: 15
+
+
+# baseurl: http://rulerstorm.github.io
+
+# Details for the RSS feed generator
+url:            'http://rulerstorm.github.io'
+author:         'Rock Lu'

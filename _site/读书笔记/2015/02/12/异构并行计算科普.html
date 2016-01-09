@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2015-02-12">12 Feb 2015</time>
+        	
+        		on
+	        	
+	        	    读书笔记
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">异构并行计算科普</h1>
+
+        <section class="post-content">
+            <p>在Coursera选了一门叫<a href="https://www.coursera.org/course/hetero" style="color:blue">「Heterogeneous Parallel Programming」</a>的课程，算是科普。     </p>
+
+<h4>什么是「异构并行计算」？</h4>
+
+<p>不规范得说，主要是开发出GPU的性能，用以配合CPU共同计算。     </p>
+
+<h4>为什么需要GPU参与？光CPU不行吗？</h4>
+
+<p>一方面，是由于CPU内核数量和主频以及功耗达到瓶颈<br>
+更重要的另一方面，是由于GPU与CPU在工艺设计上的特点能互补：<br>
+CPU的设计主旨，是<code>低延迟</code>。而GPU的设计主旨，是<code>高吞吐量</code>。（Latency Oriented / Throughput Oriented）     </p>
+
+<h5>两者的主要差异在以下三方面：</h5>
+
+<ol>
+<li>CPU具有更强的<code>ALU</code>，降低计算延迟。而GPU的ALU是数量多、功耗低、高度流水。<br></li>
+<li>CPU有很大容量的<code>cache</code>，降低数据存取的延迟。GPU的cache很小，主要为了提高并发性能，而不是避免读内存。<br></li>
+<li>CPU具有复杂的<code>控制逻辑</code>（主要是<code>分支预测</code>和<code>数据转发</code>），用以降低控制延迟。而GPU是相对简单的控制逻辑。<br></li>
+</ol>
+
+<h4>两者的配合</h4>
+
+<p>CPU适合<code>顺序计算</code>部分。（单线程，对延迟敏感的部分）<br>
+GPU适合<code>并发多线程</code>部分。（多线程，对延迟不敏感的部分）<br>
+从性能上看，目前两者在这两部分的差异，在<code>10倍</code>以上。     </p>
+
+<h4>主要应用领域</h4>
+
+<p>金融分析、科学模拟、工程模拟、医学图像、视频音频处理、计算视觉、、、等等     </p>
+
+<h4>工具</h4>
+
+<p>CUDA C、openGL     </p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

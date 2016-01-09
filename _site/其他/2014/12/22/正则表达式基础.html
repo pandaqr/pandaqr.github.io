@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2014-12-22">22 Dec 2014</time>
+        	
+        		on
+	        	
+	        	    其他
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">正则表达式基础</h1>
+
+        <section class="post-content">
+            <p>【正则表达式】是一种“不学不会死人，可是你总要学”的技能。鉴于其在各种语言内通用，且大有技术含量，需要经验的积累。所以，这样的技术就如同背单词一样，了解的越早越好。     </p>
+
+<p>学习的素材是《精通正则表达式》。此书虽然号称“精通”，但是对新手还是比较友好的，后半册则可以当做字典，是一本经典好书。重要的是，它告诉你<code>什么问题可以用正则解决</code>。     </p>
+
+<p>此笔记为书中第一章的内容，包含所有正则表达式语法，供参考查询。该书认为，掌握具体深入的原理与技巧的学习曲线非常陡峭，需一气呵成学完，然后此生不忘。所以暂且在需要时再深入。     </p>
+
+<h4>【单元】的概念(unit)</h4>
+
+<p>模式匹配时，是按顺序，对模式中的每个【单元】<code>挨个</code>进行匹配。<br>
+【字符组】和【小括号】都是整体作为一个单元，而【量词】则是修饰前面的单元，本身不是一个单元。<br>
+[注]<code>.</code>符号，也是一个单元。意思是：匹配任何一个字符（除了回车）<br>
+特别的，【位置】字符也是一个单元，例如:<code>^cat</code>不能理解为【匹配一个出现在行首的cat】，而应该是【先匹配一个<code>行首</code>，再匹配一个c，在一个a，在一个t】     </p>
+
+<h4>【量词】</h4>
+
+<p><code>?</code>  --  至多一个（要么没有，要么有一个）<br>
+<code>+</code>  --  至少一个<br>
+<code>*</code>  --  任意多个（可以没有）<br>
+<code>{a,b}</code>  --  a个至b个    </p>
+
+<h4>【“或”的逻辑】</h4>
+
+<p><code>|</code>表示“或”，例如<code>expressionA|expressionB</code>表示匹配expressionA或expressionB。（优先匹配A？）        </p>
+
+<h4>【子表达式】的概念(subexpression)</h4>
+
+<p>通常是：【小括号】内的表达式，或，由<code>|</code>分割的【分支】<br>
+【注意】对于<code>|</code>，注意使用小括号限定其范围，否则就是<code>全局或</code>。     </p>
+
+<h4>字符组<code>[]</code></h4>
+
+<p>表示匹配本组字符中的任意一个字符。<br>
+【注意】<br>
+1.一个字符组，匹配的字符只能是<code>一个</code><br>
+2.可以用连词符<code>-</code>来表示一个<code>字符编码</code>的范围，但是如果出现在字符组的<code>开头</code>，就表示连词符本身。<br>
+3.字符组中的【其他元字符】都表示其本来的含义，排除符<code>^</code>除外。<br>
+4.当且仅当<code>^</code>在字符组的<code>开头</code>时，这个字符组表示【匹配一个除这组字符以外的任意一个字符，但不能没有！】。如果<code>^</code>在字符组的中间位置，则表示<code>^</code>符号本身。    </p>
+
+<h4>【位置】匹配</h4>
+
+<p><code>^</code>  --  行首<br>
+<code>$</code>  --  行尾<br>
+<code>\&lt;</code>  --  单词的开头<br>
+<code>\&gt;</code>  --  单词的结尾    </p>
+
+<h4>【单词分界符】的判定</h4>
+
+<p>逻辑上，单词分隔符匹配一个位置，实现上，匹配的是<code>符号</code>，即【非数字】且【非字母】<br>
+<code>\&lt;</code>表示【匹配一个符号，后面是个数字或字母】<br>
+<code>\&gt;</code>表示【匹配一个符号，前面是一个数字或字母】<br>
+所以注意，对于<code>a1b2c3</code>的前后，都会被单词分界符匹配<br>
+对于<code>真正的单词</code>，使用<code>\&lt;[a-zA-Z]+\&gt;</code>匹配即可。    </p>
+
+<h4>【反向引用】</h4>
+
+<p><code>\1</code>、<code>\2</code>表示表达式中的<code>第一</code>、<code>第二</code>个括号所<code>匹配的文本</code>。有点<code>变量</code>的味道。<br>
+例子：<code>\&lt;([A-Za-z]+) +\1\&gt;</code>-表示匹配两个连续相同的单词。     </p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

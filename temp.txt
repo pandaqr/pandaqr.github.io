@@ -1,0 +1,34 @@
+
+
+fake it until you make it
+
+don't hate your enemy, that infect your judgement
+don't let anybody knows what you are thinking about
+
+
+sudo netstat -tulpn | grep 80
+netstat -aWn --programs | grep 80
+
+mtr命令
+mtr combines the functionality of the traceroute and ping programs in a single network diagnostic tool.
+
+what are you up to these days?
+
+
+啥是runtime? 编译时自动加入代码，如内存管理错误处理、类管理
+
+
+sed -i.bakup.md 's/\([^ ].\{0,3\}$\)/\1     /g'   
+
+
+
+
+## 正则应用
+
+Cat ./* | egrep -c '^.' 比wc -l 准
+
+gem list | grep cocoapods | xargs sudo gem uninstall  
+
+
+
+操作系统分页是怎么管理的，工厂设计模式来个例子，TCP建立和释放的过程，sql中index怎么玩的，原理是什么，怎么去优化，MVC的路由过程，快速排序写一下。介绍一个你感觉比较熟悉的项目。

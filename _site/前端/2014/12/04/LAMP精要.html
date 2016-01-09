@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2014-12-04">04 Dec 2014</time>
+        	
+        		on
+	        	
+	        	    前端
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">LAMP精要</h1>
+
+        <section class="post-content">
+            <p>lamp是指：linux, apache, mysql, php。在mac上使用lamp与linux相差无几，作笔记如下：<br>
+mac安装教程：<br>
+http://www.guomii.com/posts/30136     </p>
+
+<p>ubuntu的官方教程：
+http://wiki.ubuntu.org.cn/Apache#.E5.AE.89.E8.A3.85LAMP</p>
+
+<p>ubuntu快速指南：<br>
+安装 <code>sudo apt-get install apache2 php5-mysql libapache2-mod-php5 mysql-server</code><br>
+配置：（默认php功能已经开启）<br>
+  1&gt;apache 的配置文件路径 /etc/apache2/apache2.conf<br>
+  2&gt;apache 网站字符编码配置路径 /etc/apache2/conf-enabled/charset.conf<br>
+  3&gt;php.ini 路径 /etc/php5/apache2/php.ini<br>
+  4&gt;mysql配置文件路径 /etc/mysql/my.cnf<br>
+  5&gt;phpmyadmin配置文件路径 /etc/phpmyadmin/apache.conf<br>
+  6&gt;默认网站根目录 ar/www/html<br>
+使用：sudo sercice apache2/mysql start/stop   </p>
+
+<h2>MySQL</h2>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">开启服务</span>     
+<span class="n">mysql</span><span class="p">.</span><span class="n">server</span> <span class="k">start</span>              
+                        <span class="o">//</span><span class="n">ubuntu</span><span class="err">命令：</span><span class="n">sudo</span> <span class="n">service</span> <span class="n">mysql</span> <span class="k">start</span>
+
+<span class="err">连接服务器</span>     
+<span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>    
+
+<span class="err">查看当前服务器和数据库的设置</span>     
+<span class="k">show</span> <span class="n">variables</span> <span class="err">【注】由于结果比较多，可加</span><span class="k">like</span> <span class="ss">&quot;xxx%&quot;</span><span class="err">进行筛选</span>     
+
+<span class="err">查看所有数据库：</span>     
+<span class="k">show</span> <span class="n">databases</span><span class="p">;</span>     
+
+<span class="err">创建数据库</span>     
+<span class="k">create</span> <span class="k">database</span> <span class="n">db_name</span><span class="p">;</span>     
+<span class="err">【注】数据库名称遇到中文或者特殊符号时，需要用反引号包裹，如：\</span><span class="o">`</span><span class="err">中文名字\</span><span class="o">`</span>     
+
+<span class="err">查看数据库的创建信息</span>     
+<span class="k">show</span> <span class="k">create</span> <span class="k">database</span> <span class="n">db_name</span><span class="p">;</span>     
+<span class="err">【注】</span><span class="k">show</span><span class="err">数据的时候如果数据太多显示混乱，可用</span><span class="o">`</span><span class="err">\</span><span class="k">G</span><span class="o">`</span><span class="err">替代分号，如：</span><span class="o">`</span><span class="k">show</span> <span class="k">create</span> <span class="k">database</span> <span class="n">db_name</span> <span class="err">\</span><span class="k">G</span> <span class="o">`</span>     
+
+<span class="err">删除数据库</span>     
+<span class="k">drop</span> <span class="k">database</span> <span class="n">db_name</span><span class="p">;</span>     
+
+<span class="err">设置操作的默认目标数据库</span>     
+<span class="n">use</span> <span class="n">db_name</span><span class="p">;</span>     
+
+<span class="err">创建表</span>     
+<span class="k">create</span> <span class="k">table</span> <span class="k">table_name</span>  <span class="p">(</span><span class="n">field</span> <span class="n">field_type</span><span class="p">,</span> <span class="err">…</span><span class="p">)</span> <span class="p">[</span><span class="err">可选属性</span><span class="p">]</span>     
+<span class="err">【注】如果未指明当前默认数据库，需要在</span><span class="o">`</span><span class="k">table_name</span><span class="o">`</span><span class="err">前面手动指明对应数据库，即</span><span class="o">`</span><span class="n">db_name</span><span class="p">.</span><span class="k">table_name</span><span class="o">`</span>     
+
+<span class="err">查看表结构</span>     
+<span class="k">describe</span> <span class="k">table_name</span><span class="p">;</span>     
+
+<span class="err">插入数据</span>     
+<span class="k">insert</span> <span class="k">into</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">field1</span><span class="p">,</span> <span class="n">field2</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">);</span>     
+<span class="err">【注】如果插入所有字段的值，那么可以省略字段列表的那个括号，但是记得值得顺序要与数据库一致。</span>    
+<span class="err">例如：</span><span class="k">insert</span> <span class="k">into</span> <span class="k">table_name</span> <span class="k">values</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">);</span>     
+
+<span class="err">删除数据</span>     
+<span class="k">delete</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">where</span> <span class="n">your_condition</span>     
+<span class="err">【注】</span><span class="k">where</span><span class="err">后面的条件写为数字</span><span class="mi">1</span><span class="err">时，表示删除全表数据，但是表还在。</span>     
+
+<span class="err">修改数据</span>     
+<span class="k">update</span> <span class="k">table_name</span> <span class="k">set</span> <span class="n">field1</span><span class="o">=</span><span class="n">value1</span> <span class="n">field2</span><span class="o">=</span><span class="n">value2</span> <span class="p">...</span> <span class="k">where</span> <span class="n">your_condition</span>     
+<span class="n">updata</span> <span class="k">table_name</span> <span class="k">set</span> <span class="n">field1</span> <span class="o">=</span> <span class="n">field1</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">//</span><span class="err">这个字段自增</span><span class="mi">1</span>     
+
+<span class="err">查询表数据</span>     
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span><span class="p">;</span>    <span class="o">//</span><span class="err">查看所有数据</span>     
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">where</span> <span class="n">your_condition</span>  <span class="o">//</span><span class="err">有条件查询</span>     
+<span class="k">select</span> <span class="n">field_name</span> <span class="k">from</span> <span class="k">table_name</span><span class="p">;</span>  <span class="o">//</span><span class="err">只查看某些字段</span>     
+<span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span> <span class="k">from</span> <span class="k">table_name</span>   <span class="o">//</span><span class="err">查询表行数</span>     
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">limit</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>     <span class="o">//</span><span class="n">a</span><span class="err">为起始行</span><span class="p">(</span><span class="k">from</span> <span class="mi">0</span><span class="p">)</span><span class="err">，</span><span class="n">b</span><span class="err">为数量</span>     
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">order</span> <span class="k">by</span> <span class="n">field_name</span> <span class="k">desc</span> <span class="k">limit</span> <span class="mi">10</span>   <span class="o">//</span><span class="err">逆序显示最新</span><span class="mi">10</span><span class="err">条记录</span>     
+
+<span class="err">为表增加字段</span>     
+<span class="k">alter</span> <span class="k">table</span> <span class="k">table_name</span> <span class="k">add</span> <span class="n">field_name</span> <span class="n">field_type</span><span class="p">;</span>     
+
+<span class="err">修改字段</span>     
+<span class="k">alter</span> <span class="k">table</span> <span class="k">table_name</span> <span class="n">change</span> <span class="n">old_field_name</span> <span class="n">new_field_name</span> <span class="n">new_field_type</span><span class="p">;</span>     
+
+<span class="err">查看表结构</span>     
+<span class="k">desc</span> <span class="k">table_name</span><span class="p">;</span>     
+
+
+
+<span class="err">\</span><span class="n">s</span> <span class="err">显示目前信息</span>     
+
+<span class="err">数据库文件夹路径</span>     
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span>      
+
+<span class="err">配置文件位置：（</span><span class="n">homebrew</span><span class="err">）</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">Cellar</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span>
+
+<span class="c1">----------------------------------------     </span>
+
+<span class="err">数据库导出</span>     
+<span class="o">//</span><span class="k">in</span> <span class="n">terminal</span>     
+<span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span> <span class="n">db_name</span> <span class="o">&gt;</span> <span class="n">db_name</span><span class="p">.</span><span class="k">sql</span>     
+
+<span class="err">数据库导入</span>     
+<span class="o">//</span><span class="err">方法一：</span><span class="k">in</span> <span class="n">mysql</span>     
+<span class="k">create</span> <span class="k">database</span> <span class="n">db_name</span><span class="p">;</span>     
+<span class="n">use</span> <span class="n">db_name</span><span class="p">;</span>     
+<span class="k">source</span> <span class="n">sqlFile_path</span><span class="p">;</span>     
+
+<span class="o">//</span><span class="err">方法二：</span><span class="k">in</span> <span class="n">terminal</span>     
+<span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span> <span class="n">db_name</span> <span class="o">&lt;</span> <span class="n">sqlFile_path</span>     
+
+<span class="p">[</span><span class="err">注意</span><span class="p">]</span><span class="err">如果导入时遇到“</span><span class="n">unknow</span> <span class="n">command</span> <span class="err">\</span><span class="n">x</span><span class="err">”，</span><span class="mi">100</span><span class="o">%</span><span class="err">是字符集的问题</span>     
+<span class="p">[</span><span class="err">解决方案</span><span class="p">](</span><span class="k">in</span> <span class="n">terminal</span><span class="p">)</span>     
+<span class="err">导出和导入时，都加上参数</span> <span class="c1">--default-character-set=utf8     </span>
+
+
+<span class="c1">----------------------------------------</span>
+<span class="err">所有乱码的事情都是字符集的问题</span>
+
+<span class="err">查看字符集</span>
+<span class="k">show</span> <span class="n">variables</span> <span class="k">like</span> <span class="s1">&#39;character_set_%&#39;</span><span class="p">;</span>
+
+<span class="err">默认字符集设置：</span><span class="n">my</span><span class="p">.</span><span class="n">cnf</span>
+<span class="err">［</span><span class="n">client</span><span class="p">]</span><span class="err">在下面加入</span>    
+<span class="k">default</span><span class="o">-</span><span class="nb">character</span><span class="o">-</span><span class="k">set</span><span class="o">=</span><span class="n">utf8</span>    
+<span class="p">[</span><span class="n">mysqld</span><span class="p">]</span><span class="err">下加入</span>    
+<span class="nb">character</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="n">server</span><span class="o">=</span><span class="n">utf8</span>    
+<span class="k">collation</span><span class="o">-</span><span class="n">server</span><span class="o">=</span><span class="n">utf8_general_ci</span>    
+
+<span class="err">如果中文在</span><span class="n">client</span><span class="err">中文，在</span><span class="n">server</span><span class="err">乱码，或者相反，应该是连接的字符集问题：</span>
+<span class="err">在</span><span class="n">PHP</span><span class="err">中，记得加入：</span><span class="o">`</span><span class="n">mysql_set_charset</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span><span class="err">$</span><span class="n">link</span><span class="p">);</span><span class="o">`</span>
+
+
+<span class="c1">---------------------</span>
+<span class="n">ubuntu</span><span class="err">下删除</span><span class="n">mysql</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">autoremove</span> <span class="c1">--purge mysql-server-5.0</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">remove</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">autoremove</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">remove</span> <span class="n">mysql</span><span class="o">-</span><span class="n">common</span> 
+<span class="n">dpkg</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span><span class="n">grep</span> <span class="o">^</span><span class="n">rc</span><span class="o">|</span><span class="n">awk</span> <span class="s1">&#39;{print $2}&#39;</span> <span class="o">|</span><span class="n">sudo</span> <span class="n">xargs</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">P</span></code></pre></div>
+     
+
+<hr>
+
+<hr>
+
+<h2>PHP</h2>
+
+<h5>Key Point</h5>
+
+<ul>
+<li>动态类型<br></li>
+<li>弱类型<br></li>
+<li>底层由c编写<br></li>
+<li>解释运行<br></li>
+<li>由解释器运行后，嵌入html代码<br></li>
+<li>区分大小写<br></li>
+</ul>
+
+<p>字符串拼接 =&gt; <code>.</code>（英文句号）     </p>
+
+<h5>变量的作用域</h5>
+
+<p>函数中，要使用全局变量，需做该变量的global声明；     </p>
+
+<h5>单引号和双引号</h5>
+
+<p>类似于ruby，单引号无视字符串内容，双引号会判别<code>变量</code>和<code>转义字符</code>     </p>
+
+<h5>数组</h5>
+
+<p>数组就是字典{map}，语法形式于ruby雷同     </p>
+
+<h5>heredoc语法</h5>
+
+<p>功能：用于赋值一整段文本<br>
+注意：还可以应用变量进行插值，主要是对于转义字符的处理比较方便<br>
+语法：以<code>&lt;&lt;&lt; 开始标记</code>开始，以<code>开始标记</code>结束<br>
+<code>
+接收变量 =  &lt;&lt;&lt;  开始标记     
+这里是正文     
+正文     
+正文     
+开始标记     
+</code>     </p>
+
+<h5>布尔值</h5>
+
+<ul>
+<li>不区分大小写<br></li>
+<li>非0即为真（于c相同）<br></li>
+</ul>
+
+<p>print_r(数组名)可以直接打印输出数组各个元素     </p>
+
+<h5><code>===</code>和<code>==</code></h5>
+
+<p>于js类似，==的相等，可以通过隐式类型转化，而===却表示完全相同，连类型也是一样     </p>
+
+<h5>循环</h5>
+
+<p>基本和c一致，但是多一个<code>foreach(arrayName as  itemName)</code><br>
+对于字典：<code>foreach(arrayName as keyName =&gt; valueName)</code>     </p>
+
+<h5>函数</h5>
+
+<ul>
+<li>定义可以写在文件的最后<br></li>
+<li>语法：<br>
+<code>
+function nameOfFunction($nameOfArray) {     
+//body     
+return $returnValue;     
+}     
+</code><br></li>
+</ul>
+
+<h5>文件包含</h5>
+
+<p>类似于c语言的include，即把目标文件的文本，直接复制到当前位置。     </p>
+
+<ul>
+<li>require ‘文件路径’   —— 引用文件，失败则报错<br></li>
+<li>include ‘文件路径’   —— 引用文件，失败时继续执行脚本<br></li>
+</ul>
+
+<h5>字符串拆分</h5>
+
+<p>explode()函数     </p>
+
+<hr>
+
+<h5>页面跳转</h5>
+
+<p>header(‘location: xxx.php”)    //支持相对路径 //不需要加http://     </p>
+
+<h5>post和get</h5>
+
+<p>可用超全局数组<code>$_POST[&quot;post_name&quot;]</code>、<code>$_GET[&quot;get_name&quot;]</code>来获取<br>
+[另]<code>$_REQUIRE[&quot;item&quot;]</code>可以兼容post和get<br>
+[注]必须全都大写     </p>
+
+<h5>关于cookie</h5>
+
+<p>读取：超全局数组<code>$_COOKIE[&quot;item_name&quot;]</code><br>
+写入：<code>setcookie(&quot;item_name&quot;, $value, invalid_until/sec)</code>推荐时间写法：<code>time()+3600*24*30</code>意思是一个月     </p>
+
+<hr>
+
+<h5>与MySQL的接口</h5>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>     
+<span class="c1">// Connecting, selecting database     </span>
+<span class="nv">$link</span> <span class="o">=</span> <span class="nb">mysql_connect</span><span class="p">(</span><span class="s1">&#39;mysql_host&#39;</span><span class="p">,</span> <span class="s1">&#39;mysql_user&#39;</span><span class="p">,</span> <span class="s1">&#39;mysql_password&#39;</span><span class="p">)</span>     
+    <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Could not connect: &#39;</span> <span class="o">.</span> <span class="nb">mysql_error</span><span class="p">());</span>     
+<span class="k">echo</span> <span class="s1">&#39;Connected successfully&#39;</span><span class="p">;</span>   
+<span class="nb">mysql_set_charset</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span><span class="nv">$link</span><span class="p">);</span>     
+<span class="nb">mysql_select_db</span><span class="p">(</span><span class="s1">&#39;my_database&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Could not select database&#39;</span><span class="p">);</span>     
+
+<span class="c1">// Performing SQL query     </span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">;</span>     
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Query failed: &#39;</span> <span class="o">.</span> <span class="nb">mysql_error</span><span class="p">());</span>     
+
+<span class="c1">// Printing results in HTML     </span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;table&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>     
+<span class="k">while</span> <span class="p">(</span><span class="nv">$line</span> <span class="o">=</span> <span class="nb">mysql_fetch_array</span><span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nx">MYSQL_ASSOC</span><span class="p">))</span> <span class="p">{</span>     
+    <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&lt;tr&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>     
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$line</span> <span class="k">as</span> <span class="nv">$col_value</span><span class="p">)</span> <span class="p">{</span>     
+        <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&lt;td&gt;</span><span class="si">$col_value</span><span class="s2">&lt;/td&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>     
+    <span class="p">}</span>     
+    <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&lt;/tr&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>     
+<span class="p">}</span>     
+<span class="k">echo</span> <span class="s2">&quot;&lt;/table&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>     
+
+<span class="c1">// Free resultset     </span>
+<span class="nb">mysql_free_result</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>     
+
+<span class="c1">// Closing connection     </span>
+<span class="nb">mysql_close</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>     
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+     
+
+<hr>
+
+<h5>php调用c++程序</h5>
+
+<p>使用PHP提供的<code>exec()函数</code>（貌似就是linux系统提供的那个？。。。）<br>
+调用格式：<code>exec(&quot;cppFilePath arguments&quot;, $outputArgument);</code>     </p>
+
+<p>前提：必须是已经编译过的可执行二进制文件哦～<br>
+输入方式：命令行参数<br>
+输出方式：在cpp中<code>标准输出</code>，以<code>回车</code>分割元素<br>
+返回结果：用php中的<code>$outputArgument</code>，格式为<code>字符串类型的数组</code>        </p>
+
+<p>【另外】不知道为什么，好像只有在同一文件夹才能调用。。。     </p>
+
+<p>参考：<br>
+<a href="http://stackoverflow.com/questions/11789095/run-c-script-in-php">http://stackoverflow.com/questions/11789095/run-c-script-in-php</a>     </p>
+
+<p>范例：     </p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>     
+    <span class="nb">exec</span><span class="p">(</span><span class="s2">&quot;/Library/WebServer/Documents/hello 爱的我中华&quot;</span><span class="p">,</span> <span class="nv">$output</span><span class="p">);</span>     
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$output</span><span class="p">);</span>     
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+     
+
+<hr>
+
+<h5>php的配置文件</h5>
+
+<p>/etc/php.ini.default  里面开启各项配置（<code>;</code>号为注释符）     </p>
+
+<hr>
+
+<h5>经典错误：header is already sent之类的</h5>
+
+<p>意思是http头文件已经写好发送了，再改来不及了<br>
+[解决方案]增加缓存，不要急着写入http<br>
+方法一：<br>
+在php文件最前面加：<code>ob_start();</code><br>
+在最后加：<code>ob_end_flush();</code>     </p>
+
+<p>方法二：<br>
+修改php的配置：<code>set output_buffering = On</code>     </p>
+
+<p>[注]这两个方法原理相同，会降低php的执行效率     </p>
+
+<hr>
+
+<h2>apache</h2>
+
+<p>配置目录：<br>
+/etc/apache2    </p>
+
+<p>主要配置文件：<br>
+httpd.conf<br>
+                    //在ubuntu下似乎有所不同，是apache2.conf</p>
+
+<p>默认根目录：<br>
+/Library/WebServer/Documents/<br>
+[注]网页放在这里就可以用localhost地址访问到，但是这个文件夹是有root权限的，建议chmod777一下。。。<br>
+                    //ubuntu位置：/var/www/html/</p>
+
+<h5>常用命令：</h5>
+
+<p>apachectl start/stop/restart<br>
+apachectl -v<br>
+                    //ubuntu命令：sudo service apache2 strat/stop....
+netstate -an     </p>
+
+<p>127.0.0.1 回送地址     </p>
+
+<h5>开通php功能：</h5>
+
+<p>在httpd.conf中，用关键字<code>php</code>搜索到：<br>
+<code>LoadModule php5_module libexec/apache2/libphp5.so</code><br>
+然后把这句话前面的<code>#</code>号去掉即可     </p>
+
+<p>测试：<br>
+&lt;?php phpinfo(); ?&gt;     </p>
+
+<h5>注意</h5>
+
+<p>Apache这哥们儿反应比较慢，可能会有1分钟左右的延迟     </p>
+
+<h5>httpd.conf文件中的访问权限设置</h5>
+
+<p><Directory "/Users/username/Sites/">        //指明目录     </p>
+
+<p>//这种是默认的设置<br>
+Order allow,deny        //order代表读取下面两个设置的的顺序（先读allow，再度deny）<br>
+Allow from all          //代表允许从任何ip来的请求     </p>
+
+<p>//实际上是这样的设置<br>
+Order deny, allow<br>
+deny from 127.0<br>
+allow form 127.0.0.223      //这两句代表拒绝除127.0.0.223之外的所有127.0开头的ip     </p>
+
+<p>//注：如果换allow和deny的顺序，那么就是拒绝所有127.0开头的ip，那个233也拒绝<br>
+</Directory>     </p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

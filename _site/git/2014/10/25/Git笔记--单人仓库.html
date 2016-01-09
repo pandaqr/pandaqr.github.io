@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2014-10-25">25 Oct 2014</time>
+        	
+        		on
+	        	
+	        	    git
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">Git笔记--单人仓库</h1>
+
+        <section class="post-content">
+            <p><strong>如何使用Github创建你的git仓库:</strong>      </p>
+
+<p><strong>step1:</strong><br>
+登陆你的github账号，在网页端建立一个仓库。<br>
+<strong>step2:</strong><br>
+在展示仓库的网页上，找到用于clone的链接。点击复制。<br>
+<strong>step3:</strong><br>
+在本地terminal中，输入：<code>git clone xxxxxx(the address you just copied)</code><br>
+于是这样你的仓库就被复制到本地了。<br>
+[问题] 为什么一定要从网页端创建？不能本地<code>git init</code>一个吗？<br>
+[答疑] 因为你要告诉他push到哪里去啊，<code>github</code>只是众多git托管商之一，只有从<code>github</code>网站上生成的.git文件才会知道你的代码要托管到<code>github</code>上而不是<code>bitbucket</code>。<br>
+到此为止，创建完毕。     </p>
+
+<h4>仓库的push</h4>
+
+<p>在本地写完代码后，如果想展示在github中，必须要push到远程。步骤：        </p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">git</span> <span class="n">add</span> <span class="p">.</span>    <span class="c1">//表示把当前文件夹下所有文件加入提交范围     </span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;对commit的注释&quot;</span>   <span class="c1">//请保持良好的注释习惯     </span>
+<span class="n">git</span> <span class="n">push</span> <span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="n">origin</span> <span class="n">master</span>    <span class="c1">//origin是远端仓库的名字，master是分支的名字     </span>
+       <span class="c1">//-u代表以后如果不注明，可以省略origin master，只输入git push</span></code></pre></div>
+       
+
+<ul>
+<li>要点1：push前需要设置密钥，把公钥上传到github上。教程：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" style="color: blue;">廖雪峰的教程</a><br></li>
+<li>要点2：本地的git中邮箱设置一定要于github上的相同，否则提交不计入commit图。参考我的日志：<a href="http://rulerstorm.github.io/git/2014/10/16/关于github不记录contribuions.html" style="color: blue;">关于github不记录contribuions</a><br></li>
+</ul>
+
+<h4>分支的使用</h4>
+
+<h5>什么情况要用分支？</h5>
+
+<p>你不想改变主线（master），却想保存当前修改。在分支上commit多次，代码完整后，可以再与主线合并。     </p>
+
+<h5>Cheat Sheet</h5>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">git</span> <span class="n">branch</span>                 <span class="c1">//查看分支     </span>
+<span class="n">git</span> <span class="n">branch</span> <span class="n">branch_name</span>     <span class="c1">//创建分支     </span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">branch_name</span>   <span class="c1">//切换至分支     </span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">branch_name</span>  <span class="c1">//先创建，再切换     </span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">branch_name</span>      <span class="c1">//把这个分支合并到当前分支     </span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">branch_name</span>  <span class="c1">//删除分支     </span>
+
+<span class="c1">//版本回退     </span>
+<span class="n">git</span> <span class="n">log</span>           <span class="c1">//查看各个commit的注释和hash_number     </span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">hash_number</span>   <span class="c1">//版本回退     </span>
+<span class="n">git</span> <span class="n">reflog</span>        <span class="c1">//查看所有输入命令时的版本号，用来以防错误回退     </span>
+<span class="c1">//注意，回滚操作也是基于增量修改的，千万不要手动修改文件，否则就麻烦了！</span></code></pre></div>
+       
+
+<p>[注意]小心合并后的冲突，关于冲突，以后再研究。     </p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

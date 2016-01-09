@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Rock's personal notebook - Blogging something deserved</title>
+    <meta name="description" content="Your New Jekyll Site, Blogging about stuffs" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    
+    <main class="content" role="main">
+
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="http://rulerstorm.github.io">
+                
+                    <span class="blog-title">Rock's personal notebook</span>
+                 
+            </a>
+        </header>
+        
+        <span class="post-meta">
+        	<time datetime="2015-02-07">07 Feb 2015</time>
+        	
+        		on
+	        	
+	        	    c
+	        	
+	        
+       	</span>
+
+        <h1 class="post-title">《C和指针》读书笔记</h1>
+
+        <section class="post-content">
+            <p>之所以再学C语言，目的是希望编写<code>跨平台可移植的C语言</code>。听起来似乎有点奇怪，C语言不是高级语言吗？难道本来就不该是跨平台可移植的吗？<br>
+答案显然不是，C语言仍然不够“高级”，涉及到底层的细节时，往往会由于编译器、机器的差异，在移植的时候出现问题。另外关于跨平台，其实是我自己的问题，之前学得时候和Linux网络编程一块儿学的，于是就有点分不清哪些是Linux的特有函数，哪些是ANSI C的通用函数。导致写出来得东西在Windows上面编译不动。     </p>
+
+<h4>可移植性建议</h4>
+
+<p>也包含一些防止出错的细节。</p>
+
+<h5>一、数据类型</h5>
+
+<p>不同的编译器和机器上数据定义有差异，了提高可移植性：<br>
+1. 数据类型的长度可能不同---用<code>int32_t</code>、<code>uint8_t</code>代替原来的<code>int</code>和<code>unsigned char</code>。<br>
+2. char不确定是不是有符号---不超过127时安全，否则强制申明有没有符号<br>
+另外：<br>
+1. 本机数据类型的最大值，在<code>limits.h</code>和<code>float.h</code>中有宏定义（如：INT_MAX、FLT_MAX）<br>
+2. 「数字常量」默认是int，存不下就unsigned int、long往上加。（<code>EOF = -1</code> 是int类型！）     </p>
+
+<h5>二、底层操作</h5>
+
+<ol>
+<li>「移位操作」究竟是<code>算数移位</code>还是<code>逻辑移位</code>不一定。但两者仅在<code>有符号数</code>的<code>右移</code>操作有差异。（有符号补符号位，无符号补0）<br></li>
+<li>「位段」数据类型是不可移植的。<br></li>
+</ol>
+
+<h5>三、溢出</h5>
+
+<ol>
+<li>小心无符号数减法<br></li>
+<li>大数字「加法」和「乘法」时，在运算前就强转为大数据类型比较安全<br></li>
+</ol>
+
+<h5>四、类型转化</h5>
+
+<p>「截短」是直接取长数据的低位。<br>
+「扩展」是根据短数据是否有符号，无符号补0，有符号补符号位。<br>
+<code>隐式类型转化一定要小心！！</code>     </p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="err">看一个经典的例子：</span>
+<span class="c1">//关于char转int可能发生的问题     </span>
+<span class="kt">char</span> <span class="n">buf</span><span class="p">;</span>     
+<span class="k">while</span><span class="p">(</span> <span class="p">(</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">()</span> <span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span> <span class="p">){</span>     
+<span class="c1">//...     </span>
+<span class="p">}</span></code></pre></div>
+     
+
+<p>上面这个while循环可能永远不能退出。因为EOF是-1，所以getchar()返回值是int。当读到EOF时，先被先截断到char，再扩展到int类型于EOF比较。如果这个char是无符号的，那么这个EOF被截断再扩展后就不等于EOF了。。。     </p>
+
+<p>下面是个实验：     </p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;     </span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>     
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>     
+  
+    <span class="kt">signed</span> <span class="kt">char</span> <span class="n">s_cha</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span>      <span class="c1">//EOF, -1     </span>
+    <span class="kt">int</span> <span class="n">s_integer</span> <span class="o">=</span> <span class="n">s_cha</span><span class="p">;</span>     
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;int converted form signed char: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s_integer</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     
+
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">us_cha</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span>     
+    <span class="n">s_integer</span> <span class="o">=</span> <span class="n">us_cha</span><span class="p">;</span>     
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;int converted form unsigned char: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s_integer</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     
+    
+<span class="c1">//输出：     </span>
+<span class="c1">//      int converted form signed char: -1     </span>
+<span class="c1">//      int converted form unsigned char: 255     </span>
+
+    <span class="c1">//所以短字节数向长字节数扩展时，务必注意是否带符号！     </span>
+
+<span class="c1">//-------------------------------------------------------------     </span>
+<span class="c1">//再看这个例子：同样是上面的两个char的0xFF     </span>
+
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">us_integer</span> <span class="o">=</span> <span class="n">s_cha</span><span class="p">;</span>    <span class="c1">//这里改成无符号int     </span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;unsigned int converted form signed char: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">us_integer</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     
+    
+    <span class="n">us_integer</span> <span class="o">=</span> <span class="n">us_cha</span><span class="p">;</span>     
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;unsigned int converted form unsigned char: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s_integer</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     
+    
+<span class="c1">//输出：     </span>
+<span class="c1">//      unsigned int converted form signed char: 4294967295     </span>
+<span class="c1">//      unsigned int converted form unsigned char: 255     </span>
+    
+    <span class="c1">//可见，在扩展时接收的变量是否有符号是不影响的，只不过解释的方式不同而已。     </span>
+    <span class="c1">//注释：4294967295就是0xFFFFFFFF，解释成普通int就是-1     </span>
+    
+<span class="p">}</span></code></pre></div>
+     
+
+<hr>
+
+<h4>有关指针</h4>
+
+<p>_</p>
+
+<h5>指针的申明</h5>
+
+<p>对于<code>int * a;</code>，应该理解为：a变量「解引用」后是int。（这对于理解函数指针等复杂指针很有帮助）<br>
+所以<code>*</code>号是跟着a一边的，而不是int一边的。（例子：<code>int * a, b, c;</code> 只有a是指针，另两个都是int）     </p>
+
+<h5>「数组名」就是「指针常量」吗？</h5>
+
+<p>不是。数组名在参与表达式运算以及函数传参时，被<code>隐式转化</code>成指针常量。一个好的例子是<code>sizeof()</code>运算符应用于数组名时，返回的是整个数组的长度。     </p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">//一个奇怪的例子：     </span>
+<span class="c1">//--------------------     </span>
+<span class="c1">//文件a.c中：     </span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>     
+
+<span class="c1">//文件b.c中：     </span>
+    <span class="k">extern</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">a</span><span class="p">;</span>     
+<span class="c1">//然后在b.c中执行：会发生什么？     </span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>     
+
+<span class="c1">//--------------------     </span>
+<span class="c1">//C语言解析`a[3]`时，采用`*(a+3)`计算。b.c文件编译时，认为a是指针，于是去a地址取出指针的值。在链接时，a在a.c中定义的是数组名，a不是指针`变量`（间接取值），常量在编译期直接替换为「直接量」。a的地址就是a[0]的地址，于是b.c取到的是a[0]的值，而不是数组的起始地址！最后，*(a+3)计算出来的，是一个由a[0]值决定的未知位置。</span></code></pre></div>
+     
+
+<h4>链接属性</h4>
+
+<p><code>extern</code>---链接时，当做同一个实体。<br>
+<code>static</code>---仅在本文件有效。     </p>
+
+<h4>存储属性</h4>
+
+<p><code>register</code>---强制要求这个变量存在寄存器内<br>
+<code>static</code>---强制要求这个变量存在静态内存区     </p>
+
+<h4>再看「++x」与「x++」</h4>
+
+<ol>
+<li>自增运算符，参与运算的，是x值的拷贝，而不是x本身。所以<code>a++ = 1</code>是非法的，a++是一个临时常量，不可以当「左值」。<br></li>
+<li>在同一句语句中，用了自增就别再用这个变量了。<code>a + --a</code>这样的语句的结果是取决于编译器的。虽然自增优先级高，的确会先自增，但是无法确定左边那个a是在自增前取值还是自增后取值。（另：操作符的优先级，仅对相邻的操作符起作用。不相邻的取决于编译器）<br></li>
+</ol>
+
+<hr>
+
+<h4>预处理</h4>
+
+<p>_     </p>
+
+<h5>预定义符号</h5>
+
+<p><strong>FILE</strong>---文件名<br>
+<strong>LINE</strong>---当前行数<br>
+<strong>DATE</strong>---编译日期<br>
+<strong>TIME</strong>---编译时间     </p>
+
+<h5>宏</h5>
+
+<p><code>#define SYMBOL value</code><br>
+[注]NAME中间不可以有空格，value中间不能有回车，如果要，请在回车前加<code>\</code>转义     </p>
+
+<p>带参数：<br>
+<code>#define SYMBOL(parameter_list) stuff</code><br>
+[注]<br>
+1. 有点类似于「内联函数」但也有区别，1. 这里的参数没有指定类型。2. 这里甚至可以用类型作为参数。（预处理是文本替换，它不管你的文本是什么含义）<br>
+2. 后面内容如果有数值计算的，请注意它是文本替换，并没有计算出结果。文本替换后小心由于运算符优先级带来的bug，请加括号。<br>
+3. #define里面不可以有#if，反之可以<br>
+4. #define里面可以有定义好的符号，但是不可以递归<br>
+5. #undef 可以取消一个符号的定义     </p>
+
+<p>[另]在stuff中：<br>
+<code>#argument</code>会被替换成<code>&quot;argument&quot;</code>就是给它加对括号<br>
+<code>##</code>会把它两边的预定义变量连在一起（为什么需要这个？因为直接连在一起就认不出来了嘛。。。）     </p>
+
+<h5>条件编译</h5>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#if  constant-expression     
+    statement     
+#endif     
+</code></pre></div>
+<p>常量表达式是「真」，就插入中间的表达式，否则整段删除。<br>
+[注]<br>
+1. 也可以由<code>#elif</code>、<code>#else</code>逻辑<br>
+2. <code>#ifndef SYMBOL</code>就是<code>#if !defined(SYMBOL)</code>     </p>
+
+<p>例子：     </p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">//example_about_CONDITIONAL_COMPILATION     </span>
+
+<span class="cp">#define NO_DEBUG 0     </span>
+
+<span class="cp">#if NO_DEBUG     </span>
+    <span class="cp">#define PRINT(x)     </span>
+    <span class="cp">#define OK     </span>
+<span class="cp">#else      </span>
+    <span class="cp">#define PRINT(x)  \     </span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="err">#</span><span class="n">x</span><span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="err">\</span>     
+            <span class="o">&lt;&lt;</span> <span class="s">&quot;    line: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span>     
+    <span class="err">#</span><span class="n">define</span> <span class="n">OK</span> <span class="err">\</span>     
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;OK!    line: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span>     
+<span class="cp">#endif</span></code></pre></div>
+     
+
+<p>加上这段以后，在代码中可以用<code>PRINT(变量)</code>和<code>OK</code>调试，在不需要时，把<code>NO_DEBUG</code>设为1就没有这些调试信息了。     </p>
+
+<h5>文件包含</h5>
+
+<p>防止文件重复包含：     </p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#ifndef _HEADFILENEME_H     </span>
+<span class="cp">#define _HEADFILENEME_H     </span>
+
+<span class="c1">//你的头文件，名字和上面保持一致：headfileneme.h     </span>
+
+<span class="cp">#endif</span></code></pre></div>
+     
+
+<hr>
+
+<h4>关于I/O</h4>
+
+<p>ANSI C的io是比较高层的，在各个操作系统中会调用不同的底层io函数。大多数f开头的io函数都是ANSI C的标准io函数，通用。     </p>
+
+<h5>关于缓冲区</h5>
+
+<p>标准io库函数在执行io操作时，默认会申请一片内存作为缓冲区。缓冲方式有两种：<code>全缓冲</code>和<code>行缓冲</code>。<br>
+「读操作」<br>
+对于全缓冲，每次读整个缓冲区的大小的文件，行缓冲读到换行符为止。然后根据程序需求从缓冲区取数据，通过指针便宜读取而不改变缓冲区的内容。当指针移到缓冲区末尾时，清空缓冲区，重新去文件中取一片数据回来。<br>
+「写操作」<br>
+类似，写满了，再真正写入文件。提前写入，请<code>fflush()</code>     </p>
+
+<p>[另]<br>
+缓冲区的指定<br>
+<code>setvbuf()</code>函数可以手动指定一个io文件的「缓冲方式」以及「缓冲区位置」。     </p>
+
+<h5>二进制IO与字符IO区别</h5>
+
+<ol>
+<li>字符io要负责<code>数字</code>「补码」与「ASCII码」的转换<br></li>
+<li>字符io能识别换行符<br>
+所以二进制io更快<br></li>
+</ol>
+
+<hr>
+
+<h4>有用的库函数</h4>
+
+<p><code>clock()</code>---函数执行消耗的cpu时间<br>
+<code>qsort()</code>---高效的排序<br>
+<code>signal.h</code>---信号处理（这个竟然是标准库）     </p>
+
+<hr>
+
+<p>最后附上去年刚学C语言时的笔记作为备份（可能有错仅作备份）</p>
+
+<h4>c语言Tips：</h4>
+<div class="highlight"><pre><code class="language-text" data-lang="text">##1. 关于printf。
+* 可以有返回值，为打印计数（包括空格）。用于检查非屏幕打印
+* 打印内容过长时，可在两行间，暂时用一对双引号断开。
+* 当要求输出”/n”时，将强制清空缓冲区，在屏幕输出
+
+---
+##2. 关于scanf。
+* 默认时，遇到［空格］、［tab］或［换行符］停止当此输入
+* 可用数字表示最大宽度。
+    如：%10S，代表最多扫描10个字符就结束。但如果中间遇到空格等还是要提前结束
+* 返回值是成功读入的项目计数。
+* 输入`control + z`，即为EOF, 值为-1
+* 当读入格式与要求格式不同时，打断。  
+    如：要求%d，而输入为字符，则返回空。且下次扫描时，仍然从该字符开始。
+* **重要！！-----关于缓冲区**
+    当这些扫描输入的函数需要输入时，它们首先去检查缓冲区，如果有内容，就直接取。如果没有，则中断，要求用户输入。此事，无论用户输入多少内容，当且仅当用户输入“回车”时，才会一次性把刚刚输入的内容push进缓冲区。（此时是系统调用，程序处于“阻塞”状态）
+
+---
+
+##3. “逗号”运算符
+1.  在for语句中，使用逗号运算符隔开两句，可一次进行两次动作。
+    例如：`for(i=1, j=1; i&lt;=10; j++);`
+
+2.  逗号运算得最终取值为右边得表达式。 注：附值符号返回值为左值。  
+如：`i = ( 40, 50)`; 此时i被附值为50 。
+
+---
+
+##4. 函数式宏定义
+范例：
+
+    #define HTON(host) \
+    (host &amp; 0xff000000) &gt;&gt; 24 | (host &amp; 0x00ff0000) &gt;&gt; 8 | \
+    (host &amp; 0x0000ff00) &lt;&lt; 8 | (host &amp; 0x000000ff) &lt;&lt; 24
+
+关键点：1. 最后的反斜杠是续行符，注意反斜杠后面不能加任何内容，只能立即回车
+        2. HTON(host) 中间不能有空格（宏定义原样替换嘛）
+
+---
+
+##5. 关于getchar
+* 从用户输入回车的那一刻起，每次抓取一个字符，什么都抓！
+**包括[回车][tab]等！（注：scanf和gets会忽略回车等）**
+* 可以被用作清空缓冲区（因为什么都抓嘛）
+
+---
+
+##6. 关于fgets(point, maxsize, stdin)
+* 每次抓一整行字符，不包含末尾的回车
+
+---
+
+##7. 关于char类型
+* 占1个字节
+* 可以等同与int操作，例如两个字符可以直接比大小，不用直接转为ASCII码
+
+---
+
+##9. 未定义变量的默认值：
+堆栈内变量默认值全为`cc`，静态变量、全局变量默认值全`cd`
+
+---
+
+##10.理解++i 和 i++
+亲，不要去考虑优先级。即使++i的优先级是最高的，也不会每次都最优先运行。  
+请看范例：`int j = 1;`，`i = j - ++j;`，运算结束后，i=-1，说明左++并没有在整个式子中最优先，仅表示在使用后一个j时，先把j增1，而已。  
+
+同样的，`i = j++ -j;`,结果i也等于－1。说明并不是在整个式子结束以后再j增1，其实是在把j放入式子以后立马给j增1。  
+
+&gt; **从硬件角度考虑，怎么解释呢？有待研究。**
+
+---
+
+##11. main函数的参数
+main函数的规范申明：`int main(int argc, char const *argv[])`，其中：
+
+* argv[o]指向该文件的绝对路径
+* argv[1]、argv[2]....分别是终端中输入的参数，string * 类型，以“空格”分开。  
+    例： test.exe hello world   其中，hello是argv[1]，world是argv[2]
+* argc参数计数器
+
+---
+
+##12. 关于数组在函数中的参数传递
+数组在参数传递中，默认传递的就是指针（地址），并`100%丢失`数组长度信息。  
+
+例如：`func(int a[])`等价于`func(int * a)`等价于`func(int a[10])`
+
+值得注意的是：`int a[10]; sizeof(a);` 得40   
+而如果a作为参数传递到函数中时，`sizeof(a)`;得4。 （int的长度）（说明长度信息丢失）  
+
+另外，二维和三维数组定义为形参数时，除第一维外都需显示指定，如`func(a[][10])`
+
+---
+
+##13. 指向数组的指针
+定义： `int (* name)[MAX]`，其中MAX为指向的数组长度。  
+如何使用：
+
+* `name++`相当于二维数组跳到下一行。
+* `name[1]`指向第二行的首元素，类型为**`int *`**！！！即指向int的指针。
+
+注意！ `int *a[10]`指针的数组。 `int (*a)[10]`指向数组的指针。
+
+---
+
+##14. 指向指针的指针
+定义：`int * (*name)`  
+如何使用：一般在需要在调用函数后**`返回指针`**时定义在形参中，调用该函数时，传入指针的地址即可。
+
+---
+
+##15. 关于static
+用法一：  
+
+* 作用于**函数** 和**全局变量**时，表示该全局变量变量、函数仅对**本文件**有效 
+
+用法二：
+
+* 作用于**局部变量**时，表示该局部变量在函数调用结束后仍然不销毁。
+
+---
+
+##16. 多文件的全局变量申明
+
+由于include的特性，全局变量的定义在被include两次后会报错（重复定义）。需要把定义改为**申明**。  
+用法：在**头文件**中，`extern int name`。 在**主文件**中：`int name = 1`即可。
+
+---
+
+##17. 关于malloc
+
+malloc的空间在`堆`内，系统不会自动释放。局部变量在`栈`，调用完函数后自动销毁。全局变量在`系统常量区`。
+
+---
+
+##18. 移位操作
+注意，移位操作**`不考虑`**“小端”，认为二进制就是顺着的！
+
+---
+
+##19. 函数指针
+**定义**为：指向`特定参数、特定返回值`的一类函数的指针。定义的语法比较奇怪，参考：&lt;http://stackoverflow.com/questions/4295432/typedef-function-pointer&gt;   
+
+**存在的价值：** 可以在定义函数时，把特定的功能分离出去，`把函数作为参数`！
+
+---
+
+##20. 关于定义const类型
+**关键点1：**加了const的类型其实也是变量，只是编译器会保护这个值不被更改。  
+**关键点2：**传入普通的变量，编译器会自动转化为const的，不会警告。  
+**关键点3：**建议用const替代define定义常量， 因为const拥有变量类型，可以调整
+
+---
+
+##21. C的文件函数特点
+**关键点1：**C的文件函数是对系统(linux/windows)的文件函数的封装，增加了用户级缓冲区。通过缓冲区，一次性读取一个文件块，减少实际的系统调用／读取文件的次数。
+**关键点2：**C的文件函数拥有ASCII模式，这个模式可以辨识字符流中的回车(win-\r\n, linux-\r)，实现按行读取。而系统的底层文件函数只知道二进制数据流。
+
+
+##22. struct的大小内存对齐
+32位以4B为单位对齐，因为内存里一次读取四个字节，如果不对齐，读取一个数据时可能要多次读取内存，降低效率。
+</code></pre></div>
+<h4>小技巧</h4>
+<div class="highlight"><pre><code class="language-text" data-lang="text">---
+
+###1. 指定内存空间的初始化
+`void * memset ( void * ptr, int value, size_t num );`  
+
+- 需要include &lt;string.h&gt;
+- 填充方式：以int型填充，每次以`1个字节`的补码，所以只能填充0，或－1（补码为全0和全1），否则以其他类型读取时会出问题。
+
+---
+
+###2. 一种对整数数量级的试探技巧 
+`while(w/i) i*=10;` 退出时，i即比最高位多1.
+
+---
+
+###3. 简易随机数生成
+`#include &lt;time.h&gt;`  
+`#include &lt;stdlib.h&gt;`  
+`srand(time(0))`  
+`rand()%100`  其中100是范围上限，0是默认下限。
+
+---
+
+###4. 想给int赋一个默认的最小值？
+`0x8000 0000` （补码）
+
+---
+
+###5. 怎么取一个数字得某几位？
+方法一：`按位“与”`（掩码）！  
+方法二：用更小号的指针（char *玩int）操作它！`注意小端机的内存中的存放逆序！`
+
+###6. c语言库中的万能排序`qsort`
+详参：&lt;http://en.cppreference.com/w/c/algorithm/qsort&gt;
+
+###7. **`sprintf`** ,**`sscanf`**格式化输入/输出去不同的目标（文件、字符串）
+
+###8. malloc的替代？`calloc`分配空间并初始化为**0**
+参考：&lt;http://en.cppreference.com/w/c/memory/calloc&gt;
+
+###9. 整型和字符串转换
+`itoa`，`atoi`  ASCII to Integer
+
+###10. 比较字符串的前n个字符，strncmp
+
+###11.无限从屏幕输入
+
+`while(memset(send_buf,0,1024),fgets(send_buf,1024,stdin)!=NULL)`
+
+###12.读取整个文件
+
+`while(memset(buff, 0, 4096), fread(buff,1,4096,fp)&gt;0)`
+
+`while(memset(buff, 0, 4096), fgets(buff, 1024,fp) != NULL)`
+
+###13.精确的sleep()－－－－usleep()
+
+###14.计时器
+- alarm(3)   三秒后向自己发SIGALRM类型signal
+- setitimer()  函数比较复杂，高级计时器，也向自己发送SIGALRM类型signal
+</code></pre></div>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="err">如何动态申请二维数组</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="c1">// 3 * 4</span>
+    <span class="kt">int</span> <span class="o">**</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+   
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="err">二维数组传参技巧</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+
+<span class="cm">/*</span>
+<span class="cm"> * 把数组封装到结构体中，用m和n指定维度</span>
+<span class="cm"> */</span>
+<span class="cp">#define M 10</span>
+<span class="cp">#define N 10</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">_Array</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">A_</span><span class="p">[</span><span class="n">M</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">m_</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n_</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Array</span><span class="p">;</span>
+
+
+<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">Array</span> <span class="o">*</span><span class="n">arr</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">arr</span><span class="o">-&gt;</span><span class="n">m_</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">arr</span><span class="o">-&gt;</span><span class="n">n_</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="o">-&gt;</span><span class="n">A_</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">Array</span> <span class="n">arr</span><span class="p">;</span>
+    <span class="n">arr</span><span class="p">.</span><span class="n">m_</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">arr</span><span class="p">.</span><span class="n">n_</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+   
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+        	<!-- If we want to display author's name and bio -->
+            
+                <section class="author">
+                	<header> <a href=""> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> Rock Lu </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		<!-- Here goes the author description. You might want to place some links too in here -->
+                    	    A newbie coder    <br>
+                            Contact: &nbsp luleruler@gmail.com
+
+                        </p>
+                    </article>
+                </section>                
+            
+        	
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="rss.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="">Rock's personal notebook</a> &copy;  &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+
+</body>
+</html>

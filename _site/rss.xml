@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Rock's personal notebook</title>
+    <link>http://rulerstorm.github.io</link>
+    <description>Blogging something deserved</description>
+    <pubDate>Sat, 14 Feb 2015 06:00:00 +0800</pubDate>
+    <item>
+      <title>小规模C++语法笔记</title>
+      <link>http://rulerstorm.github.io/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2015/02/14/%E5%B0%8F%E8%A7%84%E6%A8%A1C++%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0.html</link>
+      <description>&lt;p&gt;之前虽然有系统学过C++，但还是低估了&lt;code&gt;Primer&lt;/code&gt;的事无巨细。在加上C++11的诸多变化，两三天根本看不完，还是不花太多时间复习语法了，先写起来吧~这里把这三天回顾的要点记录下来。     &lt;/p&gt;
+</description>
+      <pubDate>Sat, 14 Feb 2015 06:00:00 +0800</pubDate>
+      <dc:date>2015-02-14T06:00:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>异构并行计算科普</title>
+      <link>http://rulerstorm.github.io/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2015/02/12/%E5%BC%82%E6%9E%84%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%A7%91%E6%99%AE.html</link>
+      <description>&lt;p&gt;在Coursera选了一门叫&lt;a href=&quot;https://www.coursera.org/course/hetero&quot; style=&quot;color:blue&quot;&gt;「Heterogeneous Parallel Programming」&lt;/a&gt;的课程，算是科普。     &lt;/p&gt;
+</description>
+      <pubDate>Thu, 12 Feb 2015 22:00:00 +0800</pubDate>
+      <dc:date>2015-02-12T22:00:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>《C和指针》读书笔记</title>
+      <link>http://rulerstorm.github.io/c/2015/02/07/%E3%80%8AC%E5%92%8C%E6%8C%87%E9%92%88%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</link>
+      <description>&lt;p&gt;之所以再学C语言，目的是希望编写&lt;code&gt;跨平台可移植的C语言&lt;/code&gt;。听起来似乎有点奇怪，C语言不是高级语言吗？难道本来就不该是跨平台可移植的吗？&lt;br&gt;
+答案显然不是，C语言仍然不够“高级”，涉及到底层的细节时，往往会由于编译器、机器的差异，在移植的时候出现问题。另外关于跨平台，其实是我自己的问题，之前学得时候和Linux网络编程一块儿学的，于是就有点分不清哪些是Linux的特有函数，哪些是ANSI C的通用函数。导致写出来得东西在Windows上面编译不动。     &lt;/p&gt;
+</description>
+      <pubDate>Sat, 07 Feb 2015 15:46:00 +0800</pubDate>
+      <dc:date>2015-02-07T15:46:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>配置一台真正的服务器</title>
+      <link>http://rulerstorm.github.io/linux/2015/02/05/%E9%85%8D%E7%BD%AE%E4%B8%80%E5%8F%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+      <description>&lt;p&gt;由于需要准备和校外的朋友一起测试app，总需要一台公网服务器。与其去租用免费的公共服务器资源，我更乐意试试把实验室的电脑配置成一台服务器。     &lt;/p&gt;
+</description>
+      <pubDate>Thu, 05 Feb 2015 21:12:00 +0800</pubDate>
+      <dc:date>2015-02-05T21:12:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>重学「计算机网络」（2）</title>
+      <link>http://rulerstorm.github.io/%E5%9F%BA%E7%A1%80%E8%AF%BE/2015/01/27/%E9%87%8D%E5%AD%A6%E3%80%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8D%EF%BC%882%EF%BC%89.html</link>
+      <description>&lt;p&gt;重学计算机网络，主要是为了科普一下『网络常识』。所以在笔记内容上，我只记录我目前不知道的知识。也就是说，例如「分组交换」、「存储转发」这种我就忽略了。     &lt;/p&gt;
+</description>
+      <pubDate>Tue, 27 Jan 2015 08:08:00 +0800</pubDate>
+      <dc:date>2015-01-27T08:08:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Linux常用命令</title>
+      <link>http://rulerstorm.github.io/linux/2015/01/26/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</link>
+      <description>&lt;h4&gt;xargs命令&lt;/h4&gt;
+
+&lt;p&gt;xargs代表construct argument lists and invoke utility&lt;br&gt;
+[用途：]&lt;br&gt;
+1. 有些命令的输入必须是命令行（如果可以是stdin，那可以用管道），用xargs可以把stdin的输入转化为命令行参数，加在目标命令后面&lt;br&gt;
+2. 参数太长时，xargs会把参数分批次传送给目标命令     &lt;/p&gt;
+</description>
+      <pubDate>Mon, 26 Jan 2015 12:37:10 +0800</pubDate>
+      <dc:date>2015-01-26T12:37:10+08:00</dc:date>
+    </item>
+    <item>
+      <title>当《黑天鹅》遇到《大数据》</title>
+      <link>http://rulerstorm.github.io/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2015/01/20/%E3%80%8A%E9%BB%91%E5%A4%A9%E9%B9%85%E3%80%8B%E9%81%87%E5%88%B0%E3%80%8A%E5%A4%A7%E6%95%B0%E6%8D%AE%E3%80%8B.html</link>
+      <description>&lt;p&gt;《大数据时代》和《黑天鹅》都是近年来比较热门的概念和书籍。虽然各界对他们的评价都很高，然后我在实际阅读这两本书的时候，突然大腿一拍，觉得不对啊：黑天鹅现象说了「预测是没有意义的」，而大数据则说「一切都是可以预测的」。是不是有点矛盾呢？     &lt;/p&gt;
+</description>
+      <pubDate>Tue, 20 Jan 2015 01:00:00 +0800</pubDate>
+      <dc:date>2015-01-20T01:00:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>mac进阶</title>
+      <link>http://rulerstorm.github.io/tools/2015/01/16/mac%E8%BF%9B%E9%98%B6.html</link>
+      <description>&lt;p&gt;这篇称不上是攻略，是整理的笔记。     &lt;/p&gt;
+</description>
+      <pubDate>Fri, 16 Jan 2015 09:36:10 +0800</pubDate>
+      <dc:date>2015-01-16T09:36:10+08:00</dc:date>
+    </item>
+    <item>
+      <title>重学「计算机网络」（1）</title>
+      <link>http://rulerstorm.github.io/%E5%9F%BA%E7%A1%80%E8%AF%BE/2015/01/11/%E9%87%8D%E5%AD%A6%E3%80%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8D%EF%BC%881%EF%BC%89.html</link>
+      <description>&lt;p&gt;说起网络，给我的印象是「常识」一样的存在。网络层次的框架其实大家都还是有的，但是里面很多实现的细节（深度），以及诸如安全、工具方面的内容（广度）。我之前为了应付考研草草吞下去的内容显然不够的。     &lt;/p&gt;
+</description>
+      <pubDate>Sun, 11 Jan 2015 09:12:10 +0800</pubDate>
+      <dc:date>2015-01-11T09:12:10+08:00</dc:date>
+    </item>
+    <item>
+      <title>递归与约瑟夫问题</title>
+      <link>http://rulerstorm.github.io/%E7%AE%97%E6%B3%95/2015/01/10/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98.html</link>
+      <description>&lt;p&gt;「递归」是一种很强大、也很常见的解决问题方式。我所学到的递归，是当你碰到一个&lt;code&gt;令人奔溃&lt;/code&gt;的问题，没办法一下子解决的那种。却发现可以通过简单转化，把一个&lt;code&gt;大问题&lt;/code&gt;分解成&lt;code&gt;一模一样&lt;/code&gt;的&lt;code&gt;小问题&lt;/code&gt;的时候，递归就有奇效了。意思就是，我虽然没解决这个问题，但是我找到了一个可以无限简化这个问题的方法，然后当这个问题简化到极限的时候，就引刃而解了。     &lt;/p&gt;
+</description>
+      <pubDate>Sat, 10 Jan 2015 21:24:00 +0800</pubDate>
+      <dc:date>2015-01-10T21:24:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>sublime_text使用总结</title>
+      <link>http://rulerstorm.github.io/%E5%85%B6%E4%BB%96/2014/12/27/sublime_text%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</link>
+      <description>&lt;p&gt;想要快速用好vim，那么删掉sublime可能是最迅速的方法了。王道培训时，大张旗鼓抛弃vim转投sublime，到现在其实也就没几个月的时间。但是sublime我已经用得挺熟悉，码字效率已经比较高了，毕竟也是认真花了一些精力去钻研的。所以感觉就此抛弃可惜了，还是把经验存在这里吧。（原本是存在电脑上的，但是由于spotligh）     &lt;/p&gt;
+</description>
+      <pubDate>Sat, 27 Dec 2014 10:43:00 +0800</pubDate>
+      <dc:date>2014-12-27T10:43:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>《长尾效应》读书笔记</title>
+      <link>http://rulerstorm.github.io/%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%A4%96/2014/12/26/%E3%80%8A%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</link>
+      <description>&lt;p&gt;中信出版社的精装《长尾效应》，优雅而寂寞得躺在我的书架上已经快一年了，今天终于被我翻出来看掉。老规矩，看完留下笔记，然后书送掉。     &lt;/p&gt;
+
+&lt;h5&gt;什么是【长尾效应】&lt;/h5&gt;
+
+&lt;p&gt;所谓长尾效应，是相对于传统的【二八法则】的。二八法则描述，市场上最热门20%的货物创造了80%的利润。而【长尾效应】认为，在新的经济体系下，【热门商品】的价值不再像过去那么大，&lt;code&gt;利润&lt;/code&gt;由&lt;code&gt;最热门的2%&lt;/code&gt;、&lt;code&gt;次热门的8%&lt;/code&gt;与&lt;code&gt;剩余的90%&lt;/code&gt;产品三分天下，各占&lt;code&gt;33%&lt;/code&gt;！     &lt;/p&gt;
+</description>
+      <pubDate>Fri, 26 Dec 2014 20:40:00 +0800</pubDate>
+      <dc:date>2014-12-26T20:40:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>我为什么最后选了vim</title>
+      <link>http://rulerstorm.github.io/vim/2014/12/25/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%80%E5%90%8E%E9%80%89%E4%BA%86vim.html</link>
+      <description>&lt;p&gt;对于编辑器的选择，其实是一直萦绕心头的。关于效率和逼格的东西，总是让我不断费尽心思，折腾得有点让普通人无法理解的。&lt;br&gt;
+曾经在我的N9手机上，为了一个主题颜色和几个图标的位置顺序，我来来回回改了一个下午。你问我有什么要改的？&lt;br&gt;
+比如呢，图标哪些放桌面，哪些放文件夹，文件夹多了虽然可以逻辑归类，但是使用起来却要多一个打开文件夹的操作。在比如，哪些使用频率比较高，放在比较容易按到的地方，左右手的方便的范围也要考虑。再来，图标的颜色组合起来要美观，还要与背景协调。。。。。（好吧。。。还是不说下去了）&lt;br&gt;
+所以，对于编辑器呢，之前我一直是推崇&lt;code&gt;Sublime text&lt;/code&gt;的，理由有两点：    &lt;/p&gt;
+</description>
+      <pubDate>Thu, 25 Dec 2014 21:14:00 +0800</pubDate>
+      <dc:date>2014-12-25T21:14:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>编程语言概念汇总</title>
+      <link>http://rulerstorm.github.io/%E5%85%B6%E4%BB%96/2014/12/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%A6%82%E5%BF%B5%E6%B1%87%E6%80%BB.html</link>
+      <description>&lt;p&gt;最近也接触了不少的编程语言，人们从各种方面，给她们进行了分类，产生了大量的术语。总结一下吧~        &lt;/p&gt;
+
+&lt;h5&gt;&lt;code&gt;强类型&lt;/code&gt;和&lt;code&gt;弱类型&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;强类型语言会强制要求两个操作变量的类型相匹配，像【有符号整形】给【无符号整形】【赋值】这种事情是不允许的。&lt;br&gt;
+弱类型就没有这种限制，允许隐式转换，更加灵活。&lt;br&gt;
+【通常认为】，JAVA, C#是强类型，C, C++, PHP是弱类型     &lt;/p&gt;
+</description>
+      <pubDate>Wed, 24 Dec 2014 09:24:00 +0800</pubDate>
+      <dc:date>2014-12-24T09:24:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>正则表达式基础</title>
+      <link>http://rulerstorm.github.io/%E5%85%B6%E4%BB%96/2014/12/22/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80.html</link>
+      <description>&lt;p&gt;【正则表达式】是一种“不学不会死人，可是你总要学”的技能。鉴于其在各种语言内通用，且大有技术含量，需要经验的积累。所以，这样的技术就如同背单词一样，了解的越早越好。     &lt;/p&gt;
+</description>
+      <pubDate>Mon, 22 Dec 2014 07:32:00 +0800</pubDate>
+      <dc:date>2014-12-22T07:32:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>一天只做一件重要的事</title>
+      <link>http://rulerstorm.github.io/other/2014/12/12/%E4%B8%80%E5%A4%A9%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B.html</link>
+      <description>&lt;p&gt;我知道什么事情是&lt;code&gt;重要&lt;/code&gt;的，是好事。&lt;br&gt;
+但是，我每天都想做&lt;code&gt;很多&lt;/code&gt;重要的事情，就不是好事了。     &lt;/p&gt;
+</description>
+      <pubDate>Fri, 12 Dec 2014 07:57:00 +0800</pubDate>
+      <dc:date>2014-12-12T07:57:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>LAMP精要</title>
+      <link>http://rulerstorm.github.io/%E5%89%8D%E7%AB%AF/2014/12/04/LAMP%E7%B2%BE%E8%A6%81.html</link>
+      <description>&lt;p&gt;lamp是指：linux, apache, mysql, php。在mac上使用lamp与linux相差无几，作笔记如下：&lt;br&gt;
+mac安装教程：&lt;br&gt;
+http://www.guomii.com/posts/30136     &lt;/p&gt;
+</description>
+      <pubDate>Thu, 04 Dec 2014 05:49:00 +0800</pubDate>
+      <dc:date>2014-12-04T05:49:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Heroku笔记</title>
+      <link>http://rulerstorm.github.io/ruby/2014/11/20/Heroku%E7%AC%94%E8%AE%B0.html</link>
+      <description>&lt;p&gt;Heroku 专门用于部署 Rails 和其他 Web 应用，部署 Rails 应用的过程异常简单——只要源码纳入了 Git 版本控制系统就好。     &lt;/p&gt;
+</description>
+      <pubDate>Thu, 20 Nov 2014 09:53:00 +0800</pubDate>
+      <dc:date>2014-11-20T09:53:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Ruby_cheat_sheet</title>
+      <link>http://rulerstorm.github.io/ruby/2014/11/18/Ruby_cheat_sheet.html</link>
+      <description>&lt;p&gt;基础部分     &lt;/p&gt;
+</description>
+      <pubDate>Tue, 18 Nov 2014 09:53:00 +0800</pubDate>
+      <dc:date>2014-11-18T09:53:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>动态连通性问题</title>
+      <link>http://rulerstorm.github.io/algorithm/2014/11/09/%E5%8A%A8%E6%80%81%E8%BF%9E%E9%80%9A%E6%80%A7%E9%97%AE%E9%A2%98.html</link>
+      <description>&lt;p&gt;在一个图结构中，动态加入某条边后，希望快速判断两个节点是否联通。     &lt;/p&gt;
+</description>
+      <pubDate>Sun, 09 Nov 2014 22:53:00 +0800</pubDate>
+      <dc:date>2014-11-09T22:53:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>重要但是不紧急的事</title>
+      <link>http://rulerstorm.github.io/other/2014/11/09/%E9%87%8D%E8%A6%81%E4%BD%86%E6%98%AF%E4%B8%8D%E7%B4%A7%E6%80%A5%E7%9A%84%E4%BA%8B.html</link>
+      <description>&lt;p&gt;很早就知道，方向比努力重要。做正确的事，比把事情做正确更加重要。&lt;br&gt;
+从管理学的角度来说，正确的事，就是”&lt;strong&gt;重要，但是不紧急的事情&lt;/strong&gt;“。在《高效能人士的七个习惯》一书中认为，人的日常事务，事务可分为四种：       &lt;/p&gt;
+</description>
+      <pubDate>Sun, 09 Nov 2014 05:10:00 +0800</pubDate>
+      <dc:date>2014-11-09T05:10:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Google笔记</title>
+      <link>http://rulerstorm.github.io/other/2014/11/05/Google%E7%AC%94%E8%AE%B0.html</link>
+      <description>&lt;p&gt;google的高级功能一直在用，但是有一些还是用的不多时间长了就会忘。而且随着时间的变迁，现在像filetype这样的功能显得越来越不实用了。今天正好整理一下看到的教程，精简了一些比较有用的，供将来查询实用。     &lt;/p&gt;
+</description>
+      <pubDate>Wed, 05 Nov 2014 19:23:00 +0800</pubDate>
+      <dc:date>2014-11-05T19:23:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Git笔记--单人仓库</title>
+      <link>http://rulerstorm.github.io/git/2014/10/25/Git%E7%AC%94%E8%AE%B0--%E5%8D%95%E4%BA%BA%E4%BB%93%E5%BA%93.html</link>
+      <description>&lt;p&gt;&lt;strong&gt;如何使用Github创建你的git仓库:&lt;/strong&gt;      &lt;/p&gt;
+</description>
+      <pubDate>Sat, 25 Oct 2014 07:08:00 +0800</pubDate>
+      <dc:date>2014-10-25T07:08:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>关于VPN的路由器设置</title>
+      <link>http://rulerstorm.github.io/other/2014/10/23/VPN%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%E8%AE%BE%E7%BD%AE.html</link>
+      <description>&lt;p&gt;VPN用了半年，折磨了很久。有的路由器可以用，有的就不行，简直莫名其妙，忍无可忍！&lt;br&gt;
+今天研究了一下。&lt;br&gt;
+有一些品牌的路由器直接提供了VPN穿透的选项，可以直接使用。    &lt;/p&gt;
+</description>
+      <pubDate>Thu, 23 Oct 2014 04:18:00 +0800</pubDate>
+      <dc:date>2014-10-23T04:18:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>关于github不记录contribuions</title>
+      <link>http://rulerstorm.github.io/git/2014/10/16/%E5%85%B3%E4%BA%8Egithub%E4%B8%8D%E8%AE%B0%E5%BD%95contribuions.html</link>
+      <description>&lt;p&gt;用了好几个月的Github，也经常往上面push代码，可是contirbution却一直不见有涨。时间长了心理一直很郁闷，今天终于下决心解决这个问题。    &lt;/p&gt;
+</description>
+      <pubDate>Thu, 16 Oct 2014 08:18:00 +0800</pubDate>
+      <dc:date>2014-10-16T08:18:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>OpenCV_on_IOS</title>
+      <link>http://rulerstorm.github.io/ios/2014/10/14/OpenCV_on_IOS.html</link>
+      <description>&lt;p&gt;实话说，在对openCV一点不了解的情况下，直接搞ios版是走了很多弯路的。而且网上的教程都已经过时，新版的xcode用起来方便了很多。     &lt;/p&gt;
+</description>
+      <pubDate>Tue, 14 Oct 2014 14:18:00 +0800</pubDate>
+      <dc:date>2014-10-14T14:18:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>Mac新手攻略</title>
+      <link>http://rulerstorm.github.io/other/2014/10/11/mac%E6%96%B0%E6%89%8B%E6%94%BB%E7%95%A5.html</link>
+      <description>&lt;p&gt;很多朋友最近开始转投mac门下，写点经验希望能帮助朋友们节约自己摸索的时间。我是井底之蛙，很多东西还不知道，不足之处还望慷慨补充和指正！     &lt;/p&gt;
+</description>
+      <pubDate>Sat, 11 Oct 2014 00:18:00 +0800</pubDate>
+      <dc:date>2014-10-11T00:18:00+08:00</dc:date>
+    </item>
+    <item>
+      <title>不管行不行，先搞出来再说！</title>
+      <link>http://rulerstorm.github.io/bloging/2014/10/09/%E5%85%88%E6%90%9E%E5%87%BA%E6%9D%A5%E5%86%8D%E8%AF%B4.html</link>
+      <description>&lt;p&gt;搭建博客的事情，其实拖了一个多月了。&lt;br&gt;
+理由呢，是一个很好的借口 ---- 我还没把前端的知识、甚至网络的知识理顺。&lt;br&gt;
+于是，没有博客就不写笔记，这样的借口一环套一环，简直就是拖延症。     &lt;/p&gt;
+</description>
+      <pubDate>Thu, 09 Oct 2014 14:18:00 +0800</pubDate>
+      <dc:date>2014-10-09T14:18:00+08:00</dc:date>
+    </item>
+    <dc:date>2015-02-14T06:00:00+08:00</dc:date>
+  </channel>
+</rss>
