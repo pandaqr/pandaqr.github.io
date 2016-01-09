@@ -1,4 +1,4 @@
-name: Rock's personal notebook
+name: Notebook
 description: Pain is inevitable, Suffering is optional.
 meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
@@ -11,5 +11,5 @@ paginate: 15
 # baseurl: http://rulerstorm.github.io
 
 # Details for the RSS feed generator
-url:            'http://rulerstorm.github.io'
-author:         'Rock Lu'
+url:            'http://pandaqr.github.io'
+author:         'Ellen'
