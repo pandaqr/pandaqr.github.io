@@ -1,34 +1,68 @@
 ---
+title: Triffic的WEB站点 | 往事随风
 layout: default
 ---
+<section class="box special" style="font-family: Times New Roman">
+	<header class="major">
+		<h2>Hi, There, Nice to meet you</h2>
+		<p>This is <a href="#">Triffic</a>'s Personal Website. Graduated from <a href="http://www.hdu.edu.cn/index_pc.html" target="_blank">Hangzhou Dianzi University</a> in September 2011, Major in SOFTWARE ENGINEERING;  Achieve Master Degree From <a href="http://www.zju.edu.cn/" target="_blank">Zhejiang University</a> in April 2014, Major in COMPUTER APPLICATION TECHNOLOGY. 
+		<br/>
+		<br/>
+		2014.04-Now Working @ICBC Zhejiang Regional Headquarters, I.T. Dept., Network Financing Centre, Act As Financial Products Developer.</p>
+	</header>
+	<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic01.jpg" alt="" /></span>
+	<p style="text-align: right">---Photo By Alex.</p>
+</section>
 
-<main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-    {% for post in site.posts %}
-        <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-                <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
-                    <meta itemprop="datePublished" content="{{post.date}}">
-                    <time datetime="{{ post.date | date_to_xmlschema }}">
-                        <span class="day">
-                            {{ post.date | date: "%d" }}
-                        </span>
-                        <span class="month-year">
-                            {{ post.date | date: "%B %Y" }}
-                        </span>
-                    </time>
-                </a>
-                <div class="content">
-                    <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
-                    <p class="description">
-                        {{ post.content | strip_html | truncatewords:40 }}
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">Read more about {{post.title}}</a>
-                    </p>
+<!--
+<section class="box special features">
+	<div class="features-row">
+		<section>
+			<span class="icon major fa-bolt accent2"></span>
+			<h3>Magna etiam</h3>
+			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+		</section>
+		<section>
+			<span class="icon major fa-area-chart accent3"></span>
+			<h3>Ipsum dolor</h3>
+			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+		</section>
+	</div>
+	<div class="features-row">
+		<section>
+			<span class="icon major fa-cloud accent4"></span>
+			<h3>Sed feugiat</h3>
+			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+		</section>
+		<section>
+			<span class="icon major fa-lock accent5"></span>
+			<h3>Enim phasellus</h3>
+			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+		</section>
+	</div>
+</section>
+-->
 
-                    <div class="tags">
-                        {% for tag in post.tags %}
-                            <a href="{{ baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-        </article>
-    {% endfor %}
-</main>
+<div class="row">
+	<div class="6u">
+		<section class="box special" style="font-family: Times New Roman">
+			<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic02.png" alt="" /></span>
+			<h3 style="text-align: center">The Posted Blogs</h3>
+			<p>It's interesting to share your opinions about technology, life and other stuffs with guys. Maybe you will be interested in what I am talking about, So let's take a glance over My posted blogs.</p>
+			<ul class="actions" style="text-align: center">
+				<li><a href="{{ site.baseurl }}/blog" class="button alt">Watch More</a></li>
+			</ul>
+		</section>
+	</div>
+	<div class="6u">
+		<section class="box special"  style="font-family: Times New Roman">
+			<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic03.png" alt="" /></span>
+			<h3 style="text-align: center">Some Projects</h3>
+			<p>In the past few years, I really finished some projects, some are commerical products, others for personal experiment try. I do love my job, and dedicate to make people's life easier, So EXCITING.</p>
+			<ul class="actions" style="text-align: center">
+				<li><a href="{{ site.baseurl }}/project" class="button alt">Watch More</a></li>
+			</ul>
+		</section>
+
+	</div>
+</div>

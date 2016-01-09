@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    {% include head.html %}
-    <body>
-        {% include svg-icons.html %}
-        {% include header-post.html %}
-        <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+{% include header.html %}
+	<section class="box special" style="font-family: Georgia, Times New Roman, Times, serif;">
+		<h3 style="text-align: center">{{ page.title }}</h3>
+		<p style="text-align: right">Posted By <font color="green">Triffic</font> On {{ page.date | date: "%Y-%m-%d" }}</p>
+		{{ page.content }}
 
-            <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                {{ content }}
-            </article>
+		<!-- 多说评论框 start -->
+        <div class="comment">
+        <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}{{page.url}}"></div>
+        </div>
+        <!-- 多说评论框 end -->
 
-            {% include share.html %}
-            {% include author.html %}
-            {% include comments.html %}
-            {% include footer.html %}
-        </section>
-    </body>
-</html>
+	</section>
+
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+	var duoshuoQuery = {short_name:"triffic"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        //ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.src = '{{ site.baseurl }}/assets/js/duoshuo-embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+	</script>
+	<!-- 多说公共JS代码 end -->
+{% include footer.html %}

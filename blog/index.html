@@ -1,0 +1,31 @@
+---
+title: Blog List | 博文列表
+layout: default
+---
+
+<section class="box special" style="font-family: Georgia, Times New Roman, Times, serif">
+	<!--
+	<header class="major">
+		<h2 style="font-family: lobster">Blog Posts List</h2>
+	</header>
+	    
+		{% for post in site.posts offset: 0 limit: 10 %}
+			<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+			<span class="date">{{ post.date | date_to_string }}</span>
+			<section class="box special">
+				{{ post.content | remove: '<p>' | remove: '</p>' }}
+			<ul class="actions">
+				<li><a href="{{ site.baseurl }}{{ post.url }}" class="button alt">Read Article</a></li>
+			</ul>
+			</section>
+		{% endfor %}
+		-->
+
+		{% for post in site.posts offset: 0 limit: 10 %}
+			<h3 style="font-size: 20px"><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:green">{{ post.title }}</a></h3>
+			<section class="box special" style="padding: 1em; font-style:italic">
+				{{ post.content |  strip_html | truncate:100 }}
+				<p>Posted By <font color="green">Triffic</font> On {{ post.date | date: "%Y-%m-%d" }}</p>
+			</section>
+		{% endfor %}
+</section>
