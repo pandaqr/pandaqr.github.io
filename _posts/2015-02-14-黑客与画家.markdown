@@ -3,8 +3,7 @@ title:  "黑客与画家"
 subtitle: "《黑客与画家》读书笔记"
 author: "Ellen"
 avatar: "img/authors/wferr.png"
-image: "img/hackerandpainter.jpg"
-
+image: "img/hackerandpainter.jpg
 date:   2015-02-14 15:28:12
 ---
 
