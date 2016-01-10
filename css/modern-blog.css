@@ -230,7 +230,6 @@ body.body--hidden .header {
 a {
 	text-decoration: underline;
 	color: #F5A623;
-	outline: none;
 }
 
 a:hover,
