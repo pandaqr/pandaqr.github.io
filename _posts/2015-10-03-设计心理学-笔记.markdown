@@ -3,7 +3,7 @@ title:  "设计心理学笔记"
 subtitle: ""
 author: "Ellen"
 avatar: "img/authors/wferr.png"
-image: "img/dongbei.JPG"
+image: "img/design.JPG"
 
 date:   2015-10-03 12:12:12
 ---
