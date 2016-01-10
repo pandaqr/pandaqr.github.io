@@ -3,7 +3,7 @@ title:  "The Guide to Mockups"
 subtitle: "最近一直在看Uxpin上的电子书，那就从最基础的开始吧，mockup, wireframe，prototype"
 author: "Ellen"
 avatar: "img/authors/wferr.png"
-image: "img/mockup.jpg"
+image: "img/mu.jpg"
 date:   2016-01-02 12:12:12
 ---
 
