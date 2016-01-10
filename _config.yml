@@ -1,15 +1,7 @@
-name: Triffic Blog
-description: Triffic Personal WebBlog
-baseurl: ''
-
-url: "http://triffic.cn"
-
-paginate: 10
-
-# highlight code
-pygments: true
-
-# 
-markdown: redcarpet
-redcarpet:
-    extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
+# Site settings
+title: Modern Blog
+description: Modern-Blog A Elegant template for Jekyll
+keywords: Modern, Blogging, Fun
+author: Wferr
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site

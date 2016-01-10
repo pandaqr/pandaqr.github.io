@@ -1,68 +1,85 @@
 ---
-title: Triffic的WEB站点 | 往事随风
-layout: default
+layout: compress
 ---
-<section class="box special" style="font-family: Times New Roman">
-	<header class="major">
-		<h2>Hi, There, Nice to meet you</h2>
-		<p>This is <a href="#">Triffic</a>'s Personal Website. Graduated from <a href="http://www.hdu.edu.cn/index_pc.html" target="_blank">Hangzhou Dianzi University</a> in September 2011, Major in SOFTWARE ENGINEERING;  Achieve Master Degree From <a href="http://www.zju.edu.cn/" target="_blank">Zhejiang University</a> in April 2014, Major in COMPUTER APPLICATION TECHNOLOGY. 
-		<br/>
-		<br/>
-		2014.04-Now Working @ICBC Zhejiang Regional Headquarters, I.T. Dept., Network Financing Centre, Act As Financial Products Developer.</p>
-	</header>
-	<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic01.jpg" alt="" /></span>
-	<p style="text-align: right">---Photo By Alex.</p>
-</section>
-
-<!--
-<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-bolt accent2"></span>
-			<h3>Magna etiam</h3>
-			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-		</section>
-		<section>
-			<span class="icon major fa-area-chart accent3"></span>
-			<h3>Ipsum dolor</h3>
-			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-		</section>
-	</div>
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-cloud accent4"></span>
-			<h3>Sed feugiat</h3>
-			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-		</section>
-		<section>
-			<span class="icon major fa-lock accent5"></span>
-			<h3>Enim phasellus</h3>
-			<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-		</section>
-	</div>
-</section>
--->
-
-<div class="row">
-	<div class="6u">
-		<section class="box special" style="font-family: Times New Roman">
-			<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic02.png" alt="" /></span>
-			<h3 style="text-align: center">The Posted Blogs</h3>
-			<p>It's interesting to share your opinions about technology, life and other stuffs with guys. Maybe you will be interested in what I am talking about, So let's take a glance over My posted blogs.</p>
-			<ul class="actions" style="text-align: center">
-				<li><a href="{{ site.baseurl }}/blog" class="button alt">Watch More</a></li>
-			</ul>
-		</section>
-	</div>
-	<div class="6u">
-		<section class="box special"  style="font-family: Times New Roman">
-			<span class="image featured"><img src="{{ site.baseurl }}/assets/images/pic03.png" alt="" /></span>
-			<h3 style="text-align: center">Some Projects</h3>
-			<p>In the past few years, I really finished some projects, some are commerical products, others for personal experiment try. I do love my job, and dedicate to make people's life easier, So EXCITING.</p>
-			<ul class="actions" style="text-align: center">
-				<li><a href="{{ site.baseurl }}/project" class="button alt">Watch More</a></li>
-			</ul>
-		</section>
-
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ site.title }}</title>
+        <meta name="description" content="{{ site.description }}" />
+        <meta name="keywords" content="{{ site.keywords }}" />
+        <meta name="author" content="{{ site.author }}" />
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/modern-blog.min.css" />
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script>
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        var root = document.getElementsByTagName('html')[0];
+        root.setAttribute('class', 'ff');
+        };
+        </script>
+    </head>
+    <body class="body">
+        <div class="container">
+            <header class="header">
+                <h1>Modern Blog<span>A Clean, Fresh Minimal Look.</span></h1>
+                <nav class="links">
+                    <a href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
+                    <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+                    <a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
+                    <a href="#"><i class="fa fa-tumblr-square fa-3x"></i></a>
+                </nav>
+            </header>
+            <div class="content">
+                <!-- trianglify pattern container -->
+                <div class="pattern pattern--hidden"></div>
+                <!-- cards -->
+                <div class="wrapper">
+                    {% for post in site.posts %}
+                        <div class="card">
+                            <div class="card__container card__container--closed">
+                                <svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                    <clipPath id="{{ post.subtitle | slugify }}">
+                                <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
+                                </clipPath>
+                                </defs>
+                                <image clip-path="url(#{{ post.subtitle | slugify }})" width="1920" height="1200" xlink:href="{{ post.image }}"></image>
+                            </svg>
+                            <div class="card__content">
+                                <i class="card__btn-close fa fa-times"></i>
+                                <div class="card__caption">
+                                    <h2 class="card__title">{{ post.title }}</h2>
+                                    <p class="card__subtitle">{{ post.subtitle }}</p>
+                                </div>
+                                <div class="card__copy">
+                                    <div class="meta">
+                                        <img class="meta__avatar" src="{{ post.avatar }}" />
+                                        <span class="meta__author">{{ post.author }}</span>
+                                        <span class="meta__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                                    </div>
+                                    {{ post.content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- /cards -->
+            </div>
+        </div>
+        <!-- /container -->
+        <!-- JS -->
+        <script src="js/vendors/trianglify.min.js"></script>
+        <script src="js/vendors/TweenMax.min.js"></script>
+        <script src="js/vendors/ScrollToPlugin.min.js"></script>
+        <script src="js/vendors/cash.min.js"></script>
+        <script src="js/card-modern-blog.min.js"></script>
+        <script src="js/modern-blog.min.js"></script>
+    </body>
+</html>
