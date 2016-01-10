@@ -228,15 +228,16 @@ body.body--hidden .header {
 }
 
 a {
-	text-decoration: none;
-	color: #de6551;
+	text-decoration: underline;
+	color: #F5A623;
 	outline: none;
 }
 
-a:hover,
-a:focus {
-	color: #3b393d;
-}
+a:link{color:#F5A623;}
+
+a:hover{color:#FFD898;}
+
+a:focus{color:#F5A623;}
 
 .body {
 	background: #acaad1;
