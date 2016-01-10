@@ -1,4 +1,13 @@
-#  The Guide to Wirframing
+---
+title:  "The Guide to Wireframing"
+subtitle: "Wireframing主要目的是为了将概念转化为可见的心态"
+author: "Ellen"
+avatar: "img/authors/wferr.png"
+image: "img/wireframe/IMG_2442.JPG"
+
+date:   2016-01-10 12:12:12
+---
+
 
 Wireframing主要目的是为了将概念转化为可见的内容给到别人。 
 交互设计师，视觉设计师，工程师，产品经理以及公司和合作伙伴都需要用到线框图。
@@ -97,7 +106,9 @@ Guide 里还介绍了一些线框图的网站，可能比较多，有些都已�
 
 ### 可视化滚动条(Visibal Scrollbar) 
 这里的滚动条和我们平时网页上看文章出现的滚动条不大一样。 
-![](/Users/Panda/Desktop/屏幕快照 2016-01-09 下午3.07.47.png)
+![](img/wireframe/屏幕快照 2016-01-09 下午3.07.47.png)
+
+
 
 这里的滚动可以帮助你分类，Carousel是一个照片分享网站，可以通过截图看到它将你的照片按时间自动分门别类了，能较快的搜索到你所需的文件。
 
