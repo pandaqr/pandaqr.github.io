@@ -114,12 +114,15 @@ Guide 里还介绍了一些线框图的网站，可能比较多，有些都已�
 
 ### 卡片
 Pinterest 引进了卡片这一概念，卡片的这一浏览方式，让人们更加沉浸的发现好内容，同时可以将其分类以及做一些交互。
-![](/Users/Panda/Desktop/1.pic.jpg)
+![](img/wireframe/1.pic.jpg)
+
+
 
 ### 地图背景
 这一个模式已经在App上得到了广泛的应用，也可以看到这带动了已照片或者媒体作为背景的模式。
 [开眼](http://www.wandoujia.com/eyepetizer/) 算是一个不错的例子
-![](/Users/Panda/Desktop/2.pic.jpg)
+![](img/wireframe/2.pic.jpg)
+
 
 ### 圆形用户头像缩略图（thumbnails in circles） 
 Facebook和Instagram采用了这种用户缩略头像为圆形的方式，在Google+这边得到了进一步的推广，Path的出现也更加推动了让这种圆形头像得使用。
@@ -133,30 +136,37 @@ Facebook和Instagram采用了这种用户缩略头像为圆形的方式，在Goo
 * 将区别不大的按钮自然转化，
 * 视觉上将元素之间完美的联系起来
 * 给到用户一定的视觉反馈，知道发生了什么
-![](/Users/Panda/Desktop/屏幕快照 2016-01-09 下午10.43.35.png)
+![](img/wireframe/屏幕快照 2016-01-09 下午10.43.35.png)
+
+
 这张截图是Pinterest的旧界面。
 
 ### 自由操控调动内容（manipulate content directly）
 Asana 是一个类GTD的时间管理应用， 你可以将安排好的条目用按压的方式自动的拖动仿制条目的位置。 
-![](/Users/Panda/Desktop/屏幕快照 2016-01-09 下午10.47.48.png)
+![](img/wireframe/屏幕快照 2016-01-09 下午10.47.48.png)
+
+
 对于有许多栏目需要操作貂整其位置的时候，这种交互方式是一个非常好的解决方式。
+
 
 ### 左右滑动（swiping actions）
 这种交互我们见的已经相当多了，在iPhone自带的email 应用里就可以动作左右滑动删除或标注已阅。 
-![](/Users/Panda/Desktop/3.pic.jpg)
+![](img/wireframe/3.pic.jpg)
+
 
 ### 隐藏按钮（discover faster actions） 
 这种按钮可能需要用户自己去探索发现，Instagram就有这个一个双击图片表示喜欢的功能，这个好处当然是操作更加的快捷，但是也造成让人误点的情况，而要去删除这个喜欢需要去其他界面操作。 
 
 ### 隐藏工具（“discoverable” tools）
 这个在Snapseed上有着完美的体现。 修图通常需要用到许多的工具，但是一一罗列出来可能是一件相当麻烦的事情，这时候通过左右或上下移动手指就能导出工具栏，用起来相当的方便。 
-![](/Users/Panda/Desktop/4.pic.jpg)
+![](img/wireframe/4.pic.jpg)
+
 
 
 ### 邀请朋友(invite others)
 邀请朋友通常就两种方式，通过邮件和通讯录，将通讯录以及邮件联系人列出来这大大方便了分享的速度。
 可以简单看一下Venmo的截图， 当然也可以去体验一下path的邀请方式，同样简单方便。 
-![](/Users/Panda/Desktop/屏幕快照 2016-01-09 下午11.15.06.png)
+![](img/wireframe/屏幕快照 2016-01-09 下午11.15.06.png)
 
 
 ##线框图设计原则
