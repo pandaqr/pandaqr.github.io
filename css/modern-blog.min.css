@@ -42,7 +42,7 @@ body.body--hidden .header{opacity:0;}
 a{text-decoration:none;color:#de6551;outline:none;}
 a:link{color:#F5A623;}
 a:hover {color:#FFD898;},
-a:focus{color:#3b393d;}
+a:focus{color:#F5A623;}
 .body{background:#acaad1;}
 .body a{color:#4f4c4c;}
 .body .header h1 span{color:#4f4c4c;}
