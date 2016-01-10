@@ -238,6 +238,20 @@ a:focus {
 	color: #F5A623;
 }
 
+a:link{
+	color:#F5A623;
+}
+
+a:visited {
+	color:#DEDEDE;
+}
+
+a:hover{
+	color:#FAC671;
+}
+
+
+
 .body {
 	background: #acaad1;
 }
