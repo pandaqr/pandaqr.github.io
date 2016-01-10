@@ -233,11 +233,10 @@ a {
 	outline: none;
 }
 
-a:link{color:#F5A623;}
-
-a:hover{color:#FFD898;}
-
-a:focus{color:#F5A623;}
+a:hover,
+a:focus {
+	color: #F5A623;
+}
 
 .body {
 	background: #acaad1;
