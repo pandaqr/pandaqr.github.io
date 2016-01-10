@@ -233,10 +233,6 @@ a {
 	outline: none;
 }
 
-a:hover,
-a:focus {
-	color: #F5A623;
-}
 
 a:link{
 	color:#F5A623;
@@ -257,7 +253,7 @@ a:hover{
 }
 
 .body a {
-	color: #4f4c4c;
+	color: #F5A623;
 }
 
 .body .header h1 span {
