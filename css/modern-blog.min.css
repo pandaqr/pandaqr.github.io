@@ -39,11 +39,9 @@ body{font-family:Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial,
 body.body--hidden{overflow:hidden;}
 body.body--hidden .header{opacity:0;}
 .header{-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out;}
-
-a:link {background-color:#FECE7E;}    /* 未被访问的链接 */
-a:visited {color:#FECE7E;} /* 已被访问的链接 */
-a:hover {color:#FECE7E;}   /* 鼠标指针移动到链接上 */
-
+a{text-decoration:none;color:#de6551;outline:none;}
+a:hover,
+a:focus{color:#3b393d;}
 .body{background:#acaad1;}
 .body a{color:#4f4c4c;}
 .body .header h1 span{color:#4f4c4c;}

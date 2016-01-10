@@ -228,13 +228,14 @@ body.body--hidden .header {
 }
 
 a {
-	text-decoration: underline;
-	color: #FECE7E;
+	text-decoration: none;
+	color: #de6551;
+	outline: none;
 }
 
 a:hover,
 a:focus {
-	color: #FECE7E;
+	color: #3b393d;
 }
 
 .body {
