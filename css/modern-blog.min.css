@@ -41,9 +41,9 @@ body.body--hidden .header{opacity:0;}
 .header{-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out;}
 a{text-decoration:none;color:#de6551;outline:none;}
 a:hover,
-a:focus{color:#3b393d;}
+a:focus{color:#F5A623;}
 .body{background:#acaad1;}
-.body a{color:#4f4c4c;}
+.body a{color:#F5A623;}
 .body .header h1 span{color:#4f4c4c;}
 .hidden{position:absolute;overflow:hidden;width:0;height:0;pointer-events:none;}
 .header{padding:2em 1em;text-align:center;}
