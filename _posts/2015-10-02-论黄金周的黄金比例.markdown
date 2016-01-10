@@ -1,7 +1,7 @@
 ---
 title:  "论黄金周的黄金比例"
 subtitle: ""
-author: "Wferr"
+author: "Ellen"
 avatar: "img/authors/wferr.png"
 image: "img/Golden/IMG_2375.JPG"
 
