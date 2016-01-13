@@ -6,8 +6,8 @@
 </description>
     <link>http://pandaqr.github.io/</link>
     <atom:link href="http://pandaqr.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jan 2016 20:23:52 +0800</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 20:23:52 +0800</lastBuildDate>
+    <pubDate>Wed, 13 Jan 2016 20:08:56 +0800</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 20:08:56 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -366,6 +366,315 @@
         <pubDate>Sun, 06 Dec 2015 15:44:00 +0800</pubDate>
         <link>http://pandaqr.github.io/2015/12/06/%E9%A1%B9%E7%9B%AE%E5%B0%8F%E7%BB%93.html</link>
         <guid isPermaLink="true">http://pandaqr.github.io/2015/12/06/%E9%A1%B9%E7%9B%AE%E5%B0%8F%E7%BB%93.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>自建PIWIK-ALL WEBSITES DASHBOARD页面</title>
+        <description>&lt;p&gt;Piwik是一款开源流量监测工具，好用好看好配置，好处自然不用多说。但也有一些小问题，私以为Piwik的可配置参数项还不够多。&lt;/p&gt;
+
+&lt;p&gt;前段时间一直在纠结如何在「所有网站」这个页面上加上「访客数」这个指标，一通翻找Piwik源码，发现水有点深，另外考虑到以后的升级，所以在想如果我把它的源码给改了，那以后方便的一键升级是不是玩不转了，或者说升级之后又需要重新再修改一遍，经过重重考虑，决定还是绕道，既然Piwik这么强大，提供的API如此丰富，何不如再写一个自己的「所有网站」页面，展示自己认为比较重要的检测指标，这种灵活性是不是爆棚，所有就自己写了一个「所有网站」的Dashboard页面。&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;项目源码下载到本地之后，如果需要跑起来，还需要修改这么几个地方：&lt;/p&gt;
+&lt;p&gt;1、~/js/piwik-tongji.js中的&lt;code&gt;http://www.yourpiwikserver.com&lt;/code&gt;替换成你自己Piwik的服务器地址，token_auth请替换成你自己Piwik的授权码；&lt;/p&gt;
+&lt;p&gt;2、如果想要在本地进行测试，并且你的Piwik并没有安装在本地，那么还涉及到一个跨域的问题，可以在Chrome的浏览器里面装一个插件&lt;code&gt;Allow-Control-Allow-Origin: *&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Need to be done&lt;/h3&gt;
+&lt;p&gt;1、还是有很多值得优化的地方，比如页面布局&lt;/p&gt;
+
+&lt;h3&gt;At Last&lt;/h3&gt;
+&lt;p&gt;最后上一张效果图(好像有点以假乱真)：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/11/piwik.png&quot; alt=&quot;DASHBOARD页面&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/11/19/piwik-all-websites.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/11/19/piwik-all-websites.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>深入理解JVM—类加载的时机</title>
+        <description>&lt;p&gt;最近在读《深入理解Java虚拟机：JVM高级特性与最佳实践》这本书，对于深入理解JVM的基础技术概念大有帮助，现对「类加载时机」这块逻辑处理过程进行一个简单的回顾和总结。&lt;/p&gt;
+
+&lt;p&gt;众所周知，JVM在字节码上运行，字节码从何而来，从高级源码编译过来，当年在制定Java虚拟机规范时并没有强制规定JVM只能运行由Java源代码编译过来的字节码，不管何种高级开发语言，只要编译后的字节码符合JVM的规范，理论上都能在JVM上运行，好了，扯远了。Java程序从加载到虚拟机内存中开始，到从内存中移出大致需要经历以下过程，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;&quot;&gt;&lt;img src=&quot;/assets/images/2015/11/jvm-class-load-time.png&quot; alt=&quot;类加载的时机&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;我们从逻辑上把Java程序执行的完整链条切割成各个阶段，后一阶段的顺利执行取决于上一阶段的执行结果，前后依赖。下面对各个阶段所执行的操作作一简单介绍：&lt;/p&gt;
+
+&lt;p&gt;
+加载：我们在这里说的加载指的是类的加载，大致需要完成以下几件事情：
+1）根据类的全路径名称获取描述此类的二进制字节流。这个动作一般通过「类加载器」来实现，「类加载器」是一块在Java虚拟机外部实现的动作代码，从Java虚拟机的角度出发，存在两种不同的类加载器：启动类加载器（由C++实现，是JVM的一部分）和其他类加载器，启动类加载器负责把&lt;java_home&gt;\lib目录中的类库加载到虚拟机内存中；其他类加载器中的扩展类加载器负责加载&lt;java_home&gt;\lib\ext目录中的类库；应用程序类加载器则负载加载用户类路径上指定的类库。
+2）将这个字节流所代表的静态存储结构（比如类变量）转化为方法区的运行时数据结构。
+3）在内存中生成一个代表这个类的Java对象，通过该对象来访问该类的各种数据。
+
+
+&lt;p&gt;
+验证：确保上一步加载进虚拟机的字节流不包含危害虚拟机自身安全的信息，主要进行以下几个验证操作：
+1）文件格式验证：验证字节流是否符合Class文件格式的规范；文件格式验证基于二进制字节流进行，通过该验证之后，字节流才会进入内存的方法区中进行存储，所以后面的验证操作都基于方法区中的存储结构进行，不会再直接操作字节流；
+2）元数据验证：对类的元数据信息进行语义校验，保证不存在不符合Java语言规范的元数据信息；
+3）字节码验证：通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的；
+4）符号引用验证：对类自身以外的信息进行匹配性校验，比如通过字符串描述的全路径名称是否能找到对应的类。
+&lt;/p&gt;
+
+&lt;p&gt;
+准备：为类变量在方法区中分配内存空间，并设置初始值，需要注意几个关键的地方：
+1）仅仅只为类变量（类中以static修饰的变量）分配内存空间，并设置初始值；
+2）准备阶段为变量设置初始值一般指的是变量对应类型的零值，比如public static int xyz = 123，准备阶段过后变量xyz的初始值为零，123赋值给xyz的操作需要等到初始化阶段才真正执行，但是也有一个例外情况：如果变量xyz具有ConstantValue常量属性，public static final int xyz = 123，那么xyz在准备阶段就会被初始化成值123。各变量对应的零值如下图所示：
+&lt;/p&gt;
+
+&lt;p&gt;解析：主要完成把常量池内的符号引用替换为直接引用&lt;/p&gt;
+
+&lt;p&gt;
+初始化：真正开始执行类中定义的Java程序代码（其实是字节码）
+初始化阶段主要执行类构造器&lt;clinit&gt;()方法，&lt;clinit&gt;()方法是由编译器自动收集类中所有类变量的赋值动作和静态语句块（static{}块）中的语句合并产生的，另外需要注意以下几个比较重要的地方：
+1）&lt;clinit&gt;()方法与类的构造函数不同，前者不需要显式的调用父类的&lt;clinit&gt;()方法，Java虚拟机保证会在调用子类的&lt;clinit&gt;()方法之前先执行父类的&lt;clinit&gt;()方法，也就意味着父类中定义的静态语句块先于子类的变量赋值操作。
+
+
+&lt;p&gt;解析这一阶段所需要完成的工作相对来说是比较复杂的，可以另外再进行说明。&lt;/p&gt;
+&lt;/clinit&gt;&lt;/clinit&gt;&lt;/clinit&gt;&lt;/clinit&gt;&lt;/clinit&gt;&lt;/clinit&gt;&lt;/p&gt;&lt;/java_home&gt;&lt;/java_home&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/11/11/jvm-class-load-time.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/11/11/jvm-class-load-time.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>重要的五分钟(GIVE IT FIVE MINUTES)</title>
+        <description>&lt;h3&gt;Something Go First&lt;/h3&gt;
+
+&lt;p&gt;这是一篇译文，来自Jason Fried的《Give it five minutes》，读完对自己触动很大，曾经或者当下的自己都像极了年轻时候的Jason Fried，当然没有他如此大的成就，这篇文章中的观点值得自己借鉴：「先学会聆听，思考，再据理力争」，做一个会思考深刻的人。&lt;/p&gt;
+
+&lt;h3&gt;译文正文&lt;/h3&gt;
+
+&lt;p&gt;几年前，我还是一个行事莽撞的人。无论别人说了什么，我都认为他说的不对。如果某件事不符合我的世界观，我则会狠狠的反击。&lt;/p&gt;
+
+&lt;p&gt;这就比如说我才是第一个应该提出某种观点的人，似乎成为意见领袖对我来说是一件非常重要的事情。然而事实是我对问题缺乏深度的思考，你反驳的越快，说明你思考的越少，虽然并不总是这样，但几乎是。&lt;/p&gt;
+
+&lt;p&gt;谈起膝跳反射时很轻松随意，好像这只是别人才会有的反应，你也有。如果你的邻居没有免疫能力，那么你也没有。&lt;/p&gt;
+
+&lt;p&gt;时间退回到2007年，当时我正在Providence, RI举办的商业创新工厂会议(Business Innovation Factory conference)上发言，Richard Saul Wurman也安排了发言。在我的演讲过后，他上来向我介绍他自己，同时赞扬了我的发言，他是如此大方，显然他不需要这么做。&lt;/p&gt;
+
+&lt;p&gt;但是你知道我接下来都做了些什么吗！？我对他的方言进行了狠狠的反驳。当时他在台上发言表述他的观点，而我在创新方面上和他意见相佐。等到会议间隙我有机会跟他对话时，我对他的某些观点进行了急不可耐的反驳。当时我的样子看起来像极了傻瓜。&lt;/p&gt;
+
+&lt;p&gt;然而他的回应改变了我的一生。『这简单』他说，『伙计，先思考五分钟』，我问这是什么意思？他说：『不同意我的观点没关系，对我的观点进行反驳也无所谓，并且坚守自己的观点和信念是一件好事，但是在你确认反驳我的观点之前能否给我的观点留点时间，先思考一下』。原来他说的「五分钟」代表「思考」，而不是当即反驳。关于这一点，他完全正确。我急匆匆的介入这次讨论只是想证明我的观点才是正确的，而这并不能让我学到什么。&lt;/p&gt;
+
+&lt;p&gt;这是我人生当中一个重要时刻。&lt;/p&gt;
+
+&lt;p&gt;Richard花了整整30年的职业生涯时间来思考这些问题，形成他自己的观点，然而我在几分钟内就立刻进行反驳。放到现在来看，当然他可能是错的，我是对的。但是在你对某件事非常确定你是对的之前，不妨先深入思考下。&lt;/p&gt;
+
+&lt;p&gt;另外问问题和反驳观点之间也有很大的不同，反驳意味着你对自己了解的问题进行了思考，已经形成自己的观点；问问题是说你想要去了解。这个世界如此之大，多多问问题。&lt;/p&gt;
+
+&lt;p&gt;先思考而不是立即反驳是我们一生的追求，这很难。我仍然有时会头脑发热，但是我真的很享受情况变得越来越好时所带给我的好处。&lt;/p&gt;
+
+&lt;p&gt;如果你不确定这一点为什么如此重要，你可以思考一下下面这段Jonathan Ive看待Steve Jobs对Idea是如此珍惜的一段话：&lt;/p&gt;
+
+&lt;blockquote&gt;
+And just as Steve loved ideas, and loved making stuff, he treated the process of creativity with a rare and a wonderful reverence. You see, I think he better than anyone understood that while ideas ultimately can be so powerful, they begin as fragile, barely formed thoughts, so easily missed, so easily compromised, so easily just squished.
+&lt;/blockquote&gt;
+
+&lt;p&gt;阐述的如此深刻，Idea是如此脆弱，它们开始时显得如此无力，几乎看不见，很容易就被我们忽视了。&lt;/p&gt;
+
+&lt;p&gt;在这个世界上有两件事情看起来是不需要掌握任何技能的：&lt;/p&gt;
+
+&lt;p&gt;花别人的钱；
+1、对Idea置若罔闻；
+2、错过一个Idea显得如此容易，因为它不牵涉任何工作。难的是你要小心保护它，对它用尽心思，让它生根发芽。
+&lt;/p&gt;
+
+&lt;p&gt;所以下次你听到某人说了什么，谈论了什么，或者提出了某个想法，先深入思考五分钟吧，在你狠狠反驳之前，你可能会认为他们说的这些事情太难了，或者有太多的工作需要完成，也许你认为的都对，但也有可能相反：恰好值得一试！&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Oct 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/10/23/give-it-five-mins.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/10/23/give-it-five-mins.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>React’s diff algorithm(中文版)</title>
+        <description>&lt;h3&gt;Something go First&lt;/h3&gt;
+&lt;p&gt;这是一篇介绍diff算法的翻译文章，原文来自FB工程师 Christopher Chedeau所写的《React’s diff algorithm》，特此说明，Ok，Here we go.&lt;/p&gt;
+
+&lt;h3&gt;Background&lt;/h3&gt;
+&lt;p&gt;React是由Facebook所发起的一个用于构建UI的Js库，创始初衷在于提高Js性能。在这篇文章中，我将使用图文的方式来呈现Diff算法和渲染是如何在React中工作的，并基于此原理，读者可以根据实际情况优化你的应用。&lt;/p&gt;
+
+&lt;h3&gt;Diff Algorithm&lt;/h3&gt;
+&lt;p&gt;首先，在正式开始了解React的实现细节之前，让我们从大体上来看下它是如何工作的：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/workcode.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;在任何时候，你都能通过代码来描述你想要的UI效果。但是请记住，如果你使用了React库来描述你的UI，那么你并不是真正得到了真实页面上的DOM，得到的只是保存在内存中的一些轻量的Js对象，我们把这些对象称之为虚拟DOM。&lt;/p&gt;
+&lt;p&gt;React之所以能够大大提高网站性能，是因为React仅仅执行前一页面渲染成后一页面时所需要执行的最少差异动作，省去很多DOM属性值中间变换的渲染过程。&lt;/p&gt;
+
+&lt;h3&gt;逐层比较(Level By Level)&lt;/h3&gt;
+&lt;p&gt;在一般情况下，计算任意两棵二叉树之间的最少差异是一个O(n^3)的问题，你可以想象，在React实现中采用这种算法是不可取的，因此React设计了一种时间性能接近O(n)的启发式算法。&lt;/p&gt;
+&lt;p&gt;算法原理是&lt;font color=&quot;orange&quot;&gt;React对任意两棵二叉树进行逐层比较，以此来确定这两棵二叉树之间的最少差异数。利用该方法大大降低了比较复杂度，按照通常来理解，这种比较方法是缺乏准确性的，但是在实际应用中观察发现：在DOM树中移动上下级节点的情况是非常少见的，通常只是在同一层的兄弟节点之间移动，&lt;/font&gt;如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/level.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;列表(List)&lt;/h3&gt;
+&lt;p&gt;假设我们现在有一个组件，在一次迭代循环中，渲染出五个组件，接下去在该组件列表中插入一个新的组件，在信息如此匮乏的情况下，实现两个组件列表之间的映射是一件非常困难的事情。&lt;/p&gt;
+&lt;p&gt;在默认情况下，React会把前一个列表中的第一个组件与后一个列表中的第一个组件进行配对，以此类推，当然，你可以为每个组件提供一个Key属性来解决映射问题。在实际应用中，我们能够很容易的在孩子节点中找出唯一的Key，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/list.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;组件(Components)&lt;/h3&gt;
+&lt;p&gt;一个React应用通常是由许多用户自定义的组件组成，这些组件最终转化成一棵主要由div(s)组成的DOM树。这一辅助信息被diff算法所很好的利用，因为React通常只比对那些具有相同类的组件。
+举例，假设现在Header被一个ExampleBlock所代替，React将会简单粗暴的把Header标签移除，然后创建ExampleBlock，而不会浪费时间去比对这两个毫无相似之处的组件，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/companet.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;事件代理(Event Delegation)&lt;/h3&gt;
+&lt;p&gt;为DOM节点设置事件监听器是一件非常耗时和消耗内存的痛苦事。不过，React实现了一项更为流行的技术，叫做&quot;事件代理”，更进一步的是，React还重新实现了一套遵循W3C标准的事件系统，这意味着IE8中原有的事件处理的Bug已成往事，事件名称在各个浏览器之间得以保持一致。&lt;/p&gt;
+&lt;p&gt;让我来解释一下这是如何实现的：单事件监听器与文档根节点进行绑定，当触发某一事件时，浏览器给了我们想要的DOM节点。因此，React为了在DOM层级间传播事件，并没有在虚拟DOM层级间迭代循环。&lt;/p&gt;
+&lt;p&gt;取而代之的是我们巧妙地利用了每个React组件都有一个编码层级的唯一标示符ID这样一个事实。通过简单的字符串操作我们能很容易的获取到所有父节点的ID。同时把事件监听器放在一个Hashmap中，我们发现这样做的性能远高于把事件监听器与虚拟DOM节点进行绑定。下面的代码展示了事件是如何在虚拟DOM间进行分发的：&lt;/p&gt;
+&lt;pre&gt;
+// dispatchEvent(&#39;click&#39;, &#39;a.b.c&#39;, event) 
+clickCaptureListeners[&#39;a&#39;](event); 
+clickCaptureListeners[&#39;a.b&#39;](event); 
+clickCaptureListeners[&#39;a.b.c&#39;](event); 
+clickBubbleListeners[&#39;a.b.c&#39;](event); 
+clickBubbleListeners[&#39;a.b&#39;](event); 
+clickBubbleListeners[&#39;a&#39;](event);
+&lt;/pre&gt;
+&lt;p&gt;浏览器为每个事件和每个监听器都创建一个新的事件对象，这样看起来很好，因为我们能追踪到每个事件对象甚至修改它，然而这也意味着需要许多次的内存分配操作。而React会在应用启动时在内存中分配一个对象池，无论何时需要事件对象，都可以从这个对象池中获取一个可用的事件对象进行复用，这一举措大大降低了垃圾回收的复杂度。&lt;/p&gt;
+
+&lt;h3&gt;渲染(Rendering)&lt;/h3&gt;
+&lt;h3&gt;批处理(Batching)&lt;/h3&gt;
+&lt;p&gt;无论何时在组件上触发setState方法，React都会把这个组件标记为dirty，等到结束事件循环时，React会对所有标记为dirty的组件进行批处理，重新渲染它们。
+该批处理意味着在一个事件循环期间，无论某个DOM元素的属性值被更新过几次，最终在循环结束之后，该属性值只会被渲染一次，这对于构建一款高性能的应用至关重要，而在原生的JS中要实现这个功能却是一项非常困难的工作，而在React应用中，该功能与生俱来，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/batching.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;子树渲染(Sub-tree Rendering)&lt;/h3&gt;
+&lt;p&gt;当触发某个组件的setState时，该组件将会为其孩子节点重新构建虚拟DOM。如果你不幸调用了根元素的setState方法，那么整个React应用都将重新渲染，所有组件的render方法都将会被调用，即使这些节点根本就没有发生改变，这听起来很吓人，然而在实际应用中，并不如此，因为我们仅仅只操作了保存在内存中的虚拟DOM，而并没有碰真实的DOM。&lt;/p&gt;
+&lt;p&gt;首先，我们正在讨论的是展示用户界面。因为屏幕大小是有限制的，而你通常需要一次性的有顺序的展示上百甚至上千个元素。&lt;/p&gt;
+&lt;p&gt;另一个关键点是当你在写React代码时，你并不会常常调用根节点的setState方法。你只对那些受到事件触发的组件进行setState的调用，这意味setState方法的调用常常局限在与用户交互的组件上，很少会调用根节点的setState方法。&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/sub-tree.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;选择性的子树渲染(Selective Sub-tree Rendering)&lt;/h3&gt;
+&lt;p&gt;最后，你也可以通过在组件上实现下面的方法来防止其子树进行渲染。&lt;/p&gt;
+&lt;pre&gt;
+boolean shouldComponentUpdate(object nextProps, object nextState)
+&lt;/pre&gt;
+&lt;p&gt;基于组件的前后状态，你可以告诉React该组件并没有发生变化，所以无需重新渲染。如果你能够正确使用这项功能，那么这对你应用的性能是一个极大的提升。
+为了能够使用该功能，你必须能够比较JS对象，但是这会带来很多问题，比如我们应该进行何种程度的比较，深还是浅，如果进行深层次的比较，那我们也许应该使用不可变的数据结构或者进行深度拷贝。&lt;/p&gt;
+&lt;p&gt;并且你还要去考量，如果使用此项了功能，那么我们要确保比较JS对象所带来的计算时间要少于未使用此项功能而需要进行渲染的时间。&lt;/p&gt;
+
+&lt;h3&gt;Reference&lt;/h3&gt;
+&lt;p&gt;1、&lt;a href=&quot;http://calendar.perfplanet.com/2013/diff/&quot;&gt;http://calendar.perfplanet.com/2013/diff/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2、&lt;a href=&quot;http://blog.vjeux.com/&quot;&gt;http://blog.vjeux.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 19 Oct 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/10/19/react-js-arith.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/10/19/react-js-arith.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Piwik实践入门介绍</title>
+        <description>&lt;h3&gt;Background&lt;/h3&gt;
+&lt;p&gt;最近团队内部想利用piwik作为网站流量分析工具，刚好借此机会接触之，用过之后才发现，piwik强大又精细，强大之处表现在其功能性完全可以媲美主流的商用流量分析工具，如Google Analystics，百度流量统计等；精细之处表现在给用户很强的惊喜感，体验到很多意想不到的细节，用户接触之后自有体会。可以在线体验：&lt;a href=&quot;http://demo.piwik.org/index.php?module=CoreHome&amp;amp;action=index&amp;amp;idSite=7&amp;amp;period=day&amp;amp;date=yesterday#/module=Dashboard&amp;amp;action=embeddedIndex&amp;amp;idSite=7&amp;amp;period=day&amp;amp;date=yesterday&amp;amp;idDashboard=1&quot;&gt;ONLINE DEMO&lt;/a&gt;，写这篇文章的目的在于总结这几天的学习心得，算是一个回顾，也把在学习研究过程中遇到的困惑进行记录。&lt;/p&gt;
+
+&lt;h3&gt;Install&lt;/h3&gt;
+
+&lt;p&gt;安装分『安装需要满足的条件』和『安装过程』，同时官网还提供了安装视频，这一切尽在：&lt;a href=&quot;http://piwik.org/faq/#installation&quot;&gt;Installation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;New to piwik&lt;/h3&gt;
+
+&lt;p&gt;官网上该板块的主要目的是带新用户进入piwik的世界，了解piwik的工作机制甚至会涉及到与同类型的流量统计工具的横向比较，是新用户了解piwik的最好实践：&lt;a href=&quot;http://piwik.org/faq/new-to-piwik&quot;&gt;New to Piwik&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;How to&lt;/h3&gt;
+
+&lt;p&gt;该板块主要介绍如何玩转piwik，包括如何定制个性化变量，如何提高piwik运行的性能等等一系列让你更深入玩转piwik的相关建议和最佳实践：&lt;a href=&quot;http://piwik.org/faq/how-to&quot;&gt;How to&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Troubleshooting&lt;/h3&gt;
+
+&lt;p&gt;不管你是新用户还是历史悠久的老用户，这里一定是会来逛逛的，可以说该板块是问题集，遇到问题是不可避免的，不妨来这里看看，或许前人已经给出了很好的解答：&lt;a href=&quot;http://piwik.org/faq/troubleshooting/&quot;&gt;Troubleshooting&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;一些思考的问题（Q&amp;amp;A）&lt;/h3&gt;
+&lt;p&gt;
+1、访问次数，访客数（独立），浏览次数如何确定？
+1）浏览次数基于追踪的js代码有没有被加载，加载则+1，建议把追踪代码放在公共页面；
+2）访问次数表示访问被监测网站的用户数（用户不去重）；基于first party uuid和ip，session过期之后，重新生成uuid，访问次数+1；
+3）访客数指独立访客数，在访问次数的基础上去掉重复的用户；基于ip地址的启发式算法；
+&lt;/p&gt;
+&lt;p&gt;
+2、PIWIK页面打开速度很慢？
+官网提到的可能原因是：在默认情况下，piwik实时处理用户发出的请求（页面点击操作）生成报表进行展示，所以后台计算以及页面渲染展示的时间会比较长。
+解决方案是：在crontab中设置定时任务，定时进行报表的归档。理论上可以提高访问速度，设置定时任务。
+&lt;/p&gt;
+&lt;p&gt;
+3、访客数如果想汇总体现，如何在页面提现？
+开启相关标志位即可：
+&lt;/p&gt;
+
+&lt;pre&gt;
+enable_processing_unique_visitors_day = 1
+enable_processing_unique_visitors_week = 1
+enable_processing_unique_visitors_month = 1
+enable_processing_unique_visitors_year = 0
+enable_processing_unique_visitors_range = 0
+&lt;/pre&gt;
+
+&lt;p&gt;
+在默认情况下，出于性能的考虑，piwik关闭了按年和按指定的时间段进行访客数统计的功能，因为按年和按指定时间段进行访客数统计时，需要实时去扫描piwik的log，所以耗时很长，对高流量的网站来说，可能需要长达几分钟的处理时间。
+&lt;/p&gt;
+
+&lt;h3&gt;Reference&lt;/h3&gt;
+&lt;p&gt;http://piwik.org/&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Oct 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/10/18/piwik-intro.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/10/18/piwik-intro.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>中美日韩四国Github开发者比较</title>
+        <description>&lt;h3&gt;Background&lt;/h3&gt;
+&lt;p&gt;越来越多的开发者开始使用Github工具，在这之前谁都没法预估一个代码托管网站会收到追捧，受由InfoQ推出的2015年&lt;a href=&quot;http://www.infoq.com/cn/articles/github-chinese-developers-annual-analysis-report&quot;&gt;GitHub中国开发者年度分析报告&lt;/a&gt;的启发，想做一份关于中美日韩（为什么选择这四个国家，理由是这几个国家跟中国的关系最微妙，呵呵，瞎扯，其实我是随便选了这四个国家）四国的开发者比较文章。&lt;/p&gt;
+
+&lt;h3&gt;四国开发者数量比较&lt;/h3&gt;
+&lt;p&gt;通过调用Github API来获取每个国家的开发者数量，数据在一定程度上可能会少算导致不够准确，因为API中根据`location`这个属性去定位开发者所属的国家，而`location`这个参数值是可选的，如果开发者未填写此项，那么这部分用户将不会被统计在内。具体发起的HTTP GET请求如下：&lt;/p&gt;
+&lt;pre&gt;https://api.github.com/search/users?q=location:china&lt;/pre&gt;
+&lt;p&gt;分别获取了这四个国家的开发者数量，虽然数据在某种程度上并不能保证准确，但不影响其参考意义，四国开发者数量对比图如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/cukj.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;从上图可以得知，国内开发者数量已经超越美国，处在排头兵的位置，Github在国内开发者社区中的受欢迎程度可见一斑。&lt;/p&gt;
+
+&lt;h3&gt;四国开发者使用语言分布情况&lt;/h3&gt;
+&lt;p&gt;通过有针对性的选择当前比较主流的开发语言：Javascript,Java,Php,CSS,Swift,Python,Ruby,Perl,Shell,C，了解四国开发者的语言使用情况。&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/language-china.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
+&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/language-usa.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
+&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/language-japan.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
+&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/language-korea.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;以上四图分别展示了中美日韩四国开发者的语言使用情况（备注：开发语言所对应的扇区面积越大，表示对应的开发者数量越多），我们似乎能够比较确信的获知以下几点信息：&lt;/p&gt;
+
+&lt;p&gt;纵观统计图可以发现，前台语言Javascript稳固开发语言第一，Js和Java开发者数量占据所有开发者数量的50%以上，尤其是中韩，两者呈现着势均力敌的效果，而美日两国虽然Js和Java开发者占比很大，但Js明显比Java更受开发者喜爱。&lt;/p&gt;
+&lt;p&gt;排在Js和Java语言之后的Python，PHP和Ruby不相上下，PHP一直保留着大块江山，目前已推出PHP7；Python和Ruby作为后起之秀，具备动态快速开发的优势，越来越成为开发者的心头之好。&lt;/p&gt;
+&lt;p&gt;样式语言CSS的出现有点出乎意料之外，在老旧的思维习惯里，似乎有点轻视它；但细细想来，在如今把用户体验当尚方宝剑的产品设计里面，样式不重要才见的奇怪呢，不知从哪年起，UX方面的人才突然变得非常受欢迎，同时轻框架，重设计的提倡也带来用户体验的变革，这对用户来说必然是一件好事，同时也傲娇到再也不需要去迎合老旧，土鳖的设计习惯，因为当下应用产品正在经历着从匮乏到丰富到五彩缤纷到争雄逐鹿到你死我活的变革，真是虐死一堆产品汪的节奏。好了，有点跑题，只是想说UX被越来越重视着。&lt;/p&gt;
+&lt;h3&gt;Github中国开发者区域分布图&lt;/h3&gt;
+&lt;p&gt;这似乎是一个已知的事实，用下面的这幅图说话吧。&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;img src=&quot;/assets/images/2015/10/china-fenbu.png&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;没有歧视其他省份开发者的意思，只是有针对性的选择了这几个我认为开发者相对集中的区域（见着色区域，颜色越深，代表开发者数量越多），这幅图不过是在确认一个事实：北上广深依然有绝对优势的开发者，这些一线城市凭借其综合因素仍然吸引着大批开发者前往，但不可否认的是杭州作为一座时尚美丽干净的城市，尤其是近几年互联网的火热让杭州有赶超一线城市开发者的趋势。&lt;/p&gt;
+
+&lt;h3&gt;Ending&lt;/h3&gt;
+&lt;p&gt;这只是作为我业余时间产生的一个衍生品，数据来自官方（All Data From Github），但不代表任何人，任何组织，我只是觉得好玩而已，并且这篇文章也只是从量上进行一个横向比较，没多少有价值的东西，业余有精力再多挖掘一点有意思的东西分享给大家，就这样。&lt;/p&gt;
+
+&lt;h3&gt;Reference&lt;/h3&gt;
+&lt;pre&gt;
+1、http://ecomfe.github.io/echarts/index-en.html
+2、https://developer.github.com/v3/search/
+&lt;/pre&gt;
+</description>
+        <pubDate>Thu, 15 Oct 2015 00:00:00 +0800</pubDate>
+        <link>http://pandaqr.github.io/2015/10/15/github-developers.html</link>
+        <guid isPermaLink="true">http://pandaqr.github.io/2015/10/15/github-developers.html</guid>
         
         
       </item>
@@ -1048,321 +1357,6 @@
         <link>http://pandaqr.github.io/2015/10/03/%E8%AE%BE%E8%AE%A1%E5%BF%83%E7%90%86%E5%AD%A6-%E7%AC%94%E8%AE%B0.html</link>
         <guid isPermaLink="true">http://pandaqr.github.io/2015/10/03/%E8%AE%BE%E8%AE%A1%E5%BF%83%E7%90%86%E5%AD%A6-%E7%AC%94%E8%AE%B0.html</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>论黄金周的黄金比例</title>
-        <description>&lt;p&gt;画图是一件自由意志的事，而往往有时候自由意志的事情最后会遇到一些巧合。 
-而有时候当自由意志遇到规定，一切都变得有条理起来。 
-就好像我当时画一堆icons的时候，在规定的60*60px的尺寸里画，若是没这舒服，我可以想画多大画多大。 
-而当画UI没有机型的束缚，没有尺寸的规定，或许我真的可以搞成艺术家。 
-直到我看到这张图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;img/Golden/屏幕快照 2015-10-01 下午1.20.46.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;好有逼格！！突然让我想到了印象中以前好像看到过得工程师图纸。造房子？ 
-而这些辅助线是怎么一会儿事儿。 如何才能变得有逼格，那这就要在黄金周的时候研究黄金比例啦~ 
-##黄金比例 Golden Ratio&lt;br /&gt;
-黄金比例约等于：1.618…
-这个神奇的数字默默的参与在各种图案，建筑中，因此搞设计怎么能放过这个黄金比咧~
-&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.04.23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;闹，这个呢就是黄金比得代表字符了(phi)
-下图可以很好的表现出其特征&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.05.38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;画出黄金比：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.11.42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;根据上图我们可以推出黄金比的算式：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.12.26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;黄金比同样也等于：  2 × sin(54°)&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;五角星的黄金比&lt;/h3&gt;
-&lt;p&gt;在五角星中也可以看到黄金比的完美应用：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.15.42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;a/b=b/c=c/d=1.618…&lt;/strong&gt;
-那我们顺便来说一下这个五角星，通常说到五角星，我们一般指这种等边的五角星，也就是规则的，仔细观察，我们可以发现五角星的中间是一个五边形，而五角星的五个端点连接起来也可以变成一个五边形。 
-于是这又给我提供了两个画五角星的方式：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;画一个等边五边形，将五条边延展开交会。&lt;/li&gt;
-  &lt;li&gt;画一个等边五角星，将五个点全部用直线连接。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.29.15.png&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;~/屏幕快照 2015-10-01 下午1.29.20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;fibonacci-sequence&quot;&gt;斐波那契数列 Fibonacci Sequence&lt;/h3&gt;
-&lt;p&gt;再来看著名的斐波那契数列。
-0,1,1,2,3,5,8,13,21,34,…..
-后一个数字等于前两个数字相加之和。
-若我们将前后两个数字做除法，会得到得数字同1.618非常相近：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.41.39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再若我们用这些珠子作为正方形的边长得到下面的图形：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午1.43.40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们发现这些正方形完美的整合在了一起，组成了一个长方形
-而当中这个斐波那契螺旋线，也称“黄金螺旋”。&lt;/p&gt;
-
-&lt;h3 id=&quot;golden-angle&quot;&gt;黄金角 Golden Angle&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/Golden/屏幕快照 2015-10-01 下午2.20.08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;因此137.5°就是黄金角
-&amp;gt; “黄金角度”生物学家发现植物种类繁多、叶子形态各异，但是叶子在茎上的排列却有着特殊的规律.我们从某种植物的顶端往下看，便会发现上下层相邻的两片叶子之间所构成的角约为137.50,如果每层叶子只画一片来表示，第一层和第二层的相邻两叶之间的角度约为137.50,以后二层到三层、三层到四层、四层到五层……两叶之间都成这个角度，这个角度对叶子的通风和采光最为有利.这叶子之间的137.50角与黄金数又有什么联系呢？我们知道，一周为3600，137.50： =137.50：222.50≈0.618.也就是说，各种植物叶子的生长规律中自然隐藏着黄金数。&lt;/p&gt;
-
-&lt;p&gt;所以有没有发现：其实斐波那契数列和黄金比例是一对好基友。可以通过画斐波那契数列来画黄金比的图案。&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;参考文章&lt;/strong&gt;
-&lt;a href=&quot;http://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html&quot;&gt;Nature, The Golden Ratio, and Fibonacci too …&lt;/a&gt;
-&lt;a href=&quot;http://www.mathsisfun.com/numbers/golden-ratio.html&quot;&gt;Golden Ratio&lt;/a&gt;
-&lt;a href=&quot;http://www.uisdc.com/%E9%BB%84%E9%87%91%E5%88%86%E5%89%B2%EF%BC%9A%E8%AE%BE%E8%AE%A1%E5%B8%88%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%88%A9%E5%99%A8&quot;&gt;黄金分割：设计师的设计利器&lt;/a&gt;
-&lt;a href=&quot;http://www.uisdc.com/logo-design-auxiliary-line#&quot;&gt;教你画高端的圈圈！标识设计中辅助参考线入门&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Maths is fun 真是一个有趣的网站啊~&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 02 Oct 2015 20:12:12 +0800</pubDate>
-        <link>http://pandaqr.github.io/jekyll/update/2015/10/02/%E8%AE%BA%E9%BB%84%E9%87%91%E5%91%A8%E7%9A%84-%E9%BB%84%E9%87%91%E6%AF%94%E4%BE%8B.html</link>
-        <guid isPermaLink="true">http://pandaqr.github.io/jekyll/update/2015/10/02/%E8%AE%BA%E9%BB%84%E9%87%91%E5%91%A8%E7%9A%84-%E9%BB%84%E9%87%91%E6%AF%94%E4%BE%8B.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>黑客与画家</title>
-        <description>&lt;p&gt;恩，我觉着情人节的午后就得晒着太阳在家里喝着柠檬水，敲着字，记录一些有的无的。 
-书名&lt;a href=&quot;http://book.douban.com/subject/6021440/&quot;&gt;《黑客与画家》&lt;/a&gt;
-此文仅记录文中让我觉有有趣的思想片段。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;黑客：&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;所谓黑客：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;（1）指精通计算机技术，善于从互联网中发现漏洞并提出改进措施的人。&lt;/p&gt;
-
-&lt;p&gt;（2）指通过互联网非法侵入他人计算机系统查看，更改，窃取保密数据或干扰计算机程序的人&lt;/p&gt;
-
-&lt;p&gt;–Kindle里中文字典对”黑客”的定义。&lt;/p&gt;
-
-&lt;p&gt;显然大部分人得以为黑客都是第二个意思。 那如果你也是这么以为的， 有空就看看这本书吧。有许多有趣的思想，我想不仅仅是程序员必读的书，可能不管你是干嘛的，有空都可以看看~
-黑客不是科学家，数学家，工程师，是 设计软件的。
-黑客与画家的共同之处： 创作者。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;创作者的学习途径&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;1）通过实践学习&lt;/p&gt;
-
-&lt;p&gt;2）通过范例&lt;/p&gt;
-
-&lt;p&gt;坚持一丝不苟，就能取得优秀的成果。因为看不见的细节累加起来，就变得可见了。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;共同合作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;学会换位思考&lt;/strong&gt;
-判断一个人是否具有“换位思考”的能力有一个好办法，那就是看他怎样向没有技术背景的人解释技术问题。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;书呆子：&lt;/h2&gt;
-
-&lt;p&gt;没有什么比一个共同的敌人更能使得人们团结起来了
-真实世界的关键并非在于它是由成年人组成的，而在于它的庞大规模使得你做的每件事都能产生真正意义上的效果。&lt;/p&gt;
-
-&lt;p&gt;以前的青少年也似乎更尊敬成年人，因为成年人都是看得见的专家，会传授他们所需要学习的技能。如今的大多数青少年，对他们的家长在遥远的办公室所从事的工作几乎一无所知。他们看不到学校作业与未来走上社会后从事的工作有何联系。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;不能说的话：&lt;/h2&gt;
-&lt;p&gt;凡是不认同社会之处，你连想都不敢想，马上就放弃自己的观点，那才会真正出问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;找出“不能说的话”&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;1）当你发现某些言论很可疑时，你可以这样想，那些话听上去真是大逆不道，但是有没有可能是真的？&lt;/p&gt;
-
-&lt;p&gt;2）有些想法，纯碎因为非常特别，而不能说出口。&lt;/p&gt;
-
-&lt;p&gt;关注极端言论（异端邪说）。
-关注标签： 比如，有一个标签叫做“性别歧视”。问自己哪些想法属于性别歧视，然后把闹钟跳出来的想法按照先后顺序列出来，再逐个追问，他们真的属于性别歧视吗？&lt;/p&gt;
-
-&lt;p&gt;3）时空差异&lt;/p&gt;
-
-&lt;p&gt;回顾过去，我们可以去找那些过去被认为理所当然，如今被认为不可思议的事情，这是用来找出我们自己正在犯下的错误的第三种方法。&lt;/p&gt;
-
-&lt;p&gt;将当代观念与不同时期的古代观念diff一下。&lt;/p&gt;
-
-&lt;p&gt;4）道貌岸然&lt;/p&gt;
-
-&lt;p&gt;寻找那些一本正经的卫道者，看看他们到底在捍卫着什么。&lt;/p&gt;
-
-&lt;p&gt;5）机制&lt;/p&gt;
-
-&lt;p&gt;观察流行的产生方式，试着预测他回禁止哪些话。
-观察禁忌是如何产生的。某种道德观念是怎么出现的，有时怎么被他们接受的？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;优秀的作品往往来自于其他人忽视的想法，而最被忽视的想法就是那些被禁止的思想观点&lt;/strong&gt;
-发现“不能说的话”下一步：
-挑选合适的场合再说，只打那些值得打的仗。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;永远质疑&lt;/strong&gt;
-如果你想要清晰的思考，就必须远离人群。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;打破常规&lt;/h2&gt;
-&lt;p&gt;只有深入了解当前的技术，黑客才能构想下一代技术。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;公民自由是国家富强的原因而不是结果。&lt;/strong&gt;
-公民自由不仅仅是社会制度的装饰品，或者一种很古老的传统。公民自由使得国家富强。
-人均国民生产总值与公民自由成正相关。
-随着对公民自由的限制不断上升，政府的流量会先增加后减小。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;创造财富&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;创业&lt;/strong&gt;
-从经济学观点看，你可以把创业想象成一个压缩过程，你的所有工作年份被压缩成了短短几年。 你不再是低强度地工作四十年，而是以极限强度工作四年。在高技术领域，这种压缩的回报尤其丰厚，共工作效率越高，额外报酬就越高。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;财富&lt;/strong&gt; 
-创造有价值的东西就是创造财富。 
-财富是最基本的东西（食品，服装，住房etc) 
-财富才是你的目标，金钱不是。 
-金钱是财富的一种简便的表达方式：金钱有点像流动的财富，两者往往可以互相转化。 
-金钱其实只是一种中介，让大家可以更方便获得自己想要的东西。大多数生意的目的是为了创造财富，做出人们真正需要的东西。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;大饼谬论&lt;/strong&gt;
-大多数情况下，世界上可供交换的财富不是恒定不变的量。人类历史上德财富i在不停的增长和会面。
-最可能明白财富能被创造出来的人就是那些善于制作东西的人，也就是手工艺人。
-公司就是许多人聚在一起创造财富的地方，能够制造更多人们需要的东西。 
-财富是被做出来的，而不是某个想象出来的大饼。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;工作&lt;/strong&gt;
-真正重要的是做出人们需要的东西，而不是加入某个公司。&lt;/p&gt;
-
-&lt;p&gt;1）可测量性和可放大性：&lt;/p&gt;
-
-&lt;p&gt;可测量性：你的职位产生的业绩，应该是可测量的。 
-可放大性：你做出的决定能够产生巨大的效应。&lt;/p&gt;
-
-&lt;p&gt;2）小团体=可测量性&lt;/p&gt;
-
-&lt;p&gt;团队越大，每个人得贡献就越接近于整体的平均值。&lt;/p&gt;
-
-&lt;p&gt;3）高科技=可放大性&lt;/p&gt;
-
-&lt;p&gt;技术就是某种手段，就是我们做事的方式
-如果你发现了一种做事的信访室，他的经济价值就取决于有多少人使用这种新方式。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果你又两个选择，就选较难得那个&lt;/strong&gt;
-缓慢工作的后果不仅是延迟了技术革新，而且很可能会扼杀技术革新。 
-只有在快速获得巨大利益的激励下，你才会去挑战那些困难的问题。否则你根本不愿意去碰它们。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;技术使得生产率扩大是一种健康的信号，如果这种扩大没有反映在收入上，只有三种可能的解释：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;1）技术革新停顿了&lt;/p&gt;
-
-&lt;p&gt;2）那些创造大部分财富的人停止工作了&lt;/p&gt;
-
-&lt;p&gt;3）创造财富的人没有获得报酬&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;设计&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;好的设计是简单的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当你被迫把东西做的简单时，你就被迫直接面对真正的问题&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是永不过时的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是解决主要问题的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是启发性的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计通常是有点趣味性的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是艰苦的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是看似容易的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是对称的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是模仿大自然的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是一种再设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是能够复制的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计常常是奇特的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计是成批出现的&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;好设计常常是大胆的设计&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;最后： 
-这本书后面小半部分概括起来就是–你学不学Lisp，学不学，学学学学不学Lisp,学了Lisp你就厉害了。
-我这个外行人就暂且不凑热闹了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;瞎扯&lt;/h2&gt;
-&lt;p&gt;写到这，发现其实这只是普通到不能再普通的读书笔记罢了。 没想到，写这么一个读书笔记（特别是这种摘录式的）比自己写一篇文章还要累人。&lt;/p&gt;
-
-&lt;p&gt;写之前，脑袋里模模糊糊的塞满了所有让我欣喜的思想。&lt;/p&gt;
-
-&lt;p&gt;比如，看完之后，我总在想，为毛老子没有在大学的时候看到这本书啊，只要第一章和第六七章就够了！！&lt;/p&gt;
-
-&lt;p&gt;第一章充分的解释了为什么现在的大学生毕业了还极度迷茫，甚至在工作了两三年后，还是对未来没有个方向。&lt;/p&gt;
-
-&lt;p&gt;现代的教育制度似乎隔绝了我们接触社会的机会，就像文中说的，以前孩子们可以直接看到成人们的工作， 知道成人们成天忙忙碌碌在做些什么，或是锄地，或是修钟表，似乎整个世界都是展开在他们面前的。&lt;/p&gt;
-
-&lt;p&gt;而现在的学校似乎就是成人们寄托孩子的地方，我们对外面的世界似乎无从认知。&lt;/p&gt;
-
-&lt;p&gt;又或者说还是我自己太不争气。 可能如果回到大学，我会对自己说一句，快滚去找实习，任何实习工作都可以！&lt;/p&gt;
-
-&lt;p&gt;做这种笔记的摘录有时候会觉着这句话有道理，快记下来，那句话也有道理，快写下来。 写的少了又怕断章取义。有时候又怕自己为了偷工减料，而只能一字一句的将原话照抄。结果就只差把整本书再写一遍了。&lt;/p&gt;
-
-&lt;p&gt;其实，书摘这玩意儿也是挺私人的，管别人有没有看得断章取义，只要自己明白就行。
-但不管怎样，书还是好的，有空多读书。&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 14 Feb 2015 23:28:12 +0800</pubDate>
-        <link>http://pandaqr.github.io/2015/02/14/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.html</link>
-        <guid isPermaLink="true">http://pandaqr.github.io/2015/02/14/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 05 Dec 2014 04:14:47 +0800</pubDate>
-        <link>http://pandaqr.github.io/jekyll/update/2014/12/05/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://pandaqr.github.io/jekyll/update/2014/12/05/welcome-to-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
         
       </item>
     

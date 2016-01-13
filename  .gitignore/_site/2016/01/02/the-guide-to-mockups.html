@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>The Guide to Mockups</title>
+  <meta name="description" content="最近在看Uxpin上的一系列电子书，犹如发现宝库一般，一堆一堆的。那就先从最基本的Mockup，Wireframe以及prototype开始吧">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width initial-scale=1">
@@ -22,7 +21,7 @@
   <link rel="stylesheet" href="/css/screen.css">
 
   
-  <link rel="canonical" href="http://pandaqr.github.io/jekyll/update/2014/12/05/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://pandaqr.github.io/2016/01/02/the-guide-to-mockups.html">
   <link rel="alternate" type="application/atom+xml" title="坚果" href="http://pandaqr.github.io/feed.xml" />
 
   <script type="text/javascript" src="/assets/javascripts/jquery-2.1.4.min.js"></script>
@@ -32,37 +31,76 @@
   <body class="">
 
     
-<div id="feature_image">
-  <div class="inner" style="background-image: url('/content/images//roon3.jpeg')">
-    <img src='/content/images/roon3.jpeg'>
-    </div>
-</div>
 
-
-<article role="main" class="image">
+<article role="main" class="">
     <header>
       <a href="/" id="home_link">«</a>
-      <div class="meta"><time datetime="2014-12-05"><a href="/jekyll/update/2014/12/05/welcome-to-jekyll.html">December 05, 2014</a></time>
+      <div class="meta"><time datetime="2016-01-02"><a href="/2016/01/02/the-guide-to-mockups.html">January 02, 2016</a></time>
         <span class="count" id="js-reading-time">&nbsp;</span>
       </div>
-      <h1>Welcome to Jekyll!</h1>
+      <h1>The Guide to Mockups</h1>
     </header>
 
     <div class="text" id="js-post-content">
-        <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+        <p>最近在看Uxpin上的一系列电子书，犹如发现宝库一般，一堆一堆的。
+那就先从最基本的Mockup，Wireframe以及prototype开始吧</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p><a href="http://studio.uxpin.com/ebooks/guide-to-mockups/"><strong>The Guide to Mockups</strong></a></p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>基本就是介绍了Mockup，wireframe ,prototype 之间的区别与概念。</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>Wireframe是Skeleton骨架，而Mockup就是Skin</p>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
+<p>因此这三者之间的进展顺序应该是 wireframe&gt;mockup&gt;prototype</p>
 
+<p>通常mockup 的方式可以在纸上直接进行，可能比较耗时，但可以以激起设计师的灵感。</p>
+
+<p>也可以在电脑上做Mockup,工具可以用PS和Sketch，但这就是高保真Mock up了。还有一种叫做中保真Mock ups.</p>
+
+<h2 id="section">高保真的好处</h2>
+
+<ul>
+  <li>接近最终成品</li>
+  <li>让客户提前看到完成品的样式</li>
+  <li>提前决定字体，颜色，幕布等，不用等到最后prototype再决定</li>
+  <li>如又要修改的会比较方便，而不是等到prototype出来了再去改什么代码，成本太高。</li>
+</ul>
+
+<h2 id="mockups">为何不支持Mockups</h2>
+<p>当然也有人反对Mockup，认为其设计的花里胡哨最终可能无法良好的转化为代码。因此提倡直接在代码上画。</p>
+
+<p>但问题是:</p>
+
+<ul>
+  <li>代码限制了想象力</li>
+  <li>无法实验多种效果</li>
+  <li>修改成本高</li>
+</ul>
+
+<h2 id="mockups-1">Mockups的作用</h2>
+
+<p>其实Mock up就是设计同程序之间的一个衔接，在设计的时候要注意的细节有：</p>
+
+<ul>
+  <li>命名，同程序员商量命名方式能直接在Xcode上直接使用</li>
+  <li>和程序员商量设计方案的可信性，不要变成飞机稿</li>
+  <li>给不同平台设计的时候一定要遵循其平台特征</li>
+</ul>
+
+<p>在做Mock up的时候也一定要添加Notes，其也能通过颜色的变化显示某种交互的 方式，比如按钮按下去就从白色变成了红色。</p>
+
+<p>及早的同客户沟通，打成共识，将设计的主导权掌握在自己的手上。</p>
+
+<h2 id="section-1">访问者浏览习惯</h2>
+
+<p>关于网页设计布局需要了解访问者的浏览习惯，我们可以回想一下自己浏览网站的习惯，通常我们是不会去认认真真的看文章的每一个字的，我们用的方式基本都是扫视。</p>
+
+<p>调查实验也发现人们有两种浏览网页的方式，</p>
+
+<ul>
+  <li><a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/">F-Pattern</a> (for text-heavy content)</li>
+  <li><a href="http://webdesign.tutsplus.com/articles/understanding-the-z-layout-in-web-design--webdesign-28">Z-Pattern</a> (for general content).</li>
+</ul>
 
     </div>
 
@@ -71,7 +109,7 @@
         <span aria-hidden="true" data-icon="S"></span>
         <strong>Share</strong>
       </a>
-      <a href="http://twitter.com/share?text=Welcome to Jekyll!&url=/jekyll/update/2014/12/05/welcome-to-jekyll.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+      <a href="http://twitter.com/share?text=The Guide to Mockups&url=/2016/01/02/the-guide-to-mockups.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
         <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
       </a>
     </menu>
@@ -137,7 +175,7 @@
                 </div>
 
                 <div id="pinit-btn">
-                    <a href="//pinterest.com/pin/create/button/?url=/jekyll/update/2014/12/05/welcome-to-jekyll.html&amp;description=Welcome to Jekyll!-坚果 " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                    <a href="//pinterest.com/pin/create/button/?url=/2016/01/02/the-guide-to-mockups.html&amp;description=The Guide to Mockups-坚果 " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
                     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
                 </div>
             </div>

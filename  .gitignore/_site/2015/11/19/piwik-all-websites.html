@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>自建PIWIK-ALL WEBSITES DASHBOARD页面</title>
+  <meta name="description" content="Piwik是一款开源流量监测工具，好用好看好配置，好处自然不用多说。但也有一些小问题，私以为Piwik的可配置参数项还不够多。">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width initial-scale=1">
@@ -22,7 +21,7 @@
   <link rel="stylesheet" href="/css/screen.css">
 
   
-  <link rel="canonical" href="http://pandaqr.github.io/jekyll/update/2014/12/05/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://pandaqr.github.io/2015/11/19/piwik-all-websites.html">
   <link rel="alternate" type="application/atom+xml" title="坚果" href="http://pandaqr.github.io/feed.xml" />
 
   <script type="text/javascript" src="/assets/javascripts/jquery-2.1.4.min.js"></script>
@@ -32,37 +31,32 @@
   <body class="">
 
     
-<div id="feature_image">
-  <div class="inner" style="background-image: url('/content/images//roon3.jpeg')">
-    <img src='/content/images/roon3.jpeg'>
-    </div>
-</div>
 
-
-<article role="main" class="image">
+<article role="main" class="">
     <header>
       <a href="/" id="home_link">«</a>
-      <div class="meta"><time datetime="2014-12-05"><a href="/jekyll/update/2014/12/05/welcome-to-jekyll.html">December 05, 2014</a></time>
+      <div class="meta"><time datetime="2015-11-19"><a href="/2015/11/19/piwik-all-websites.html">November 19, 2015</a></time>
         <span class="count" id="js-reading-time">&nbsp;</span>
       </div>
-      <h1>Welcome to Jekyll!</h1>
+      <h1>自建PIWIK-ALL WEBSITES DASHBOARD页面</h1>
     </header>
 
     <div class="text" id="js-post-content">
-        <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+        <p>Piwik是一款开源流量监测工具，好用好看好配置，好处自然不用多说。但也有一些小问题，私以为Piwik的可配置参数项还不够多。</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>前段时间一直在纠结如何在「所有网站」这个页面上加上「访客数」这个指标，一通翻找Piwik源码，发现水有点深，另外考虑到以后的升级，所以在想如果我把它的源码给改了，那以后方便的一键升级是不是玩不转了，或者说升级之后又需要重新再修改一遍，经过重重考虑，决定还是绕道，既然Piwik这么强大，提供的API如此丰富，何不如再写一个自己的「所有网站」页面，展示自己认为比较重要的检测指标，这种灵活性是不是爆棚，所有就自己写了一个「所有网站」的Dashboard页面。</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<h3>Installation</h3>
+<p>项目源码下载到本地之后，如果需要跑起来，还需要修改这么几个地方：</p>
+<p>1、~/js/piwik-tongji.js中的<code>http://www.yourpiwikserver.com</code>替换成你自己Piwik的服务器地址，token_auth请替换成你自己Piwik的授权码；</p>
+<p>2、如果想要在本地进行测试，并且你的Piwik并没有安装在本地，那么还涉及到一个跨域的问题，可以在Chrome的浏览器里面装一个插件<code>Allow-Control-Allow-Origin: *</code></p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<h3>Need to be done</h3>
+<p>1、还是有很多值得优化的地方，比如页面布局</p>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
-
+<h3>At Last</h3>
+<p>最后上一张效果图(好像有点以假乱真)：</p>
+<p><span><img src="/assets/images/2015/11/piwik.png" alt="DASHBOARD页面" /></span></p>
 
     </div>
 
@@ -71,7 +65,7 @@
         <span aria-hidden="true" data-icon="S"></span>
         <strong>Share</strong>
       </a>
-      <a href="http://twitter.com/share?text=Welcome to Jekyll!&url=/jekyll/update/2014/12/05/welcome-to-jekyll.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+      <a href="http://twitter.com/share?text=自建PIWIK-ALL WEBSITES DASHBOARD页面&url=/2015/11/19/piwik-all-websites.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
         <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
       </a>
     </menu>
@@ -137,7 +131,7 @@
                 </div>
 
                 <div id="pinit-btn">
-                    <a href="//pinterest.com/pin/create/button/?url=/jekyll/update/2014/12/05/welcome-to-jekyll.html&amp;description=Welcome to Jekyll!-坚果 " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                    <a href="//pinterest.com/pin/create/button/?url=/2015/11/19/piwik-all-websites.html&amp;description=自建PIWIK-ALL WEBSITES DASHBOARD页面-坚果 " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
                     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
                 </div>
             </div>
