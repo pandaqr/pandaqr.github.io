@@ -1,11 +1,12 @@
 # Site settings
 title: "坚果"
 logo: logo.png # image from https://www.flickr.com/photos/lwr/5496279831/in/set-72157594159055823
-email: ellenlee1006@gmail.com
+
 description: > # this means to ignore newlines until "baseurl:"
   Roon was an excellent service, with a beautiful understated design. Roon
   was eventually acquired by Ghost, who awesomely chose to open source the theme.
   <br/>This is my Jekyll port of the Roon theme
+  
 url: "http://pandaqr.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 
