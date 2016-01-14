@@ -6,8 +6,13 @@
 </description>
     <link>http://pandaqr.github.io/</link>
     <atom:link href="http://pandaqr.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <pubDate>Wed, 13 Jan 2016 22:18:21 +0800</pubDate>
     <lastBuildDate>Wed, 13 Jan 2016 22:18:21 +0800</lastBuildDate>
+=======
+    <pubDate>Thu, 14 Jan 2016 23:13:34 +0800</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 23:13:34 +0800</lastBuildDate>
+>>>>>>> gh-pages
     <generator>Jekyll v3.0.1</generator>
     
       <item>

@@ -1,0 +1,53 @@
+---
+date: 2015-12-29 20:31
+status: public
+title: Flinto实验
+---
+
+如果要在Midum上搜索Flinto恐怕相关的文章没有Pixate多，知道Flinto是之前看MengTong的Sketch+Code里面挖出来的，可惜当时苦于需要翻墙也没有深究。 
+先来看看现在做Prototype的工具真的是多的不要不要的： 
+![](http://i4.tietuku.com/79e20326e94364d7.png)
+除了最后三条是关于prototype的相关文章之外，前面的工具就有六个，还不算Invision, Proto.io,  UXPin,这些原型工具各有各得特色，我并没有一一的去试过，Invision算是我第一个尝试的，但网页版的并非十分顺手，就放弃了。
+最近因为一直惦记着想要给自己的公司网站做一个模拟的App redesign就顺手操作了起来，Flinto算是一个不错的上手工具，界面之间的转化整合匹配的相对完整。 
+下图是Sketch上先画的wireframes,说实话，一开始我是直接mock up了，没有画什么线框图，毕竟黑白灰的线条并不是那么的吸引人，但是做到后面就慢慢发现，要修改起来直接上Hi-fi并非是明智之举，于是开始用线框图来勾勒。关于线框图，我日后再说。
+![](~/TradeWinds Wirefames.sketch.png)
+下面是将Sketch里面的文件导入Flinto里面之后开始做原型交互的设计界面，其实和Sketch挺像有一点亲切感。
+![](~/TradeWinds Wirefames.flinto.png)
+
+##Flinto准备工具： 
+* [Flinto Mac](https://www.flinto.com/mac)
+* Flinto Sketch plegin 
+* [Flinto ios app](https://itunes.apple.com/us/app/flinto/id972238373) 
+
+##教程：
+其实只要在官网上直接看他的[教学视频](https://www.flinto.com/mac/help)就够了，看完基本就都会了，但是一定要跟着动手做。
+当然你也可以看Flinto的[学习手册](https://www.flinto.com/mac/documentation/English.lproj/index.html),个人感觉有点枯燥，因为是全文字的，没有配图，但是如果看完视频再来看手册的化会比较容易理解，可以补上一些细节。 
+
+##使用感想
+Flinto绝对是零代码完美实现动效的好应用
+
+###Pros:
+
+1. 上手方便，学习成本不高，看一遍视频就妥妥的了。
+2. 同Sketch有完美整合，其实不大完美，在cons里面说。本来以为同Sketch整合，或者有导出功能应该是理所当然的，但是今天学习了一下Pixate，更本无法将Sketch中得元素自动导出，必须自己存完图片然后选择设置。这对于前期准备工作来说未免有点麻烦。 但虽然还没有深入去了解pixate，已经可以发现其单个界面元素动效的设计选择性之强大了。
+3. 容易操作界面与界面直接的切换。同样是同pixate比较，flinto似乎在这点上连接的很不错
+4. 可在桌面上直接预览
+
+###Cons
+1. 虽然能从Sketch里面导出，但是如若我在做prototype的时候发现有些地方需要修改的话，Flinto并不支持导出单独一个界面，必须人工的将界面元素一个个导入。这就很麻烦了，及时的调整对于Prototype这一步来说是相当重要的，这种限制，让很多问题不能即使修改，是很令人懊恼的。
+2. 无法将Sketch Artboard上的色彩导出。不知是否是一个bug。解决方法就是在Artboard上必须加一个长方形填充。
+3. 如果要给别人Share这个原型，那个人也必须需要有安装Flinto。。。
+4. 有限的单个界面上的原型交互设计。
+
+当然Flinto是一款收费软件，$99的价格也着实不大便宜，学生半价。
+个人觉得这位Medium上的同学写的感想很符合我的心境[Hey @flinto, we need to talk.](https://medium.com/@mpassin/hey-flinto-we-need-to-talk-c4cbeffbc45e#.h1e9q4a5o),希望Flinto能听到用户内心的呼唤。
+
+##碎碎念
+在这14天得试用期内，我的心里变化是：好厉害，要不要买呢？ 不就这样么，为毛不能导出修改好的单个界面，我需要再考虑考虑。于是我用14天断断续续的学完了Flinto，并且初步完成了一整个APP的交互界面。在手机上试用着感学还行。明天就不能用了啊。。。T.T
+
+但是不买的我心里也在默默等待着一款神奇---Silver.
+请各位看一下这篇文章感受一下：[Introducing Silver : Lightweight Mobile Prototyping in Sketch 3](https://medium.com/swlh/introducing-silver-lightweight-mobile-prototyping-in-sketch-3-cee46d267f1f#.osglriji3)
+终于，如果等到这款神器就再也不用担心随时修改随时做交互啦，就可以在sketch里面做交互啦。
+但是从作者的本意上，以及其介绍来看，这款交互插件的优势自然不用说，但是若牵扯到单个页面上的原型交互设计，可能就要结合Framer,一款需要写轻量代码的交互原型设计软件，可能这又要加上一点学习成本。
+在这之前，我还是希望能再尝试着用Keynote来学习制作一下原型。 
+以上。
