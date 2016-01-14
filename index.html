@@ -2,14 +2,6 @@
 layout: default
 body_class: "home-template user"
 ---
-<<<<<<< HEAD
-{% include header.html %}
-
-<div class="page-content">
-  <div class="wrapper">
-    <div class="home">
-      {% for post in site.posts %}
-=======
 
 {% include header.html %}
 
@@ -18,7 +10,6 @@ body_class: "home-template user"
   <div class="wrapper">
     <div class="home">
       {% for post in paginator.posts %}
->>>>>>> gh-pages
       <article class="{%comment%}post_class{%endcomment%}">
 
           {% if post.image %}
@@ -46,21 +37,13 @@ body_class: "home-template user"
       </article>
       {% endfor %}
 
-<<<<<<< HEAD
-      {% include pagination.html %}
-
-=======
 
       {% include pagination.html %}
 
 
->>>>>>> gh-pages
     </div>
   </div>
 </div>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> gh-pages
 {% include footer.html %}
