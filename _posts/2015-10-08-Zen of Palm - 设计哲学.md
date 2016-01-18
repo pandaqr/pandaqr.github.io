@@ -33,7 +33,8 @@ focus is the name of the game .
 
 **Riddle1** 
 ## How can a gorilla learn to fly? 
-![](~/屏幕快照 2015-10-08 下午9.22.57.png)
+![](/content/images/Zen of Palm - 设计哲学/屏幕快照 2015-10-08 下午9.22.57.png
+)
 
 ### The Essence of PCs
 **In PCs , more features are better**
@@ -52,15 +53,16 @@ handhelds take one features at a cost.
 
 If one of the requirements of the handheld device was to operate without a recharge or new batteries for several days at a time, then the handheld’s designers have lost focus. An unfocused and undisciplined loading of features makes the handheld bigger and heavier, leading to a spiral of doom:
 
-![](~/屏幕快照 2015-10-08 下午9.23.06.png)
+![](/content/images/Zen of Palm - 设计哲学/屏幕快照 2015-10-08 下午9.23.06.png)
 
 **Handhelds must be wearable** 
+
 more than just portable. 
 
 **Handhelds are about the user**
 There is a point of diminishing returns when adding features to a handheld. Adding too much degrades the user experience. 
 
-![](~/屏幕快照 2015-10-08 下午9.24.08.png)
+![](/content/images/Zen of Palm - 设计哲学/屏幕快照 2015-10-08 下午9.24.08.png)
 
 要知道PC同移动客户端最基本的区别是他们实质上的区别，在PC端，功能可以越多越好，但是在移动端，将就的是速度，用户能够第一时间获取信息，完成其任务。降低用户学习成本也是必不可少的。 
 
@@ -69,32 +71,45 @@ There is a point of diminishing returns when adding features to a handheld. Addi
 
 ### Inverse Usage Patterns 
 PC: Sit down , work for longer time 
+
 **Handhelds are used frequently but briefly.**
+
 Handhelds: frequent, short bursts. 
-![](~/屏幕快照 2015-10-08 下午9.24.36.png)
+
+![](/content/images/Zen of Palm - 设计哲学/屏幕快照 2015-10-08 下午9.24.36.png)
 
 可以看出用户使用移动设备及PC的习惯是截然相反的。 
 
 ### Different Design Approaches. 
+
 #### PC Approach 
+
 PC: many kinds of complex activities. 
 The more features you can give to customers , the better. 
+
 #### Handheld Approach 
 focus on clever solutions. 
 Hone in on that really matter. 
+
 **Power is the ability to get the job done**
+
 Utility and convenience equal power. 
 If a few well-chosen features enable you to get the job done, you’ve created an application that is actually more powerful than a feature-heavy one that obscures the user’s primary goals.
 
 On handhelds, the most straightforward designs are the most powerful.
+
 因此在设计PC和移动客户端时也是需要采取两种不同的策略，在PC端，添加越多功能越好，因为，PC是用来处理复杂事务的，而移动端要是添加了太多的功能，使得机器变得太过于称重，则将是失去一切功能。 因此在设计移动端的时候，需要思考那些才是真正值得保留的工能，懂得舍弃，是需要思考的问题。
 
 ## Solution To Riddle 1 
 
-![](~/屏幕快照 2015-10-08 下午9.25.14.png)
+![](/content/images/Zen of Palm - 设计哲学/屏幕快照 2015-10-08 下午9.25.14.png)
 
-If you want to soar like an eagle and design successful products for the Palm OS platform, you must be willing to set aside instincts, knowledge, and experience that you acquired designing PC products
+If you want to soar like an eagle and design successful products for the Palm OS platform, you must be willing to set aside instincts, knowledge, and experience that you acquired designing PC products.
+
 ****
+
 参考文章：
+
 [《Zen of Palm》读书笔记－1. 序](http://dingyu.me/post/92885253446/zen-of-palm-notes-1)
 [《Zen of Palm》读书笔记－2. 设计哲学](http://dingyu.me/post/92885296911/zen-of-palm-notes-2)
+

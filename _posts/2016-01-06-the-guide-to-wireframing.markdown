@@ -104,7 +104,8 @@ Guide 里还介绍了一些线框图的网站，可能比较多，有些都已�
 
 ### 可视化滚动条(Visibal Scrollbar) 
 这里的滚动条和我们平时网页上看文章出现的滚动条不大一样。 
-![](img/wireframe/屏幕快照 2016-01-09 下午3.07.47.png)
+![](/content/images/guide_wireframes/屏幕快照 2016-01-09 下午3.07.47.png
+)
 
 
 
@@ -112,14 +113,14 @@ Guide 里还介绍了一些线框图的网站，可能比较多，有些都已�
 
 ### 卡片
 Pinterest 引进了卡片这一概念，卡片的这一浏览方式，让人们更加沉浸的发现好内容，同时可以将其分类以及做一些交互。
-![](img/wireframe/1.pic.jpg)
+![](/content/images/guide_wireframes/1.pic.jpg)
 
 
 
 ### 地图背景
 这一个模式已经在App上得到了广泛的应用，也可以看到这带动了已照片或者媒体作为背景的模式。
 [开眼](http://www.wandoujia.com/eyepetizer/) 算是一个不错的例子
-![](img/wireframe/2.pic.jpg)
+![](/content/images/guide_wireframes/2.pic.jpg)
 
 
 ### 圆形用户头像缩略图（thumbnails in circles） 
@@ -134,14 +135,14 @@ Facebook和Instagram采用了这种用户缩略头像为圆形的方式，在Goo
 * 将区别不大的按钮自然转化，
 * 视觉上将元素之间完美的联系起来
 * 给到用户一定的视觉反馈，知道发生了什么
-![](img/wireframe/屏幕快照 2016-01-09 下午10.43.35.png)
+![](/content/images/guide_wireframes/屏幕快照 2016-01-09 下午10.43.35.png)
 
 
 这张截图是Pinterest的旧界面。
 
 ### 自由操控调动内容（manipulate content directly）
 Asana 是一个类GTD的时间管理应用， 你可以将安排好的条目用按压的方式自动的拖动仿制条目的位置。 
-![](img/wireframe/屏幕快照 2016-01-09 下午10.47.48.png)
+![](/content/images/guide_wireframes/屏幕快照 2016-01-09 下午10.47.48.png)
 
 
 对于有许多栏目需要操作貂整其位置的时候，这种交互方式是一个非常好的解决方式。
@@ -149,7 +150,7 @@ Asana 是一个类GTD的时间管理应用， 你可以将安排好的条目用�
 
 ### 左右滑动（swiping actions）
 这种交互我们见的已经相当多了，在iPhone自带的email 应用里就可以动作左右滑动删除或标注已阅。 
-![](img/wireframe/3.pic.jpg)
+![](/content/images/guide_wireframes/3.pic.jpg)
 
 
 ### 隐藏按钮（discover faster actions） 
@@ -157,14 +158,14 @@ Asana 是一个类GTD的时间管理应用， 你可以将安排好的条目用�
 
 ### 隐藏工具（“discoverable” tools）
 这个在Snapseed上有着完美的体现。 修图通常需要用到许多的工具，但是一一罗列出来可能是一件相当麻烦的事情，这时候通过左右或上下移动手指就能导出工具栏，用起来相当的方便。 
-![](img/wireframe/4.pic.jpg)
+![](/content/images/guide_wireframes/4.pic.jpg)
 
 
 
 ### 邀请朋友(invite others)
 邀请朋友通常就两种方式，通过邮件和通讯录，将通讯录以及邮件联系人列出来这大大方便了分享的速度。
 可以简单看一下Venmo的截图， 当然也可以去体验一下path的邀请方式，同样简单方便。 
-![](img/wireframe/屏幕快照 2016-01-09 下午11.15.06.png)
+![](/content/images/guide_wireframes/屏幕快照 2016-01-09 下午11.15.06.png)
 
 
 ##线框图设计原则

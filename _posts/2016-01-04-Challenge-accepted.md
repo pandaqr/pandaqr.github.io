@@ -10,7 +10,8 @@ title: 'Challenge accepted'
 文章主要提到了两点：
 
 这是一个叫做[NOON PACIFIC STUDIO](http://studio.noonpacific.com) 发起的UI设计每日挑战， 一旦订阅后，你就会收到一封邮件告诉你今天设计的内容， 比如今天我收到的是： Header navigation
-![](http://41.media.tumblr.com/8e3ef684dfc67894880daad3ecac961f/tumblr_inline_o0fj0jeIAm1t8oz2v_500.png)
+![](/content/images/屏幕快照 2016-01-04 下午8.26.00.png
+)
 
 这个Daily Ui Challeange 我也在50多天前订阅了，但是至今没有动手过。。。。
 
@@ -51,3 +52,4 @@ title: 'Challenge accepted'
 
 
 因此，飞机稿可以画，Redesign也需要做，特别是在没有什么正真的项目的时候。
+
