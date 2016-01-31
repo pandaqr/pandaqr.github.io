@@ -2,7 +2,6 @@
 layout: post
 title:  "The Ultimate Guide to Prototype"
 date:   2016-01-23 18:23
-image: /Prototype/guide to prototype.png
 ---
 
 我们知道线框图是为你将idea变成了落到纸上的实现，是一种蓝图，Mockups是带你了最终成品的一种感觉。那么原型图其实就是将隐藏在其后的用户体验给实现了。
