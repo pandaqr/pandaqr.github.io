@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Fundamentals of Shape and Color-笔记"
-date:   2016-02-12 20:10
+layout: "post"
 ---
+
+
 
 这两周，在Design+Code的指导下终于完成一个简单的小动效，各个界面也基本可以通过XCode提供的基本UI效果完成了，下图是单个log in 界面的GIF图，展示一下成就。
 
