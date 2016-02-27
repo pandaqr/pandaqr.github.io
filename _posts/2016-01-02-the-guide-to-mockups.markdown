@@ -23,7 +23,7 @@ Wireframe是Skeleton骨架，而Mockup就是Skin
 
 也可以在电脑上做Mockup,工具可以用PS和Sketch，但这就是高保真Mock up了。还有一种叫做中保真Mock ups.
 
-##高保真的好处
+## 高保真的好处
 
 *   接近最终成品
 *   让客户提前看到完成品的样式
