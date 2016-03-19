@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1380px" height="1136px" viewBox="0 0 1380 1136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch Beta 3.3 (11751) - http://www.bohemiancoding.com/sketch -->
+    <title>Side by Side</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="640" height="1136"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#F8F8F8" offset="0%"></stop>
+            <stop stop-color="#F9F9F9" offset="48.0847263%"></stop>
+            <stop stop-color="#F8F8F8" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0" y="0" width="57" height="42"></rect>
+        <rect id="path-6" x="0" y="0" width="640" height="1136"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Side-by-Side" sketch:type="MSArtboardGroup">
+            <g id="New" sketch:type="MSLayerGroup" transform="translate(740.000000, 0.000000)">
+                <mask id="mask-2" sketch:name="Rectangle 34" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Rectangle-34" stroke="#FBFBFB" stroke-width="2" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <g id="Navigation-/-Search-Bar-2" mask="url(#mask-2)">
+                    <rect id="Search-Background" fill="#FCFCFC" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="128"></rect>
+                    <rect id="Bottom-Border" fill-opacity="0.100000001" fill="#000000" sketch:type="MSShapeGroup" x="0" y="127" width="640" height="1"></rect>
+                    <rect id="Search-Field-Background" fill="#FFFFFF" sketch:type="MSShapeGroup" x="16" y="56" width="608" height="56" rx="10"></rect>
+                    <text id="Search" fill="#8E8E93" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="28" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                        <tspan x="295.28" y="93">Search</tspan>
+                    </text>
+                    <path d="M271.328732,88.7429453 C269.604861,90.1536347 267.40127,91 265,91 C259.477153,91 255,86.5228475 255,81 C255,75.4771525 259.477153,71 265,71 C270.522847,71 275,75.4771525 275,81 C275,83.4012702 274.153635,85.6048612 272.742945,87.3287318 L280.010408,94.5961941 L278.596194,96.0104076 L271.328732,88.7429453 Z M265,89 C269.418278,89 273,85.418278 273,81 C273,76.581722 269.418278,73 265,73 C260.581722,73 257,76.581722 257,81 C257,85.418278 260.581722,89 265,89 Z" id="Loupe" fill="#8E8E93" sketch:type="MSShapeGroup"></path>
+                </g>
+                <circle id="Marker---Search-3" fill="#FFEB00" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="20" cy="108" r="10"></circle>
+                <g id="Listing-4" mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 128.000000)">
+                        <rect id="Rectangle-15" fill-opacity="0.1" fill="#FFFFFF" fill-rule="evenodd" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="320"></rect>
+                        <text id="Sailboats-in-Spain" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="140.684" y="162" fill="#8E8E93">Narrowboats in Britain</tspan>
+                        </text>
+                        <text id="4-listings" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="280.55" y="187" fill="#000000">3 listings</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Listing-5" mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 448.000000)">
+                        <rect id="Rectangle-15" fill-opacity="0.1" fill="#FFFFFF" fill-rule="evenodd" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="320"></rect>
+                        <text id="Sailboats-in-Spain" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="155.624" y="162" fill="#8E8E93">Tumbleweed Homes</tspan>
+                        </text>
+                        <text id="4-listings" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="280.55" y="187" fill="#000000">8 listings</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Listing-6" mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 768.000000)">
+                        <rect id="Rectangle-15" fill-opacity="0.1" fill="#FFFFFF" fill-rule="evenodd" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="320"></rect>
+                        <text id="Sailboats-in-Spain" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="175.316" y="162" fill="#8E8E93">Sailboats in Spain</tspan>
+                        </text>
+                        <text id="4-listings" fill="none" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle">
+                            <tspan x="280.55" y="187" fill="#000000">4 listings</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Status-Bar-/-Black-2" mask="url(#mask-2)">
+                    <rect id="Background" fill-opacity="0" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="41"></rect>
+                    <g id="Charge" transform="translate(580.000000, 11.000000)" sketch:type="MSShapeGroup">
+                        <g id="Battery-Icon">
+                            <rect id="Battery" stroke="#000000" x="0" y="0" width="45" height="19" rx="3"></rect>
+                            <rect id="Charge" stroke="#000000" fill="#000000" x="2" y="2" width="41" height="15" rx="1"></rect>
+                            <path d="M49,9.46455558 C49,11.2277927 47.6961455,12.6864982 46,12.9291112 L46,6 C47.6961455,6.24261297 49,7.70131842 49,9.46455558 Z" id="+" fill="#000000"></path>
+                        </g>
+                    </g>
+                    <path d="M163.991503,14.0417534 C167.871048,14.0417534 171.406722,15.4709041 174.117706,17.8143562 L176,15.7362192 C172.789204,12.9489315 168.595777,11 163.991503,11 C159.394227,11 155.206797,12.9430137 152,15.7214247 L153.878296,17.8025205 C156.58728,15.4659726 160.116956,14.0417534 163.991503,14.0417534 L163.991503,14.0417534 Z M163.991503,20.0404384 C166.316631,20.0404384 168.440835,20.8847123 170.07922,22.2753973 L172.070474,20.0759452 C169.903286,18.2157808 167.084343,17.0006575 163.991503,17.0006575 C160.904661,17.0006575 158.087717,18.2128219 155.922529,20.0670685 L157.910783,22.2694795 C159.548169,20.8817534 161.669374,20.0404384 163.991503,20.0404384 L163.991503,20.0404384 Z M168.086967,24.4748493 C166.978383,23.5546301 165.550918,22.9174795 163.990504,22.9174795 C162.433088,22.9174795 161.007622,23.5536438 159.899038,24.4699178 L163.990504,29 L168.086967,24.4748493 L168.086967,24.4748493 Z" id="Wifi" fill="#0C0000" sketch:type="MSShapeGroup"></path>
+                    <g id="Signal" transform="translate(13.000000, 15.000000)" fill="#000000" sketch:type="MSShapeGroup">
+                        <circle id="Oval-1" cx="5.5" cy="5.5" r="5.5"></circle>
+                        <circle id="Oval-1-copy" cx="19.5" cy="5.5" r="5.5"></circle>
+                        <circle id="Oval-1-copy-2" cx="33.5" cy="5.5" r="5.5"></circle>
+                        <circle id="Oval-1-copy-3" cx="47.5" cy="5.5" r="5.5"></circle>
+                        <circle id="Oval-1-copy-4" cx="61.5" cy="5.5" r="5.5"></circle>
+                    </g>
+                    <text id="Apple" fill="#000000" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="23" font-weight="normal">
+                        <tspan x="87" y="29">Apple</tspan>
+                    </text>
+                    <text id="9:41-AM" fill="#000000" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="24" font-weight="420" sketch:alignment="middle" letter-spacing="1.19999981">
+                        <tspan x="270.440001" y="29">9:41 AM</tspan>
+                    </text>
+                </g>
+                <g id="Navigation-/-Tab-Bar-2" mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 1008.000000)">
+                        <rect id="Background" fill-opacity="0.65" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" x="0" y="30" width="640" height="98"></rect>
+                        <g id="Discover-+-Shape" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(21.000000, 0.000000)">
+                            <text id="Discover" fill="#0079FF" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                                <tspan x="0.729999952" y="120">Discover</tspan>
+                            </text>
+                            <path d="M16,63 L17.3433333,64.3433333 L21,60.6883333 L21,88 L61,88 L61,60.6883333 L64.6566667,64.345 L66,63 L41,38 L16,63 Z" id="Home---Active" fill="#0079FF" sketch:type="MSShapeGroup"></path>
+                            <circle id="Marker---Discover" fill="#00FF5D" sketch:type="MSShapeGroup" cx="41" cy="10" r="10"></circle>
+                        </g>
+                        <g id="Profile-+-contacts" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(561.000000, 0.000000)">
+                            <text id="Me" fill="#929292" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                                <tspan x="10.62" y="120">Me</tspan>
+                            </text>
+                            <path d="M0,66 C0,79.807 11.193,91 25,91 C38.807,91 50,79.807 50,66 C50,52.193 38.806,41 25,41 C11.193,41 0,52.193 0,66 Z M36.5414764,82.882492 C33.8189765,82.1791054 31.4871584,80.7099681 31.4871584,80.7099681 L30.5840902,77.352524 C30.5840902,77.2073482 30.4398857,75.0746965 30.4398857,75.0746965 C32.4618174,74.3948243 32.2511356,70.3881789 32.2511356,70.3881789 C33.535681,71.098722 34.368181,66.9100958 34.368181,66.9100958 C36.5414763,61.4802316 33.6154538,62.7736102 33.6154538,62.7736102 C34.3364765,59.477508 35.2238248,59.5721303 35.223825,55.523762 C35.223825,51.4753937 29.0943514,47.9329069 24.9999994,47.9329073 C20.9056475,47.9329079 15.1073582,51.5905551 15.1073584,55.523762 C15.1073584,59.4569688 16.2086363,62.7736095 16.2086363,62.7736095 C12.4726372,62.7736095 16.1452269,65.7129073 16.208636,67.4253674 C16.3027269,69.9526518 17.8449996,70.4515655 17.8449996,70.4515655 C17.9421587,74.6207668 18.9730678,75.168754 18.9730678,75.168754 C19.3576132,77.7870288 18.9730678,77.5610863 18.9730678,77.5610863 L18.3113632,80.6281789 C18.3113632,80.6281789 16.5757951,81.8805751 14.4403406,82.8160383 C13.118977,83.3957188 11.6871589,82.9632588 10.3412498,83.5 C5.53238629,79.1917572 2.5,72.94 2.5,65.9920128 C2.5,53.0263898 12.0297725,43.5 24.9999994,43.5 C37.9722718,43.5 47.4999989,53.0263898 47.4999989,65.9920128 C47.5020443,72.653738 44.7110217,78.6723962 40.2427263,82.9561022 C40.2427263,82.9561022 37.7574991,83.1963578 36.5414764,82.882492 Z" id="people" fill="#929292" sketch:type="MSShapeGroup"></path>
+                            <g id="Marker---Me-+-Marker---Settings" sketch:type="MSShapeGroup">
+                                <circle id="Marker---Me" fill="#E35050" cx="10" cy="10" r="10"></circle>
+                                <circle id="Marker---Settings" fill="#50E3D7" cx="40" cy="10" r="10"></circle>
+                            </g>
+                        </g>
+                        <g id="Wish-Lists-+-Star" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(146.000000, 0.000000)">
+                            <text id="Wish-Lists" fill="#929292" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                                <tspan x="0.74999994" y="120">Wish Lists</tspan>
+                            </text>
+                            <path d="M20,60 L41.3818182,60 L48.0631273,40 L54.6181818,60 L76,60 L58.6909091,72 L65.9882182,92 L48,80 L30.8609455,92 L37.3101091,71.973 L20,60 Z M26.6813091,62 L42.4,62 L48,47 L53.6,62 L69.5946182,62 L56.4,71.417 L61.4909091,86.417 L48.0631273,77.355 L34.6781091,86.417 L39.9390545,71.417 L26.6813091,62 Z" id="Star" fill="#929292" sketch:type="MSShapeGroup"></path>
+                            <circle id="Marker---Wish-Lists" fill="#DF00FF" sketch:type="MSShapeGroup" cx="48" cy="10" r="10"></circle>
+                        </g>
+                        <g id="Your-Trips" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(285.000000, 0.000000)">
+                            <text fill="#929292" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                                <tspan x="0.41999994" y="120">Your Trips</tspan>
+                            </text>
+                            <path d="M33,69 L33,67 L47,67 L47,47 L49,47 L49,67 L49,69 L47,69 L33,69 L33,69 Z M46,43 C33.32,43 23,53.32 23,66 C23,78.68 33.32,89 46,89 C58.68,89 69,78.68 69,66 C69,53.32 58.68,43 46,43 L46,43 Z M46,91 C32.2,91 21,79.8 21,66 C21,52.2 32.2,41 46,41 C59.8,41 71,52.2 71,66 C71,79.8 59.8,91 46,91 L46,91 Z" id="clock" fill="#979797" sketch:type="MSShapeGroup"></path>
+                            <circle id="Marker---Your-Trips" fill="#FF9300" sketch:type="MSShapeGroup" cx="46" cy="10" r="10"></circle>
+                        </g>
+                        <g id="Messages-+-Messages" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(420.000000, 0.000000)">
+                            <text id="Messages" fill="#929292" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="0.300000012">
+                                <tspan x="0.239999952" y="120">Messages</tspan>
+                            </text>
+                            <g id="Messages" transform="translate(19.000000, 47.000000)">
+                                <mask id="mask-5" sketch:name="Rectangle 15" fill="white">
+                                    <use xlink:href="#path-4"></use>
+                                </mask>
+                                <use id="Rectangle-15" stroke="#979797" stroke-width="2.28" sketch:type="MSShapeGroup" xlink:href="#path-4"></use>
+                                <path d="M72.96,-13.6216216 L-15.96,-13.6216216 L28.5,28.3783784 L72.96,-13.6216216 Z" id="Path" stroke="#979797" stroke-width="2.28" sketch:type="MSShapeGroup" mask="url(#mask-5)"></path>
+                            </g>
+                            <g id="Badge" transform="translate(61.000000, 36.000000)">
+                                <circle id="Oval-41" fill="#FF3B30" sketch:type="MSShapeGroup" cx="18" cy="18" r="18"></circle>
+                                <text id="3" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="26" font-weight="normal" fill="#FFFFFF">
+                                    <tspan x="11" y="27">3</tspan>
+                                </text>
+                            </g>
+                            <circle id="Marker---Inbox" fill="#007AFF" sketch:type="MSShapeGroup" cx="47" cy="10" r="10"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <mask id="mask-7" sketch:name="Current Mask" fill="white">
+                <use xlink:href="#path-6"></use>
+            </mask>
+            <use id="Current-Mask" stroke="#FBFBFB" stroke-width="2" sketch:type="MSShapeGroup" xlink:href="#path-6"></use>
+            <g id="Current" sketch:type="MSLayerGroup" mask="url(#mask-7)">
+                <g id="Navigation-/-Menubar">
+                    <g id="Menubar-Background" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup" fill-opacity="0.65">
+                        <rect id="Background" x="0" y="0" width="640" height="128"></rect>
+                    </g>
+                    <text id="Luis-Abreu" fill="#8E8E93" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="34" font-weight="420" sketch:alignment="middle">
+                        <tspan x="90.724" y="96">Luis Abreu</tspan>
+                    </text>
+                    <path d="M595.653137,60.7857462 C596.663869,60.7857462 597.797818,63.0197146 598.29247,65.9813747 C598.406757,66.6662083 598.906766,67.2224683 599.574635,67.4081859 C600.896087,67.7751567 602.213075,68.3224879 603.488991,69.0332149 C603.760424,69.1841104 604.059537,69.2591118 604.358649,69.2591118 C604.702405,69.2591118 605.045269,69.1600029 605.342595,68.9635708 C606.964946,67.8930159 609.176592,66.8126395 610.458758,66.8126395 C610.678405,66.8126395 610.856087,66.8492473 610.886444,66.8787121 L612.032001,68.0831979 C612.818622,68.8698191 611.667708,71.4886159 610.101609,73.5663315 C609.672137,74.1368774 609.623029,74.9074269 609.976607,75.526188 C610.722156,76.8333542 611.27038,78.143199 611.605207,79.4182218 C611.812354,80.2030572 612.530224,80.7119949 613.340953,80.7119949 L613.355238,80.7119949 C613.384703,80.711102 613.414168,80.7102091 613.444526,80.7084234 C615.233843,81.0218218 618.215147,82.0379114 618.215147,83.3459705 L618.215147,84.5754567 C618.215147,84.9361774 616.946374,86.2594153 612.862373,87.3246129 C612.249862,87.4853301 611.76771,87.9567671 611.595386,88.5665994 C611.2052,89.9389453 610.631976,91.2800407 609.888212,92.5532777 C609.434633,93.3300773 609.630172,94.3220593 610.342685,94.8702834 C610.417686,94.9283201 610.496259,94.978321 610.576617,95.0229647 C611.615029,96.512277 612.8213,98.9551778 611.973964,99.8016215 L610.74537,101.032001 C610.682869,101.094502 610.511438,101.132002 610.287327,101.132002 C609.206057,101.132002 607.253344,100.296273 605.310452,99.0025 C605.012232,98.8024965 604.66669,98.7024947 604.321149,98.7024947 C604.024715,98.7024947 603.727388,98.7757103 603.45774,98.9248201 C602.122895,99.6614404 599.497848,100.674851 599.471062,100.685566 C598.863015,100.919499 598.429972,101.468616 598.34247,102.11327 C598.107645,103.836515 597.046019,107.214254 595.65403,107.214254 L594.424543,107.214254 C593.915606,107.214254 592.551296,105.381185 591.642351,101.708798 C591.486098,101.082894 591.004839,100.589136 590.3834,100.418597 C588.858372,99.9980535 586.40565,98.9212486 586.379757,98.911427 C586.149396,98.8096395 585.904748,98.7596386 585.660101,98.7596386 C585.266344,98.7596386 584.875266,98.8908909 584.554724,99.143574 C583.876141,99.678405 581.580564,101.204325 579.980535,101.204325 C579.491241,101.204325 579.275166,101.050751 579.141235,100.917713 C579.101948,100.878426 579.059983,100.840033 579.017125,100.805211 L577.998357,99.9614457 C577.635851,99.4489366 578.321577,96.8890694 580.083216,94.2042001 C580.447508,93.6479401 580.472508,92.9345345 580.148396,92.3532742 C579.440347,91.0862873 578.919802,89.8532295 578.557296,88.5844569 C578.376042,87.9469455 577.85639,87.4630083 577.208164,87.3272916 C574.674191,86.7933535 571.785746,85.3290416 571.785746,84.5781353 L571.785746,83.3486491 C571.785746,82.1959499 574.535795,81.0736085 577.084055,80.6941374 C577.78496,80.5896712 578.358185,80.0816265 578.544795,79.3976857 C578.892123,78.1262344 579.403739,76.8931767 580.110895,75.6288684 C580.433222,75.0520724 580.375185,74.2886659 580.01625,73.7332988 C577.879605,70.4314541 577.634065,68.4108823 577.886748,68.0573046 L578.980518,67.1233593 C579.016232,67.0930017 579.051054,67.0608582 579.084091,67.0278219 C579.204629,66.9081769 579.401061,66.7706745 579.856426,66.7706745 C580.981446,66.7706745 582.820765,67.6126538 584.658297,68.9698209 C584.972589,69.2019679 585.34581,69.3189343 585.719031,69.3189343 C586.025286,69.3189343 586.331542,69.2403614 586.607439,69.0823229 C587.834247,68.377846 589.120877,67.8340863 590.431615,67.463544 C591.047697,67.2903266 591.524492,66.7992464 591.678959,66.1778067 C592.575403,62.5884569 593.921856,60.786639 594.42365,60.786639 L595.653137,60.786639 L595.653137,60.7857462 Z M594.947767,92.9479276 C599.826425,92.9479276 603.947928,88.8326756 603.947928,83.9620529 C603.947928,79.0700013 599.911248,75.0904659 594.947767,75.0904659 C590.063751,75.0904659 586.090466,79.0700013 586.090466,83.9620529 C586.090466,88.9174985 590.064644,92.9479276 594.947767,92.9479276 L594.947767,92.9479276 Z M595.653137,59 L594.42365,59 C591.713781,59 590.214647,64.6688512 589.945892,65.7438704 C588.445865,66.1670923 587.025304,66.781389 585.718138,67.5314023 C585.109198,67.0805014 582.223433,64.9831426 579.855533,64.9831426 C579.09302,64.9831426 578.383185,65.2010036 577.820675,65.7635136 L576.649226,66.7635315 C574.592046,68.800175 578.282291,74.3350953 578.551938,74.7565314 C577.821568,76.0636976 577.226022,77.446758 576.82155,78.9262487 C575.784032,79.0807157 570,80.1003768 570,83.3468633 L570,84.5763496 C570,87.4219361 576.206361,88.9398204 576.840301,89.0728584 C577.263523,90.553242 577.859962,91.9175521 578.589439,93.2229326 C578.224254,93.7800854 574.74562,99.2382185 576.763514,101.256112 L577.877819,102.17845 C578.463544,102.764174 579.198379,102.988286 579.979642,102.988286 C582.560046,102.988286 585.659208,100.544492 585.659208,100.544492 C585.659208,100.544492 588.235147,101.679334 589.907498,102.139163 C590.06018,102.75346 591.57985,109 594.42365,109 L595.653137,109 C599.228201,109 600.111252,102.351667 600.111252,102.351667 C600.111252,102.351667 602.859515,101.294505 604.320256,100.488241 C605.072055,100.98825 608.066751,102.917749 610.287327,102.917749 C610.95966,102.917749 611.561456,102.74096 612.007893,102.294523 L613.237379,101.064144 C615.754388,98.5480276 611.545385,93.3390061 611.545385,93.3390061 L611.430204,93.4550796 C612.237361,92.0720191 612.871301,90.6112788 613.312381,89.0541081 C614.56151,88.7282094 620,87.2290755 620,84.5763496 L620,83.3468633 C620,79.7717995 613.351667,78.8878551 613.351667,78.8878551 L613.332917,78.9655351 C612.929338,77.4289005 612.295398,75.9869105 611.526634,74.6422436 C612.352542,73.5466883 615.503491,69.0314291 613.294523,66.8206754 L612.180218,65.648333 C611.739138,65.2027893 611.136449,65.0268933 610.457865,65.0268933 C608.180146,65.0268933 605.053305,67.0153217 604.358649,67.4733656 C603.01309,66.7233522 601.571992,66.1099484 600.054108,65.6876194 C599.822854,64.3027733 598.767478,59 595.653137,59 L595.653137,59 L595.653137,59 Z M594.947767,91.1621815 C591.033411,91.1621815 587.876212,87.8906945 587.876212,83.9620529 C587.876212,80.0476973 591.033411,76.8762121 594.947767,76.8762121 C598.846944,76.8762121 602.162181,80.0476973 602.162181,83.9620529 C602.162181,87.8906945 598.847837,91.1621815 594.947767,91.1621815 L594.947767,91.1621815 L594.947767,91.1621815 Z" id="settings" fill="#8E8E93" sketch:type="MSShapeGroup"></path>
+                    <g id="Status-Bar-/-Black">
+                        <rect id="Background" fill-opacity="0" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="41"></rect>
+                        <g id="Charge" transform="translate(580.000000, 11.000000)" sketch:type="MSShapeGroup">
+                            <g id="Battery-Icon">
+                                <rect id="Battery" stroke="#000000" x="0" y="0" width="45" height="19" rx="3"></rect>
+                                <rect id="Charge" stroke="#000000" fill="#000000" x="2" y="2" width="41" height="15" rx="1"></rect>
+                                <path d="M49,9.46455558 C49,11.2277927 47.6961455,12.6864982 46,12.9291112 L46,6 C47.6961455,6.24261297 49,7.70131842 49,9.46455558 Z" id="+" fill="#000000"></path>
+                            </g>
+                        </g>
+                        <path d="M163.991503,14.0417534 C167.871048,14.0417534 171.406722,15.4709041 174.117706,17.8143562 L176,15.7362192 C172.789204,12.9489315 168.595777,11 163.991503,11 C159.394227,11 155.206797,12.9430137 152,15.7214247 L153.878296,17.8025205 C156.58728,15.4659726 160.116956,14.0417534 163.991503,14.0417534 L163.991503,14.0417534 Z M163.991503,20.0404384 C166.316631,20.0404384 168.440835,20.8847123 170.07922,22.2753973 L172.070474,20.0759452 C169.903286,18.2157808 167.084343,17.0006575 163.991503,17.0006575 C160.904661,17.0006575 158.087717,18.2128219 155.922529,20.0670685 L157.910783,22.2694795 C159.548169,20.8817534 161.669374,20.0404384 163.991503,20.0404384 L163.991503,20.0404384 Z M168.086967,24.4748493 C166.978383,23.5546301 165.550918,22.9174795 163.990504,22.9174795 C162.433088,22.9174795 161.007622,23.5536438 159.899038,24.4699178 L163.990504,29 L168.086967,24.4748493 L168.086967,24.4748493 Z" id="Wifi" fill="#0C0000" sketch:type="MSShapeGroup"></path>
+                        <g id="Signal" transform="translate(13.000000, 15.000000)" fill="#000000" sketch:type="MSShapeGroup">
+                            <circle id="Oval-1" cx="5.5" cy="5.5" r="5.5"></circle>
+                            <circle id="Oval-1-copy" cx="19.5" cy="5.5" r="5.5"></circle>
+                            <circle id="Oval-1-copy-2" cx="33.5" cy="5.5" r="5.5"></circle>
+                            <circle id="Oval-1-copy-3" cx="47.5" cy="5.5" r="5.5"></circle>
+                            <circle id="Oval-1-copy-4" cx="61.5" cy="5.5" r="5.5"></circle>
+                        </g>
+                        <text id="Apple" fill="#000000" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="23" font-weight="normal">
+                            <tspan x="87" y="29">Apple</tspan>
+                        </text>
+                        <text id="9:41-AM" fill="#000000" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="24" font-weight="420" sketch:alignment="middle" letter-spacing="1.19999981">
+                            <tspan x="270.440001" y="29">9:41 AM</tspan>
+                        </text>
+                    </g>
+                </g>
+                <path d="M540,1014.77899 L1048,1088 L1048,188 L540,261.221014 L540,1014.77899 Z" id="Screen" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+                <text id="Travel" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="48" font-weight="normal" fill="#8E8E93">
+                    <tspan x="60" y="304">Travel</tspan>
+                </text>
+                <text id="Search-2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="260" fill="#8E8E93">
+                    <tspan x="60" y="380">Search</tspan>
+                </text>
+                <text id="Discover-2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="260" fill="#8E8E93">
+                    <tspan x="60" y="450">Discover</tspan>
+                </text>
+                <text id="Your-Trips" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="260" fill="#8E8E93">
+                    <tspan x="60" y="520">Your Trips</tspan>
+                </text>
+                <text id="Wish-Lists-2" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="260" fill="#8E8E93">
+                    <tspan x="60" y="590">Wish Lists</tspan>
+                </text>
+                <text id="Inbox" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="36" font-weight="260" fill="#8E8E93">
+                    <tspan x="60" y="662">Inbox</tspan>
+                </text>
+                <path d="M20,84 C20,97.807 31.193,109 45,109 C58.807,109 70,97.807 70,84 C70,70.193 58.806,59 45,59 C31.193,59 20,70.193 20,84 Z M56.5414764,100.882492 C53.8189765,100.179105 51.4871584,98.7099681 51.4871584,98.7099681 L50.5840902,95.352524 C50.5840902,95.2073482 50.4398857,93.0746965 50.4398857,93.0746965 C52.4618174,92.3948243 52.2511356,88.3881789 52.2511356,88.3881789 C53.535681,89.098722 54.368181,84.9100958 54.368181,84.9100958 C56.5414763,79.4802316 53.6154538,80.7736102 53.6154538,80.7736102 C54.3364765,77.477508 55.2238248,77.5721303 55.223825,73.523762 C55.223825,69.4753937 49.0943514,65.9329069 44.9999994,65.9329073 C40.9056475,65.9329079 35.1073582,69.5905551 35.1073584,73.523762 C35.1073584,77.4569688 36.2086363,80.7736095 36.2086363,80.7736095 C32.4726372,80.7736095 36.1452269,83.7129073 36.208636,85.4253674 C36.3027269,87.9526518 37.8449996,88.4515655 37.8449996,88.4515655 C37.9421587,92.6207668 38.9730678,93.168754 38.9730678,93.168754 C39.3576132,95.7870288 38.9730678,95.5610863 38.9730678,95.5610863 L38.3113632,98.6281789 C38.3113632,98.6281789 36.5757951,99.8805751 34.4403406,100.816038 C33.118977,101.395719 31.6871589,100.963259 30.3412498,101.5 C25.5323863,97.1917572 22.5,90.94 22.5,83.9920128 C22.5,71.0263898 32.0297725,61.5 44.9999994,61.5 C57.9722718,61.5 67.4999989,71.0263898 67.4999989,83.9920128 C67.5020443,90.653738 64.7110217,96.6723962 60.2427263,100.956102 C60.2427263,100.956102 57.7574991,101.196358 56.5414764,100.882492 Z" id="people-2" fill="#8E8E93" sketch:type="MSShapeGroup"></path>
+                <circle id="Marker---Inbox-2" fill="#007AFF" sketch:type="MSShapeGroup" cx="30" cy="649" r="10"></circle>
+                <circle id="Marker---Wish-Lists-2" fill="#DF00FF" sketch:type="MSShapeGroup" cx="30" cy="577" r="10"></circle>
+                <circle id="Marker---Your-Trips-2" fill="#FF9300" sketch:type="MSShapeGroup" cx="30" cy="507" r="10"></circle>
+                <circle id="Marker---Discover-2" fill="#00FF5D" sketch:type="MSShapeGroup" cx="30" cy="437" r="10"></circle>
+                <circle id="Marker---Search-2" fill="#FFEB00" sketch:type="MSShapeGroup" cx="30" cy="367" r="10"></circle>
+                <circle id="Marker---Me-2" fill="#E35050" sketch:type="MSShapeGroup" cx="20" cy="108" r="10"></circle>
+                <circle id="Marker---Settings-2" fill="#50E3D7" sketch:type="MSShapeGroup" cx="573" cy="108" r="10"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
