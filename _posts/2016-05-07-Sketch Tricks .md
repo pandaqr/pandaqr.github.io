@@ -20,7 +20,7 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 ![](/content/images/SketchTricks/Click_through.gif)
 
 
-#### 如何移动一个元素而不影响到其他内容？ (command+option)
+#### 如何移动一个元素而不影响到其他内容？ (command + option)
 
 当选中一个元素后，按住**command+option**就可以将鼠标放在任意位置移动该元素，而不影响到其他的元素。
 
@@ -28,7 +28,7 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 
 
-#### 如何选中一个元素而不影响到其他内容？ (Option+选择) 
+#### 如何选中一个元素而不影响到其他内容？ (Option + 选择) 
 
 通常我们要选择许多元素的时候，只需要将光标移到外面然后拉扯就能选中了，但往往这个时候会选中许多我们不需要的内容，因此为了更精准的选择可以按住**option**的同时进行选择，这样只有当选择的区域被全覆盖的时候，该层组才会被选中。 
 
@@ -36,11 +36,15 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 
 
-#### 如何选中被遮住的元素？ (Option+Click)
+#### 如何选中被遮住的元素？ (Option + Click)
 
 当画布上有许多图层的时候，有些元素会被覆盖，这时候可以按住**option**点击选择被覆盖的元素。
 
 ![](/content/images/SketchTricks/Option+click.gif)
+
+#### 如何选中所有画布 (Command + Shif + a)
+
+选择所有图层方式很简单就是**Command + a**,但若是想要选中所有画布，可以直接按**Command + Shif + a**。
 
 
 ## 重命名( Command + r )
@@ -51,7 +55,7 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 ## 操控图形
 
-#### 旋转图标(Command+click)
+#### 旋转图标(Command + click)
 
 在选择一个图形的时候四周会出现边框供你调整图形大小，当需要图形方向的时候，可以按住**command**键将鼠标移动到右上角就能按到旋转图标。 
 
@@ -73,7 +77,7 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 这个可以在菜单栏里找到，当然为了省时间，可以直接**Shift + Command + O**（字母O)
 
 
-#### 放大局部 (command+ 2) 
+#### 放大局部 (command + 2) 
 
 #### 改变corner值
 
@@ -100,9 +104,12 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 Symbol在Sketch 3.7.2.上有了重大的改变。好吧我已经忘了之前的了。 
 
-今天介绍的一种Symbol的使用方式叫做nest Symbol. 也就是说你可以创建一个主symbol,主symbol下还可以有n个附属的symbols，这些附属的symbols的变化得依着主symbol。
+#### Nested Symbols 
 
-制作方式:
+
+今天介绍的一种Symbol的使用方式叫做nested Symbol. 也就是说你可以创建一个主symbol,主symbol下还可以有n个附属的symbols，这些附属的symbols的变化得依着主symbol。
+
+**制作方式:**
 
 1. 设置一个Symbol后，
 2. 在Symbol页面再插入此symbol(可多次插入多个）
@@ -111,10 +118,17 @@ Symbol在Sketch 3.7.2.上有了重大的改变。好吧我已经忘了之前的�
 
 ![](/content/images/SketchTricks/Symbol.gif)
 
+#### Symbol 分组
+
+有时候在设计一款Button的时候有两种状态，选中和非选中或者鼠标悬停。 
+在Symbol的页面我们可以设计两个Symbol，使用同一个主命名比如button，然后在后面用**"/"**来分割命名，说明Symbol的状态： 
+
+![](/content/images/SketchTricks/Button.png)
 
 参考文章： 
 
 # 完美插件
+
 
 ### [Runner](http://sketchrunner.com)
 
