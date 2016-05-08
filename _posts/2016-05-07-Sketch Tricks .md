@@ -46,9 +46,13 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 选择所有图层方式很简单就是**Command + a**,但若是想要选中所有画布，可以直接按**Command + Shif + a**。
 
-#### 如何将所有的画布都搜索起来（Collapse dartboards and Groups)
+#### 如何将所有的画布都收起来（Collapse artboards and Groups)
 
-该功能隐藏的有点深，藏在**View > Layer list > Collapse dartboards and Groups**
+该功能隐藏的有点深，藏在**View > Layer list > Collapse artboards and Groups**
+照理来说这应该是个听常用的功能，但是可能会有点麻烦每次都要点击好几次才能完成，如何加速，两个方案： 
+
+1. 自定义快捷键
+2. 使用[Runner](http://sketchrunner.com)插件（等下会讲到），快速查找运行。
 
 #### 如何将某一组下的所有元素展开(alt+click)
 
@@ -62,6 +66,16 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 #### 批量命名
 
 有时候批量命名真是个体力活，用上[RenameIt](https://github.com/rodi01/RenameIt)插件就可以帮你解决一些相似的文件的命名啦~ 
+
+几个参数： 
+
+* “%N”数字
+
+* “ * ”原本的命名
+
+* "%a" or "%A"用字母命名
+
+* "%w" or "%h" 高度宽度
 
 ## 操控图形
 
