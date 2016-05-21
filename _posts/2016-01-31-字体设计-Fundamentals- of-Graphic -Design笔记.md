@@ -257,6 +257,7 @@ Architecture肯定是要稳固一点，而右下角的这个Architecture就给�
 如果我们将上面Archtecture的字体运用到一下一个单词中去，比如cupcakes，第一个胖胖的cupcakes就给人感觉是挺好吃的，而第三个则有点莫名其妙，第二个看着也没啥食欲，最后一个cupcakes至少外形上是挺像蛋糕的。 
 
 
+
 # 排印字体
 
 ![](/content/images/Type/屏幕快照 2016-01-27 下午9.19.42.png)
@@ -317,6 +318,27 @@ Indent的大小通常是1em(the size of the type or the size of leading) 
 Indent通常是将两个段落分开来的标志
 也可以在段与段之间加上一行空行以示区别。但是不能同indent同时使用，因为两个意思一样。
 
+## 数字排版
+
+数字排版分两种：
+
+**Monospaced(Tabular)Numbers**
+![](/content/images/Type/Tabular Figures.gif)
+
+指的是每一个数字所占的空间相同，数字的变化不会影响到数字之间的间隔
+
+如果用数字做一个计数的动效，或放在表格里做对比，那么则需要使用Monospaced.
+
+
+**Proportional Lining Figures**
+
+![](/content/images/Type/Proportional Lining Figures.gif)
+
+指的是数字之间的间隔按照视觉平衡的感受调节其间距。
+
+如果是单纯的信息展示，则用按比例调节空隙的数字排列较好
+
+![](/content/images/Type/numbers.png)
 
 
 #### Greeking 
@@ -434,5 +456,7 @@ Monogram（字体拼接）
 
 [Why San Francisco](https://medium.com/martiancraft-s-syndicate/why-san-francisco-b86bd45f3273#.6o79avg46)
 
+[Arriving at San Francisco](https://medium.com/martiancraft-s-syndicate/arriving-at-san-francisco-c66709e848c1#.rnm62rzhy)
 
+[Introducing San Francisco](https://developer.apple.com/fonts/)
 
