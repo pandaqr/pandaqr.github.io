@@ -62,12 +62,13 @@ MD是基于真实世界纸张的一种UI介质。 通过模拟真实世界纸张
 
 ### 交互&动效（Interaction & Motion）
 
-* Material Design：点击反馈。当你去点击凸起的按钮的时候，按钮会自动“升高”，表示靠近你的手指，这个有“磁力”的表现方式同一般的点击效果有所不同。
+* Material Design：点击反馈。当你去点击凸起的按钮的时候，按钮会自动“升高”，表示靠近你的手指，这种有“磁力”的表现方式同一般的点击效果有所不同。
 * ios：通过改变颜色等方式表示已点击
 
 ### 字体设计（Typography）
 
 Android: Roboto
+
 ios：San Fransisco
 
 ### dp 以及用一倍图设计（Use density-independent pixels (dp) and design in vector at 1x）
