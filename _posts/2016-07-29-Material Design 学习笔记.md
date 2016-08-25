@@ -380,13 +380,16 @@ Fab按键可以触发的形式:
 ## 参考资料：
 
 学习MD最好的资料当然还是取之于官网材料，当然要注意的是这绝对不是一个你只打开一次的文档，基本要来来回回的不断翻开，由于翻墙速度堪忧的原因，我个人将几个没有小视频的文档都存成了PDF这样查看起来瞬间就方便了不少。 要注意的是，Google会时不时的去更新MD，比如最近一次最重大的更新就是底部导航栏了，这玩意儿本来只是ios的，MD也弄来了~ 很多人吐槽说，这下好了，屏幕使用率更加堪忧了~但其实在实行过程中你会发现tabs,buttom naviagtion,和drawer并一定需要共存~
+
 [Google Material design guideline](https://material.google.com/#introduction-goals)
 
 不推荐大家直接上手读中文版的guideline,翻译问题不少，也不完善，但是要翻好也不容易，看着中文也感到挺累的，可以作为参照，如果英文觉得啃得有点辛苦，可以参照一下中文版，说不定，就豁然开朗了。 
+
 [Material Design 中文版](http://wiki.jikexueyuan.com/project/material-design/)
 
 
 Cola Chan的MD学习笔记还是很值得一看的，算是高度浓缩版。
+
 [material design学习笔记](http://www.colachan.com/post/3416)
 
 
@@ -416,15 +419,18 @@ Cola Chan的MD学习笔记还是很值得一看的，算是高度浓缩版。
 
 
 这个视频解释了Android的基本尺寸，解释了为什么要用一倍图设计的原因以及好处
+
 [Designer & developer communication - Google I/O 2016](https://www.youtube.com/watch?v=ZFyK1J5NrVk&list=PLJ21zHI2TNh-RpdsZdynAnvn6026Pw7Rr&index=5)
 
 这里主要是给大家提供一个思路，感受一下Google设计师设计流程，以及设计的英文术语
+
 [Learning to speak Designer - Google I/O 2016](https://www.youtube.com/watch?v=80hrknwD74Q&list=PLJ21zHI2TNh-RpdsZdynAnvn6026Pw7Rr&index=1)
 
 
 ### 工具
 
 这个网站可以帮你迅速生成Android设计中所需要的icon尺寸，点九图等。有空我得把点九图的制作方法整理一下~
+
 [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html)
 
 
