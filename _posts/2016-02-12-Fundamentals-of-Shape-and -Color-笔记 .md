@@ -21,7 +21,7 @@ layout: "post"
 **Small vs. Big**
 ![](/content/images/shapes/屏幕快照 2016-02-03 下午10.15.01.png)
 
-**Vertical vs. Horizantal**
+**Vertical vs. Horizontal**
 ![](/content/images/shapes/屏幕快照 2016-02-03 下午10.15.08.png
 
 
