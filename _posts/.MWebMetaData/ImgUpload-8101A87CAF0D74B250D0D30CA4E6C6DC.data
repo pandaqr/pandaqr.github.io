@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4643A38C8717321A1452526D91D01074</key>
+	<array>
+		<dict>
+			<key>localURL</key>
+			<string>media/Perspective%20App%20Screens%20Mock-Up.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-07-Perspective App Screens Mock-Up.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/TradeWindsFlow.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-07-TradeWindsFlow.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/All%20User%20Screen.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-07-All User Screen.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/Redesign.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-07-Redesign.png</string>
+		</dict>
+	</array>
+	<key>selectedItem</key>
+	<string>4643A38C8717321A1452526D91D01074</string>
+</dict>
+</plist>
