@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4643A38C8717321A1452526D91D01074</key>
+	<array>
+		<dict>
+			<key>localURL</key>
+			<string>media/button_on_off.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-button_on_off.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/music%20player.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-music player.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/section.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-section.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/shopbop.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-shopbop.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/keeper-1.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-keeper-1.png</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/IMG_0405.png</string>
+			<key>remoteURL</key>
+			<string>http://ob49cesbh.bkt.clouddn.com/2016-12-15-IMG_0405.png</string>
+		</dict>
+	</array>
+	<key>selectedItem</key>
+	<string>4643A38C8717321A1452526D91D01074</string>
+</dict>
+</plist>
