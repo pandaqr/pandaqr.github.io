@@ -17,30 +17,31 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 当然如果你可以预见在接下去的一段时间内你都不会选中整个组，可以将控制面板左边的**click-through when selecting**给勾选掉，这样你在选则组的元素时候 Sketch就不会自动帮你选中整个组了。
 
-![](/content/images/SketchTricks/Click_through.gif)
+
+![Click_through](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Click_through.gif)
 
 
 #### 如何移动一个元素而不影响到其他内容？ (command + option)
 
 当选中一个元素后，按住**command+option**就可以将鼠标放在任意位置移动该元素，而不影响到其他的元素。
 
-![](/content/images/SketchTricks/Command+Option.gif)
 
+![Command+Option](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Command+Option-1.gif)
 
 
 #### 如何选中一个元素而不影响到其他内容？ (Option + 选择) 
 
 通常我们要选择许多元素的时候，只需要将光标移到外面然后拉扯就能选中了，但往往这个时候会选中许多我们不需要的内容，因此为了更精准的选择可以按住**option**的同时进行选择，这样只有当选择的区域被全覆盖的时候，该层组才会被选中。 
 
-![](/content/images/SketchTricks/Option_select.gif)
-
-
+![Option_select](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Option_select.gif)
 
 #### 如何选中被遮住的元素？ (Option + Click)
 
 当画布上有许多图层的时候，有些元素会被覆盖，这时候可以按住**option**点击选择被覆盖的元素。
 
-![](/content/images/SketchTricks/Option+click.gif)
+
+![Option+click](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Option+click.gif)
+
 
 #### 如何选中所有画布 (Command + Shif + a)
 
@@ -83,7 +84,7 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 在选择一个图形的时候四周会出现边框供你调整图形大小，当需要图形方向的时候，可以按住**command**键将鼠标移动到右上角就能按到旋转图标。 
 
-![](/content/images/SketchTricks/roate.gif)
+![roate](http://ob49cesbh.bkt.clouddn.com/2017-01-22-roate.gif)
 
 
 #### 调整图形初始点 （space) 
@@ -92,9 +93,12 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 当然，如果你在画图形的时候发现起始点不理想你也可以按住**space**直接改变图形的位置。 
 
-![](/content/images/SketchTricks/Space.gif)
+![Space](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Space.gif)
 
+#### 重设图形边框（Flattern)
+假设你在画一个五角星，当你旋转的时候，肯定有点晕乎，通常不知道哪里是顶端，这时候你就可以用Flatten键，一键将五角星的边框（bounding box)恢复到正常矩形。
 
+![flattern](http://ob49cesbh.bkt.clouddn.com/2017-01-22-flattern.gif)
 
 #### 如何将文字变为图形（Shift + Command + O）
 
@@ -109,13 +113,17 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 #### 快速改变数值大小
 
-比如，通常我们在讲尖锐的边角变成圆形的时候，会用到corner，这时候用鼠标点击一下下增大corner数值有点累人，为了使数值更快的变化，我们可以按住**shift**键。 
+比如，通常我们在讲尖锐的边角变成圆形的时候，会用到corner，这时候用鼠标点击一下下增大corner数值有点累人，为了使数值更快的变化，我们可以按住**shift**键，一次增加10px。 
 
-![](/content/images/SketchTricks/Corner.gif)
+
+![Corne](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Corner.gif)
+
 
 如果想要让数值有小数点的话，可以按着**alt+up/down**
 
+由于系统默认的按住Shift后增加或减少的值是10px,而每个设计师的通常心里都有个基准数，比如8px,因此，我们可以用[nudg.it](http://nudg.it)这款app来调节默认值~
 
+#### 
 
 ## 把控图形风格
 
@@ -129,7 +137,24 @@ a,r,o,u,v这种常用的快捷键就不叨叨了。
 
 #### 如何绘制只有一条边的表格？ 
 
-边框我们可以直接按快捷键b，但是如果我们只需要一边有边线呢， 这种情况下我们可以用**inner shadow（内阴影）**,记得将blur值设为0。
+边框我们可以直接按快捷键b，但是如果我们只需要一边有边线呢， 这种情况下我们可以用**inner shadow（内阴影）**,记得将blur值设为0。比如这样： 
+
+![gird](http://ob49cesbh.bkt.clouddn.com/2017-01-22-gird.png)
+像上图这样的按键，建议使用Bounding box,也就是隐形的长方形，用它来包裹内容，这样做的好处是，隐形的边可以直接合在一起，不用去算距离，bounding box也可以代表点击范围，另外也可以用inner shadow来画边线。
+![屏幕快照 2017-01-22 下午4.50.57](http://ob49cesbh.bkt.clouddn.com/2017-01-22-屏幕快照 2017-01-22 下午4.50.57.png)
+
+同时我们还可以用这个办法来绘制分割线，我们可能会用Line来绘制分割线，但这样做你每次要去点击它就很麻烦. 因此使用内阴影是个很好的解决方案。 
+![iPhone 7](http://ob49cesbh.bkt.clouddn.com/2017-01-22-iPhone 7.png)
+
+
+
+#### 如何画出一致性的按钮
+
+Material design有规定按钮的内容距离都为8dp， 但是我们无法把控的是按钮的内容长度，如果多了两个文字，我们又要重新调节距离，就很麻烦。
+
+我们可以使用 [Relabel button](https://github.com/kenmoore/sketch-relabel-button)来很好的解决这个问题.
+
+![Relabel button](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Relabel button.gif)
 
 
 # Symbol的使用
@@ -145,22 +170,41 @@ Symbol在Sketch 3.7.2.上有了重大的改变。好吧我已经忘了之前的�
 
 1. 设置一个Symbol后，
 2. 在Symbol页面再插入此symbol(可多次插入多个）
-3. 比如你需要将这个Symbol的底色做一个小改变，但是里面的元素还是同主Symbol一致，可以加入一个不同的元素，将此元素同插入的Symbol选中后创建一个新的Symbol，此时这个Symbol依然依附于住Symbol，主Symbol上的元素大小改变也会影响到这个次元素。
+3. 比如你需要将这个Symbol的底色做一个小改变，但是里面的元素还是同主Symbol一致，可以加入一个不同的元素，将此元素同插入的Symbol选中后组合然后创建成一个新的Symbol，此时这个Symbol依然依附于主Symbol，主Symbol上的元素大小改变也会影响到这个次元素。这个方法非常适用于有颜色的底部导航栏。
 
 
-![](/content/images/SketchTricks/Symbol.gif)
+![Symbo](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Symbol.gif)
+
+
+#### 用Symbol做导航状态
+
+通常一个导航的按键有选中和未选两种状态，通常来说复制黏贴一下的确很方便，但是万一我们要对导航栏有大幅度的改动，那么把他设置成Symbol是最好不过的。让我们看一下如果用Symbol来自动在选中不同状态的tab间切换：
+
+1. 将所有的状态叠加。像我这里的三个标签只有两种状态，选中和未选中。因此我只要叠加一个全选中的状态就好。
+
+![屏幕快照 2017-01-22 下午8.01.48](http://ob49cesbh.bkt.clouddn.com/2017-01-22-屏幕快照 2017-01-22 下午8.01.48.png)
+
+![屏幕快照 2017-01-22 下午8.00.55](http://ob49cesbh.bkt.clouddn.com/2017-01-22-屏幕快照 2017-01-22 下午8.00.55-1.png)
+
+2. 插入Symbol之后，比如我只需要主页是高亮的，表示用户在主页面，那我只要把选中状态的发现，和设置给去掉就好了（按空格键）： 
+
+![symbols](http://ob49cesbh.bkt.clouddn.com/2017-01-22-symbols.gif)
+
+但是这个方法有个缺点，就是不适用于图标。通常移动端的导航栏都有图标，因此可能更加适用于网页端。
+
+在移动端如果需要对图标和字体一起的标签做做Symbol，可以使用之前提到的nested symbol，但是颜色的设置就相对来说比较有局限性了。
 
 #### Symbol 分组
 
 有时候在设计一款Button的时候有两种状态，选中和非选中或者鼠标悬停。 
 在Symbol的页面我们可以设计两个Symbol，使用同一个主命名比如button，然后在后面用**"/"**来分割命名，说明Symbol的状态： 
 
-![](/content/images/SketchTricks/Button.png)
+![Button](http://ob49cesbh.bkt.clouddn.com/2017-01-22-Button.png)
+
 
 同样的道理，在你想要命名某一些图层的时候可以在前面加上想要将元素放入的Folder名字，比如Project/icon1，输出的时候，就会自动生成一个Project的文件。icon1就会自动放在里面了。 
 
 # 完美插件
-
 
 ### [Runner](http://sketchrunner.com)
 
@@ -174,6 +218,10 @@ Symbol在Sketch 3.7.2.上有了重大的改变。好吧我已经忘了之前的�
 ### [Craft](https://www.invisionapp.com/craft)
 
 我还是得表扬一下invision的，Craft将一些机械劳动简化的很好，比如我要复制一组卡片，Craft能很好的将内容有条理的复制，还能自动将图片或者文字按照类型改变。（但是吐槽一下，Splash上的people的图片都好不people啊）
+
+
+
+
 
 
 
