@@ -243,6 +243,10 @@ MVP就像是做出一个蛋糕的雏形，只有原料干巴巴的，没有添�
 
 ![](/content/images/Prototype/time-line-exp-map-2.jpg)
 
+其实不单单只是做一个产品的时候我们可以使用experience map,我们在做营销的时候也可以用到Experience Map这个工具： 
+
+我们可以参考[How to Align Email Marketing to The Buyer’s Journey (Inc. Examples)](https://sleeknote.com/blog/the-buyers-journey)一文中像我们阐释的一个购买者的流程是如何的（What is the buyer’s journey?）： 通过Awareness，Consideration，Decision三个不同的阶段来帮助用户做出购买决定。
+
 
 ### 交互原型前的可用性测试
 
@@ -335,6 +339,8 @@ MVP就像是做出一个蛋糕的雏形，只有原料干巴巴的，没有添�
 
 [【译文】 DIY 用户体验地图](http://jdc.jd.com/archives/538)
 
+[How to Align Email Marketing to The Buyer’s Journey (Inc. Examples)](https://sleeknote.com/blog/the-buyers-journey)
+
 **关于  Minimum Viable Products ：**
 
 [10 Massively Successful Minimum Viable Products](http://speckyboy.com/2014/10/01/successful-minimum-viable-products/)
@@ -344,6 +350,8 @@ MVP就像是做出一个蛋糕的雏形，只有原料干巴巴的，没有添�
 [精益用户体验(UX)：摆脱只注重结果的工作](http://www.leiphone.com/news/201406/0919-warlial-ux-deliverables.html)
 
 [Lean UX vs. Agile UX – is there a difference?](https://studio.uxpin.com/blog/lean-ux-vs-agile-ux-is-there-a-difference/)
+
+
 
 ******
 
