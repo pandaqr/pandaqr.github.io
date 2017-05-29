@@ -1,8 +1,6 @@
 ---
 layout: "post"
-image: upbeing community.jpg
 ---
-
 
 终于，今年的Google I/O 前阵子结束了，对于Google，和Apple的发布会上关于设计的话题都是我必看的内容。 
 
@@ -79,8 +77,4 @@ image: upbeing community.jpg
 
 当用户在不佳的网络环境甚至是离线的情况下， 依然保留用户之前查看的页面， 
 
-
-
-
-P.S : 题图是最近画的一个地图。。。
 
