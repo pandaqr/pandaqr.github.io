@@ -1,11 +1,14 @@
 ---
 layout: "post"
+image: upbeing community.jpg
 ---
+
 
 终于，今年的Google I/O 前阵子结束了，对于Google，和Apple的发布会上关于设计的话题都是我必看的内容。 
 
 
 今天抓来[Creating UX that “Just Feels Right” with Progressive Web Apps](https://www.youtube.com/watch?v=mmq-KVeO-uU&list=PLRDt1-VhUOFrzO0zvL9dG9jkFJKrzzD9X)啃了一下， 感觉是，很多的问题不是UI的问题， 是技术上的问题， 
+
 
 基于UX设计出 Just feels right 的网页应用。
 
@@ -78,4 +81,6 @@ layout: "post"
 
 
 
+
+P.S : 题图是最近画的一个地图。。。
 
