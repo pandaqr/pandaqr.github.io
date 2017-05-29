@@ -463,8 +463,8 @@ inbound Marketing = Content + Context
 
 **Marketing Intelligence**
 
-* # Twitter上的关注
-* # Facebook上的关注
+* Twitter上的关注
+* Facebook上的关注
 * SEO寻找搜索关键词
 * 网页
 * 技术
