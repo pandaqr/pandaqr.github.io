@@ -3,7 +3,7 @@ layout: "post"
 ---
 
 
-根据这个很Fancy的网站[Home | Laws of UX](https://lawsofux.com)整理的UX规则。 
+根据这个很Fancy的网站 [Laws of UX](https://lawsofux.com)整理的UX规则。 
 
 规则这东西每次都要想蛮累的。 
 
@@ -59,7 +59,7 @@ The average person can only keep 7 (plus or minus 2) items in their working memo
 
 # 8. Occam’s Razor
 
-[Occam’s Razor: A Great Principle for Designers | Webdesigner Depot](https://www.webdesignerdepot.com/2010/07/occams-razor-a-great-principle-for-designers/)
+[Occam’s Razor: A Great Principle for Designers - Webdesigner Depot](https://www.webdesignerdepot.com/2010/07/occams-razor-a-great-principle-for-designers/)
 
 Among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected.
 
