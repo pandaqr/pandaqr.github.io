@@ -1,0 +1,84 @@
+{
+  "main": {
+    "id": "dc867d5581cf4f04",
+    "type": "split",
+    "children": [
+      {
+        "id": "3aa4eb14619870a4",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a678f18c091d9f8",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3fb021e0225de56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f56602850109180f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ba88674089c95551",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "920af73ed466d00a",
+    "type": "split",
+    "children": [
+      {
+        "id": "80cf28ceddcbda13",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6895f2f2a07cc5b3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "lastOpenFiles": [
+    "2018-02-03-设计是一首诗.md",
+    "2018-02-17-用户界面设计准则乱炖.md",
+    "2018-01-14-无需代码如何爬虫.md",
+    "2016-05-14-你才不是没有故事的字体.md",
+    "2016-09-24-微信小程序儿.md",
+    "2016-09-04-【解构UI】导航设计（3）-底部导航栏.md",
+    "2016-08-30-【解构UI】导航设计（1）.md",
+    "2015-11-25-【Photoshop】图层.md",
+    "2015-10-11-Zen of Palm - 设计完善.md",
+    "2015-09-04-【Sketch】Sketch作业3.md"
+  ]
+}
